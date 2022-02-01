@@ -1,14 +1,17 @@
+import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
+import Context from "../context/context"
 
-const Login = () => {
+const SignIn = () => {
+    const { setContext } = useContext(Context)
+    const navigate = useNavigate()
     
     const handleOnSubmit = async (event) => {
         event.preventDefault()
-        // const response = await fetch("/api/options");    // GET
-        // let service_options = await response.json()
-        // console.log(service_options)
         const email = event.target.email.value 
         const password = event.target.password.value
+
         console.log("email: ", email)
         console.log("password: ", password)
 
@@ -23,13 +26,14 @@ const Login = () => {
         const loginResponse = await fetch("api/auth/sign_in", options)
         const user = await loginResponse.json()
         console.log(user)
-        
+        setContext({ user })
+        navigate("/")
         
     }
 
     return (
         <>
-            <h1>Login Page</h1>
+            <h1>Sing-in Page</h1>
             <form onSubmit={handleOnSubmit}>
                 <label htmlFor="email">Email</label>
                 <input type="text" name="email" />
@@ -41,4 +45,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignIn

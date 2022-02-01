@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Context from "./context/context"
 import Home from "./pages/home";
-import Login from "./pages/login";
+import SignIn from "./pages/sign_in";
 import MakeBooking from "./pages/make_booking";
 import ConfirmBooking from "./pages/confirm_booking";
 import Admin from "./pages/admin";
@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/sign_in" element={<SignIn />} />
           <Route path="/make_booking" element={<MakeBooking />} />
           <Route path="/confirm_booking" element={<ConfirmBooking />} />
           <Route path="/admin" element={<Admin />} />
