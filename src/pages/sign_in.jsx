@@ -28,7 +28,6 @@ const SignIn = () => {
         console.log(user)
         setContext({ user })
         navigate("/")
-        
     }
 
     return (
