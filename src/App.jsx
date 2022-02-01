@@ -1,25 +1,31 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Context from "./context/context"
 import Home from "./pages/home";
-import Login from "./pages/login";
+import SignIn from "./pages/sign_in";
+import SignUp from "./pages/sign_up";
 import MakeBooking from "./pages/make_booking";
 import ConfirmBooking from "./pages/confirm_booking";
 import Admin from "./pages/admin";
 
 function App() {
 
-  return (
+  const [context, setContext] = useState({})
 
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/make_booking" element={<MakeBooking />} />
-        <Route path="/confirm_booking" element={<ConfirmBooking />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-    </BrowserRouter>
-    
+  return (
+    <Context.Provider value={{context, setContext}}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sign_in" element={<SignIn />} />
+          <Route path="/sign_up" element={<SignUp />} />
+          <Route path="/make_booking" element={<MakeBooking />} />
+          <Route path="/confirm_booking" element={<ConfirmBooking />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
+    </Context.Provider>
   )
 }
 

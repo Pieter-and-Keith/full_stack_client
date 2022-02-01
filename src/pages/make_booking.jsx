@@ -3,7 +3,7 @@
 const MakeBooking = () => {
     return(
         <>
-        <h1>Make Booking Page</h1>
+        <h1>Make Page</h1>
         </>
     )
 }
