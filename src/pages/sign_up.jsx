@@ -37,7 +37,7 @@ const SignUp = () => {
     const user = await signUpResponse.json()
     console.log(user)
     setContext({ user })
-    navigate("/")
+    navigate("/user_details")
   };
 
   return (
