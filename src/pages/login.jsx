@@ -24,9 +24,10 @@ const Login = () => {
         const user = await loginResponse.json()
         console.log(user)
         
+        
     }
 
-    return(
+    return (
         <>
             <h1>Login Page</h1>
             <form onSubmit={handleOnSubmit}>
