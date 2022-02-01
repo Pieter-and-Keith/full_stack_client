@@ -1,6 +1,7 @@
 import { useContext } from "react"
 
 import Context from "../context/context"
+import Nav from "../components/navbar"
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
 
     return(
         <>
+        <Nav />
         <h1>Welcome to Sydey Motor Service Centre </h1>
         <h2>Home Page</h2>
         <h3>username: {context?.user?.username}</h3> 

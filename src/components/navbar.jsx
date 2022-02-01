@@ -5,7 +5,7 @@ const Nav = () => {
         <nav>
             <Link to="/">Home</Link>
             <Link to="/sign_in">Sign In</Link>
-            <Lint to="/sign_up">Sign Up</Lint>
+            <Link to="/sign_up">Sign Up</Link>
         </nav>
     )
 }

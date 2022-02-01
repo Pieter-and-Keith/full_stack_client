@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
 import Context from "../context/context"
+import Nav from "../components/navbar"
 
 const SignIn = () => {
     const { setContext } = useContext(Context)
@@ -23,8 +24,8 @@ const SignIn = () => {
             },
             body: JSON.stringify({"email": email, "password": password})
         }
-        const loginResponse = await fetch("api/auth/sign_in", options)
-        const user = await loginResponse.json()
+        const signInResponse = await fetch("api/auth/sign_in", options)
+        const user = await signInResponse.json()
         console.log(user)
         setContext({ user })
         navigate("/")
@@ -32,6 +33,7 @@ const SignIn = () => {
 
     return (
         <>
+            <Nav />
             <h1>Sing-in Page</h1>
             <form onSubmit={handleOnSubmit}>
                 <label htmlFor="email">Email</label>
