@@ -1,8 +1,8 @@
 import { useContext } from "react"
+import full_stack_server from "../config/api"
 
 import Context from "../context/context"
 import Nav from "../components/navbar"
-
 
 const Home = () => {
     const { context } = useContext(Context)

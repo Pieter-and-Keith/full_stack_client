@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 import Context from "../context/context"
@@ -6,8 +6,14 @@ import Nav from "../components/navbar";
 
 const SignUp = () => {
 
-    const { setContext } = useContext(Context)
-    const navigate = useNavigate()
+  const { setContext } = useContext(Context)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!setContext?.user?.email) {
+      console.log("duplicate email")
+    }
+  }, [])
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -15,6 +21,7 @@ const SignUp = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     const passwordConfirm = event.target.passwordConfirm.value;
+    
 
     console.log("username: ", username);
     console.log("email: ", email);
@@ -33,6 +40,7 @@ const SignUp = () => {
                                 "password_confirmation": passwordConfirm
                             })
     }
+
     const signUpResponse = await fetch("api/auth/sign_up", options)
     const user = await signUpResponse.json()
     console.log(user)
