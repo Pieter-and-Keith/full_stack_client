@@ -21,7 +21,6 @@ const UserDetails = () => {
         const make = event.target.make.value 
         const model = event.target.model.value
 
-        console.log("userId: ", context.user.id)
         console.log("firstName: ", firstName)
         console.log("lastName: ", lastName)
         console.log("phoneNumber: ", phoneNumber)
@@ -65,7 +64,6 @@ const UserDetails = () => {
         <>
         <h2>User detail Page</h2>
         <h3>Welcome: {context?.user?.username}</h3> 
-        <h4>id: {context?.user?.id}</h4>
         <h6>jwt: {context.user?.jwt}</h6>
         <form onSubmit={handleOnSubmit}>
             <label htmlFor="firstName">First Name: </label>
