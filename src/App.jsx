@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Context from "./context/context"
 import Home from "./pages/home";
-import SignIn from "./pages/sign_in";
-import SignUp from "./pages/sign_up";
-import UserDetails from "./pages/user_details";
-import MakeBooking from "./pages/make_booking";
-import ConfirmBooking from "./pages/confirm_booking";
+import SignIn from "./pages/sign-in";
+import SignUp from "./pages/sign-up";
+import UserDetails from "./pages/user-details";
+import MakeBooking from "./pages/make-booking";
+import ConfirmBooking from "./pages/confirm-booking";
 import Admin from "./pages/admin";
 
 function App() {
