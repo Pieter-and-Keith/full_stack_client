@@ -1,9 +1,10 @@
-const ServiceItem = ({ id, service_type }) => {
+const ServiceItem = ({ service_type, description, price }) => {
 	return (
-		<div>
-            <h2>{id}</h2>
+        <>
 			<h2>{service_type}</h2>
-		</div>
+            <p>{description}</p>
+            <h4>Price: ${price}</h4>
+        </>
 	);
 };
 
