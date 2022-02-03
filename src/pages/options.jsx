@@ -1,30 +1,35 @@
 import { useState, useEffect } from "react";
 
-const Options = () => {
+import api from "../config/api";
+import ServiceItem from "../components/service-item";
 
-    const [services, setServices] = useState({})
+const OptionPage = () => {
+    const [options, setOptions] = useState([])
 
-    useEffect( async () => {
-		
-        const response = await fetch("/api/options");
-		let servicesReply = await response.json();
-        console.log(servicesReply)
-        // setServices( servicesReply )
-        // console.log("services state:", services)
-    },[])
+    useEffect(async () => {
+        const data = await api.getOptions();
+            if (data) {
+                console.log("options", data);
+                setOptions(data);
+            }
+    }, []);
+
+    const serviceTypes = options.map((option) => {
+		return (
+			<ServiceItem 
+                key={option.id} 
+                id={option.id} 
+                service_type={option.service_type}
+            />
+		);
+	});
 
     return (
         <>
             <h1>Options Page</h1>
-            {/* {services.map((service, index) => (
-                <div key={index}>
-                <h1>{service.service_type}</h1>
-                <p>{service.description}</p>
-                </div>
-            ))} */}
+            {serviceTypes}
         </>
     )
-
 }
 
-export default Options
+export default OptionPage;
