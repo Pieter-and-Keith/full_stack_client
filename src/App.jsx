@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import Context from "./context/context"
 import Home from "./pages/home";
@@ -10,10 +11,19 @@ import OptionPage from "./pages/options";
 import MakeBooking from "./pages/make-booking";
 import ConfirmBooking from "./pages/confirm-booking";
 import Admin from "./pages/admin";
+import api from "./config/api";
 
 function App() {
-
   const [context, setContext] = useState({})
+  const [services, setServices] = useState([])
+
+    useEffect(async () => {
+        const data = await api.getOptions();
+            if (data) {
+                console.log("services", data);
+                setServices(data);
+            }
+    }, []);
 
   return (
     <Context.Provider value={{context, setContext}}>
@@ -23,7 +33,7 @@ function App() {
           <Route path="/sign_in" element={<SignIn />} />
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/user_details" element={<UserDetails />} />
-          <Route path="/options" element={<OptionPage />} />
+          <Route path="/options" element={<OptionPage services={services}/>} />
           <Route path="/make_booking" element={<MakeBooking />} />
           <Route path="/confirm_booking" element={<ConfirmBooking />} />
           <Route path="/admin" element={<Admin />} />

@@ -1,33 +1,38 @@
 import { useState, useEffect } from "react";
 
-import api from "../config/api";
 import ServiceItem from "../components/service-item";
 
-const OptionPage = () => {
-    const [options, setOptions] = useState([])
+const OptionPage = props => {
+    const [option, setOption] = useState("")
 
-    useEffect(async () => {
-        const data = await api.getOptions();
-            if (data) {
-                console.log("options", data);
-                setOptions(data);
-            }
-    }, []);
-
-    const serviceTypes = options.map((option) => {
-		return (
-			<ServiceItem 
-                key={option.id} 
-                id={option.id} 
-                service_type={option.service_type}
-            />
+    const serviceTypes = props.services.map((service) => {
+		return (          
+			    <ServiceItem key={service.id} service_type={service.service_type} description={service.description} price={service.price} />
 		);
 	});
+
+    const handleSubmit =e => {
+        e.preventDefault()
+        console.log("Options Submitted")
+    }
+
 
     return (
         <>
             <h1>Options Page</h1>
-            {serviceTypes}
+            <form onSubmit={handleSubmit}>
+                {serviceTypes}
+                <select onChange={e => setOption(e.target.value)}>
+                    <option disabled>Please Select</option>
+                    {props.services.map((service, index) => (
+                        <option key={index} value={service?.service_type}>{service?.service_type} ${service?.price}</option>
+                    ))}
+                </select>
+                <div>
+                    {option}
+                </div>
+                <button>Submit</button>
+            </form>
         </>
     )
 }
