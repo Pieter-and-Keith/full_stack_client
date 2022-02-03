@@ -23,7 +23,10 @@ const SignIn = () => {
                 Accept: "application/json",
                 "Content-Type": "application/json;charset=UTF-8"
             },
-            body: JSON.stringify({"email": email, "password": password})
+            body: JSON.stringify({
+                "email": email, 
+                "password": password
+            })
         }
         const signInResponse = await fetch("api/auth/sign_in", options)
         const user = await signInResponse.json()
