@@ -1,16 +1,15 @@
 import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-import LoginContext from "../context/SignInContext"
+import SignInContext from "../context/SignInContext"
 import Nav from "../components/navbar";
 
 const SignUp = () => {
-
-  const { setLoginContext } = useContext(LoginContext)
+  const { setSignInContext } = useContext(SignInContext)
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!setLoginContext?.user?.email) {
+    if (!setSignInContext?.user?.email) {
       console.log("duplicate email")
     }
   }, [])
