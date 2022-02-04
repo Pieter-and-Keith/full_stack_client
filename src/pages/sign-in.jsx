@@ -1,12 +1,12 @@
 import { useState, useContext} from "react"
 import { useNavigate } from "react-router-dom"
 
-import LoginContext from "../context/SignInContext"
+import SignInContext from "../context/SignInContext"
 import Nav from "../components/navbar"
 import api from "../config/api";
 
 const SignIn = (props) => {
-    const { setLoginContext } = useContext(LoginContext);
+    const { setSignInContext } = useContext(SignInContext);
     const navigate = useNavigate()
 
     // METHOD 3:
@@ -14,29 +14,30 @@ const SignIn = (props) => {
             email: "",
             password: ""
     });
-        const handleChange = (e) => {
+
+    const handleChange = (e) => {
         const target = e.target;
             setData({
                 ...data,
                 [target.name]: target.value
             });
-        };
+    };
 
-        const handleSubmit = async (event) => {
-            event.preventDefault()
-            const userData = {
-                email: data.email,
-                password: data.password
-            };
-            const user = await api.signIn(userData);
-            if (user) {
-                props.setUserSignedIn(true)
-                setLoginContext({user})
-            } else {
-                throw "the email/password is not correct!"
-            }
-            navigate("/")
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const userData = {
+            email: data.email,
+            password: data.password
         };
+        const user = await api.signIn(userData);
+        if (user) {
+            props.setUserSignedIn(true)
+            setSignInContext({user})
+        } else {
+            throw "the email/password is not correct!"
+        }
+        navigate("/")
+    };
 
     // METHOD 2:
 
