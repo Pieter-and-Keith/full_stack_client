@@ -1,10 +1,12 @@
-import { useState} from "react"
+import { useState, useContext} from "react"
 import { useNavigate } from "react-router-dom"
 
+import LoginContext from "../context/SignInContext"
 import Nav from "../components/navbar"
 import api from "../config/api";
 
 const SignIn = (props) => {
+    const { setLoginContext } = useContext(LoginContext);
     const navigate = useNavigate()
 
     // METHOD 3:
@@ -29,6 +31,9 @@ const SignIn = (props) => {
             const user = await api.signIn(userData);
             if (user) {
                 props.setUserSignedIn(true)
+                setLoginContext({user})
+            } else {
+                throw "the email/password is not correct!"
             }
             navigate("/")
         };

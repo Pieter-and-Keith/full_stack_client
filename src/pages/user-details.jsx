@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Context from "../context/context"
+import Context from "../context/SignInContext"
 
 
 const UserDetails = () => {

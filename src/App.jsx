@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
-import Context from "./context/context"
+import LoginContext from "./context/SignInContext"
 import Home from "./pages/home";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
@@ -15,7 +15,7 @@ import api from "./config/api";
 
 
 function App() {
-  const [context, setContext] = useState({})
+  const [loginContext, setLoginContext] = useState({})
   const [services, setServices] = useState([])
   const [userSignedIn, setUserSignedIn] = useState(false)
 
@@ -28,7 +28,7 @@ function App() {
     }, []);
 
   return (
-    <Context.Provider value={{context, setContext}}>
+    <LoginContext.Provider value={{loginContext, setLoginContext}}>
       <BrowserRouter>
         <nav>
             <Link to="/">Home</Link>
@@ -47,7 +47,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
-    </Context.Provider>
+    </LoginContext.Provider>
   )
 }
 
