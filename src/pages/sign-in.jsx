@@ -3,25 +3,22 @@ import { useNavigate } from "react-router-dom"
 
 import Context from "../context/context"
 import Nav from "../components/navbar"
-import axios from "axios";
 import api from "../config/api";
 
 const SignIn = () => {
     const { setContext } = useContext(Context);
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
     // METHOD 3:
-    const [user, setUser] = useState({
+    const [data, setData] = useState({
             email: "",
             password: ""
     });
         
         const handleChange = (e) => {
         const value = e.target.value;
-            setUser({
-                ...user,
+            setData({
+                ...data,
                 [e.target.name]: value
             });
         };
@@ -29,12 +26,12 @@ const SignIn = () => {
         const handleSubmit = async (event) => {
             event.preventDefault()
             const userData = {
-                email: user.email,
-                password: user.password
+                email: data.email,
+                password: data.password
             };
-            const data = await api.signIn(userData);
-            console.log(data);
-            setContext({ data })
+            const user = await api.signIn(userData);
+            console.log(user);
+            setContext({ user })
             navigate("/")
         };
 
@@ -91,9 +88,9 @@ const SignIn = () => {
             <h1>Sing-in Page</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
-                <input type="email" name="email" value={user.email} onChange={handleChange} />
+                <input type="email" name="email" value={data.email} onChange={handleChange} />
                 <label htmlFor="password">password</label>
-                <input type="password" name="password" value={user.password} onChange={handleChange}/>
+                <input type="password" name="password" value={data.password} onChange={handleChange}/>
                 <button type="submit">Sign In</button>
             </form>
         </>
