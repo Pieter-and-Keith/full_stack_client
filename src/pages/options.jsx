@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import ServiceItem from "../components/service-item";
 
@@ -11,7 +11,7 @@ const OptionPage = props => {
 		);
 	});
 
-    const handleSubmit =e => {
+    const handleSubmit = e => {
         e.preventDefault()
         console.log("Options Submitted")
     }
