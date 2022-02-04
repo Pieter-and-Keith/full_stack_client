@@ -1,12 +1,12 @@
-import { useState, useContext } from "react"
+import { useState, useContext} from "react"
 import { useNavigate } from "react-router-dom"
 
-import Context from "../context/context"
+import LoginContext from "../context/SignInContext"
 import Nav from "../components/navbar"
 import api from "../config/api";
 
-const SignIn = () => {
-    const { setContext } = useContext(Context);
+const SignIn = (props) => {
+    const { setLoginContext } = useContext(LoginContext);
     const navigate = useNavigate()
 
     // METHOD 3:
@@ -14,12 +14,11 @@ const SignIn = () => {
             email: "",
             password: ""
     });
-        
         const handleChange = (e) => {
-        const value = e.target.value;
+        const target = e.target;
             setData({
                 ...data,
-                [e.target.name]: value
+                [target.name]: target.value
             });
         };
 
@@ -30,19 +29,14 @@ const SignIn = () => {
                 password: data.password
             };
             const user = await api.signIn(userData);
-            console.log(user);
-            setContext({ user })
+            if (user) {
+                props.setUserSignedIn(true)
+                setLoginContext({user})
+            } else {
+                throw "the email/password is not correct!"
+            }
             navigate("/")
         };
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault()
-    // };
-
-    // const signInResponse = await fetch("api/auth/sign_in", handleChange)
-    // const user = await signInResponse.json()
-    // console.log(user)
-    // setContext({ user })
 
     // METHOD 2:
 
@@ -84,13 +78,16 @@ const SignIn = () => {
 
     return (
         <>
-            <Nav />
-            <h1>Sing-in Page</h1>
+            <h1>Sign-in Page</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" value={data.email} onChange={handleChange} />
-                <label htmlFor="password">password</label>
-                <input type="password" name="password" value={data.password} onChange={handleChange}/>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" name="email" value={data.email} onChange={handleChange} />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" name="password" value={data.password} onChange={handleChange}/>
+                </div>
                 <button type="submit">Sign In</button>
             </form>
         </>

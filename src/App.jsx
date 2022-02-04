@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
-import Context from "./context/context"
+import LoginContext from "./context/SignInContext"
 import Home from "./pages/home";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
@@ -13,9 +13,11 @@ import ConfirmBooking from "./pages/confirm-booking";
 import Admin from "./pages/admin";
 import api from "./config/api";
 
+
 function App() {
-  const [context, setContext] = useState({})
+  const [loginContext, setLoginContext] = useState({})
   const [services, setServices] = useState([])
+  const [userSignedIn, setUserSignedIn] = useState(false)
 
     useEffect(async () => {
         const data = await api.getOptions();
@@ -26,11 +28,17 @@ function App() {
     }, []);
 
   return (
-    <Context.Provider value={{context, setContext}}>
+    <LoginContext.Provider value={{loginContext, setLoginContext}}>
       <BrowserRouter>
+        <nav>
+            <Link to="/">Home</Link>
+            <Link to="/sign_up">Sign Up</Link>
+            <Link to="/options">Options</Link>
+            { !userSignedIn ? <Link to="/sign_in">Sign In</Link> : <button onClick={() => setUserSignedIn(false)}>Logout</button> }
+        </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sign_in" element={<SignIn />} />
+          <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
+          <Route path="/sign_in" element={<SignIn setUserSignedIn={setUserSignedIn}/>} />
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/user_details" element={<UserDetails />} />
           <Route path="/options" element={<OptionPage services={services}/>} />
@@ -39,7 +47,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
-    </Context.Provider>
+    </LoginContext.Provider>
   )
 }
 

@@ -1,16 +1,16 @@
 import { useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-import Context from "../context/context"
+import LoginContext from "../context/SignInContext"
 import Nav from "../components/navbar";
 
 const SignUp = () => {
 
-  const { setContext } = useContext(Context)
+  const { setLoginContext } = useContext(LoginContext)
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!setContext?.user?.email) {
+    if (!setLoginContext?.user?.email) {
       console.log("duplicate email")
     }
   }, [])
@@ -44,23 +44,30 @@ const SignUp = () => {
     const signUpResponse = await fetch("api/auth/sign_up", options)
     const user = await signUpResponse.json()
     console.log(user)
-    setContext({ user })
+    // setContext({ user })
     navigate("/user_details")
   };
 
   return (
     <>
-      <Nav />
-      <h1>Sign Up page </h1>
+      <h1>Sign-up page </h1>
       <form onSubmit={handleOnSubmit}>
-        <label htmlFor="username">username:</label>
-        <input type="text" name="username" />
-        <label htmlFor="email">email:</label>
-        <input type="text" name="email" />
-        <label htmlFor="password">Password</label>
-        <input type="text" name="password" />
-        <label htmlFor="passwordConfirm">Password Confirmation</label>
-        <input type="text" name="passwordConfirm" />
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input type="text" name="username" />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="text" name="email" />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="text" name="password" />
+        </div>
+        <div>
+          <label htmlFor="passwordConfirm">Password Confirmation:</label>
+          <input type="text" name="passwordConfirm" />
+        </div>
         <button type="submit">Sign Up</button>
       </form>
     </>
