@@ -34,7 +34,9 @@ function App() {
             <Link to="/">Home</Link>
             <Link to="/sign_up">Sign Up</Link>
             <Link to="/options">Options</Link>
-            { !userSignedIn ? <Link to="/sign_in">Sign In</Link> : <button onClick={() => setUserSignedIn(false)}>Logout</button> }
+            { 
+              !userSignedIn ? <Link to="/sign_in">Sign In</Link> : <button onClick={() => setUserSignedIn(false)}>Logout</button> 
+            }
         </nav>
         <Routes>
           <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
