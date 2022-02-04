@@ -9,12 +9,12 @@ const Home = () => {
 
     return(
         <>
-        <Nav />
-        <h1>Welcome to Sydey Motor Service Centre </h1>
-        <h2>Home Page</h2>
-        <h3>username: {context?.user?.username}</h3> 
-        <h4>id: {context?.user?.id}</h4>
-        <h6>jwt: {context.user?.jwt}</h6>
+            <Nav />
+            <h1>Welcome to Sydey Motor Service Centre </h1>
+            <h2>Home Page</h2>
+            <h3>username: {context?.user?.username}</h3> 
+            <h4>id: {context?.user?.id}</h4>
+            <h6>jwt: {context.user?.jwt}</h6>
         </>
     )
 }
