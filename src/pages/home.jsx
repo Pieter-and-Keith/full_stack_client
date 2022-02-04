@@ -1,7 +1,7 @@
 import { useContext } from "react"
 
 import SignInContext from "../context/SignInContext"
-// import Nav from "../components/navbar"
+import Nav from "../components/navbar"
 
 const Home = (props) => {
     const { signInContext } = useContext(SignInContext)
