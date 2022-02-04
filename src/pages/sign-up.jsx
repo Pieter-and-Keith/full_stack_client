@@ -50,7 +50,6 @@ const SignUp = () => {
 
   return (
     <>
-      <Nav />
       <h1>Sign Up page </h1>
       <form onSubmit={handleOnSubmit}>
         <label htmlFor="username">username:</label>

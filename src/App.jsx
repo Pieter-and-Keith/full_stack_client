@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
 import Context from "./context/context"
@@ -13,9 +13,11 @@ import ConfirmBooking from "./pages/confirm-booking";
 import Admin from "./pages/admin";
 import api from "./config/api";
 
+
 function App() {
   const [context, setContext] = useState({})
   const [services, setServices] = useState([])
+  const [userSignedIn, setUserSignedIn] = useState(false)
 
     useEffect(async () => {
         const data = await api.getOptions();
@@ -28,9 +30,15 @@ function App() {
   return (
     <Context.Provider value={{context, setContext}}>
       <BrowserRouter>
+        <nav>
+            <Link to="/">Home</Link>
+            <Link to="/sign_up">Sign Up</Link>
+            <Link to="/options">Options</Link>
+            { !userSignedIn ? <Link to="/sign_in">Sign In</Link> : <button onClick={() => setUserSignedIn(false)}>Logout</button> }
+        </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sign_in" element={<SignIn />} />
+          <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
+          <Route path="/sign_in" element={<SignIn setUserSignedIn={setUserSignedIn}/>} />
           <Route path="/sign_up" element={<SignUp />} />
           <Route path="/user_details" element={<UserDetails />} />
           <Route path="/options" element={<OptionPage services={services}/>} />

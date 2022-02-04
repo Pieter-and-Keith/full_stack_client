@@ -1,10 +1,12 @@
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 import Context from "../context/context"
 
 
 const UserDetails = () => {
-    const { context } = useContext(Context)
+    const { context, setContext } = useContext(Context)
+    const navigate = useNavigate()
 
     const handleOnSubmit = async (event)=> {
         event.preventDefault()
@@ -58,6 +60,8 @@ const UserDetails = () => {
         const userDetailsResponse = await fetch("api/details", options)
         const userDetails = await userDetailsResponse.json()
         console.log(userDetails)
+        setContext({userDetails})
+        navigate("/")
     }
 
     return(

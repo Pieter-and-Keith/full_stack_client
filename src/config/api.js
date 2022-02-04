@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-const full_stack_server = axios.create({
-    baseURL: 'http://localhost:3000'
-})
-
 const signIn = async ({email, password}) => {
 	try {
 		const { status, data } = await axios.post("api/auth/sign_in", {
@@ -39,4 +35,4 @@ const getOptions = async () => {
 
 
 
-export default {full_stack_server, signIn, getOptions};
+export default {signIn, getOptions};
