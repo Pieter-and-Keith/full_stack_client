@@ -45,7 +45,7 @@ const SignUp = (props) => {
           props.setUserSignedIn(true)
           setSignInContext({user})
       }
-      navigate("/")
+      navigate("/user_details")
   };
 
   // METHOD 1:
