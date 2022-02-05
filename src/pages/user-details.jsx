@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 
-import SignInContext from "../context/SignInContext"
+import SignInContext from "../utils/SignInContext"
 
 
 const UserDetails = () => {

@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 
-import SignInContext from "../context/SignInContext"
+import SignInContext from "../utils/SignInContext"
 import ServiceItem from "../components/service-item";
 import Nav from "../components/navbar"
 
