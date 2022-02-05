@@ -79,13 +79,13 @@ const SignIn = (props) => {
 
     return (
         <>
-            <h1>Sign-in Page</h1>
+            <h1>Sign-in</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div style={{padding:"10px"}}>
                     <label htmlFor="email">Email:</label>
                     <input type="email" name="email" value={data.email} onChange={handleChange} />
                 </div>
-                <div>
+                <div style={{padding:"10px"}}>
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" value={data.password} onChange={handleChange}/>
                 </div>

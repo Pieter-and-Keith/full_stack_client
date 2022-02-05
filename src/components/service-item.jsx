@@ -1,9 +1,9 @@
 const ServiceItem = ({ service_type, description, price }) => {
 	return (
         <>
-			<h2>{service_type}</h2>
+			<h2><u>{service_type}</u></h2>
             <p>{description}</p>
-            <h4>Price: ${price}</h4>
+            <h4>Price: $<i>{price}</i></h4>
         </>
 	);
 };

@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-
 import SignInContext from "./context/SignInContext"
 import UserDetailContext from "./context/UserDetailContext"
 import Home from "./pages/home";
@@ -34,11 +33,10 @@ function App() {
     <SignInContext.Provider value={{signInContext, setSignInContext}}>
       <UserDetailContext.Provider value={{userDetailContext, setUserDetailContext}}>
         <BrowserRouter>
-          <nav>
-              <Link to="/">Home</Link>
-              <Link to="/options">Options</Link>
-              { !userSignedIn && <Link to="/sign_up">Sign Up</Link>}
-              { !userSignedIn ? <Link to="/sign_in">Sign In</Link> : <button onClick={() => setUserSignedIn(false)}>Logout</button> }
+          <nav style={{display:"flex", justifyContent:"flex-end"}}>
+              <Link to="/" style={{padding:"5px"}} >Home</Link>
+              { !userSignedIn && <Link to="/sign_up" style={{padding:"5px"}}>Sign-up</Link>}
+              { !userSignedIn ? <Link to="/sign_in" style={{padding:"5px"}}>Sign-in</Link> : <button onClick={() => setUserSignedIn(false)} style={{padding:"5px"}}>Logout</button> }
           </nav>
           <Routes>
             <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
