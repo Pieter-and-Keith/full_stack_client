@@ -8,8 +8,10 @@ const Nav = () => {
 
     function handleSignOut(event) {
 		event.preventDefault()
-        userSignedIn.username
 		dispatch({type: 'setUserSignedIn', data: null})
+        dispatch({type: 'setToken', data: null})
+        sessionStorage.setItem("token", null)
+        sessionStorage.setItem("user", null)
 	}
 
     return (
