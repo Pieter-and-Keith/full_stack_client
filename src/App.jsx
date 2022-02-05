@@ -35,8 +35,8 @@ function App() {
         <BrowserRouter>
           <nav style={{display:"flex", justifyContent:"flex-end"}}>
               <Link to="/" style={{padding:"5px"}} >Home</Link>
-              { !userSignedIn && <Link to="/sign_up" style={{padding:"5px"}}>Sign Up</Link>}
-              { !userSignedIn ? <Link to="/sign_in" style={{padding:"5px"}}>Sign In</Link> : <button onClick={() => setUserSignedIn(false)} style={{padding:"5px"}}>Logout</button> }
+              { !userSignedIn && <Link to="/sign_up" style={{padding:"5px"}}>Sign-up</Link>}
+              { !userSignedIn ? <Link to="/sign_in" style={{padding:"5px"}}>Sign-in</Link> : <button onClick={() => setUserSignedIn(false)} style={{padding:"5px"}}>Logout</button> }
           </nav>
           <Routes>
             <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
