@@ -34,26 +34,6 @@ const UserDetails = () => {
     const handleOnSubmit = async (event) => {
         event.preventDefault()
 
-        // const token = sessionStorage.getItem('token')
-        // console.log("session storage jwt token:", token)
-
-        const userName = signInContext?.user?.username
-        const jwtToken = signInContext?.user?.jwt
-
-        console.log("JWT: ", jwtToken)
-        console.log("userName: ", userName)
-        console.log("firstName: ", data.firstName)
-        console.log("lastName: ", data.lastName)
-        console.log("phoneNumber: ", data.phoneNumber)
-        console.log("streetNumber: ", parseInt(data.streetNumber))
-        console.log("streetName: ", data.streetName)
-        console.log("suburb: ", data.suburb)
-        console.log("postcode: ", parseInt(data.postcode))
-        console.log("state: ", data.state)
-        console.log("rego: ", data.rego)
-        console.log("make: ", data.make)
-        console.log("model: ", data.model)
-
         const detailsData = {
             first_name: data.firstName,
             last_name: data.lastName,
@@ -71,7 +51,7 @@ const UserDetails = () => {
         if (details){
             console.log("entered details successfull")
         }
-
+        navigate("/")
     }
 
     return(

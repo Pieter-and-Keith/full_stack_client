@@ -40,7 +40,7 @@ const signUp = async ({username, email, password, password_confirmation}) => {
 const inputDetails = async ({first_name, last_name, phone_number, street_number, street_name, suburb, postcode, state, rego, make, model}) =>{
 
         const token = sessionStorage.getItem('token')
-        console.log("session storage jwt token:", token)
+        console.log("sessionStorage JWT token:", token)
 
 	let tokenHeader = {
 		headers: {
