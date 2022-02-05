@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import SignInContext from "../context/SignInContext"
-import Nav from "../components/navbar";
+import SignInContext from "../utils/SignInContext"
 import api from "../config/api";
+import {useGlobalState} from '../utils/StateContext'
 
 const SignUp = (props) => {
   const { setSignInContext } = useContext(SignInContext)
@@ -23,10 +23,11 @@ const SignUp = (props) => {
       password: "",
       password_confirmation: ""
   });
+  const {dispatch} = useGlobalState()
 
   const handleChange = (e) => {
     const target = e.target;
-        setData({
+        setData({ 
             ...data,
             [target.name]: target.value
         });
@@ -42,10 +43,13 @@ const SignUp = (props) => {
       };
       const user = await api.signUp(userData);
       if (user) {
-          props.setUserSignedIn(true)
-          setSignInContext({user})
+          // props.setUserSignedIn(true)
+          // setSignInContext({user})
       }
+      dispatch({type: 'setUserSignedIn', data: username})
+
       sessionStorage.setItem("token", user.jwt)
+      sessionStorage.setItem("user", user.username)
       navigate("/user_details")
   };
 

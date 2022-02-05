@@ -1,13 +1,21 @@
 import axios from 'axios';
 
-import SignInContext from "../context/SignInContext"
-
-
 const signIn = async ({email, password}) => {
+	const token = sessionStorage.getItem('token')
+        console.log("sessionStorage JWT token:", token)
+
+	let tokenHeader = {
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json;charset=UTF-8"
+		}
+	  };
+	
 	try {
 		const { status, data } = await axios.post("api/auth/sign_in", {
 			email, password
-		});
+		}, tokenHeader);
 		console.log("api.signIn", data);
 		if (status === 200 || status === 201) {
 			return data;
@@ -21,10 +29,21 @@ const signIn = async ({email, password}) => {
 };
 
 const signUp = async ({username, email, password, password_confirmation}) => {
+	const token = sessionStorage.getItem('token')
+        console.log("sessionStorage JWT token:", token)
+
+	let tokenHeader = {
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json;charset=UTF-8"
+		}
+	  };
+	
 	try {
 		const { status, data } = await axios.post("api/auth/sign_up", {
 			username, email, password, password_confirmation
-		});
+		}, tokenHeader);
 		console.log("api.signUp", data);
 		if (status === 200 || status === 201) {
 			return data;

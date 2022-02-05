@@ -1,8 +1,8 @@
-import { useContext, useState, useEffect } from "react";
+import { useReducer, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import SignInContext from "./context/SignInContext"
-import UserDetailContext from "./context/UserDetailContext"
+import SignInContext from "./utils/SignInContext"
+import UserDetailContext from "./utils/UserDetailContext"
 import Home from "./pages/home";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
@@ -12,14 +12,21 @@ import MakeBooking from "./pages/make-booking";
 import ConfirmBooking from "./pages/confirm-booking";
 import Admin from "./pages/admin";
 import api from "./config/api";
-
+import {StateContext} from './utils/StateContext';
+import StateReducer from './utils/StateReducer'
+import Nav from './components/navbar'
 
 function App() {
-  const [signInContext, setSignInContext] = useState({})
+  // const [signInContext, setSignInContext] = useState({})
   const [userDetailContext, setUserDetailContext] = useState({})
   const [services, setServices] = useState([])
-  const [userSignedIn, setUserSignedIn] = useState(false)
-  
+  // const [userSignedIn, setUserSignedIn] = useState(false)
+
+  const initialState = {
+    userSignedIn: sessionStorage.getItem("user") || null,
+    auth: {token:sessionStorage.getItem("token") || null}
+  }
+  const [store, dispatch] = useReducer(StateReducer, initialState)
 
     useEffect(async () => {
         const data = await api.getOptions();
@@ -30,18 +37,14 @@ function App() {
     }, []);
 
   return (
-    <SignInContext.Provider value={{signInContext, setSignInContext}}>
+    <StateContext.Provider value={{store,dispatch}}>
       <UserDetailContext.Provider value={{userDetailContext, setUserDetailContext}}>
         <BrowserRouter>
-          <nav style={{display:"flex", justifyContent:"flex-end"}}>
-              <Link to="/" style={{padding:"5px"}} >Home</Link>
-              { !userSignedIn && <Link to="/sign_up" style={{padding:"5px"}}>Sign-up</Link>}
-              { !userSignedIn ? <Link to="/sign_in" style={{padding:"5px"}}>Sign-in</Link> : <button onClick={() => setUserSignedIn(false)} style={{padding:"5px"}}>Logout</button> }
-          </nav>
+          <Nav />
           <Routes>
-            <Route path="/" element={<Home services={services} userSignedIn={userSignedIn}/>} />
-            <Route path="/sign_in" element={<SignIn setUserSignedIn={setUserSignedIn}/>} />
-            <Route path="/sign_up" element={<SignUp setUserSignedIn={setUserSignedIn}/>} />
+            <Route path="/" element={<Home services={services} />} />
+            <Route path="/sign_in" element={<SignIn />} />
+            <Route path="/sign_up" element={<SignUp />} />
             <Route path="/user_details" element={<UserDetails />} />
             <Route path="/options" element={<OptionPage services={services}/>} />
             <Route path="/make_booking" element={<MakeBooking />} />
@@ -50,7 +53,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </UserDetailContext.Provider>
-    </SignInContext.Provider>
+    </StateContext.Provider>
   )
 }
 
