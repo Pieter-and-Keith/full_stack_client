@@ -5,7 +5,7 @@ import SignInContext from "../utils/SignInContext"
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
 
-const SignUp = (props) => {
+const SignUp = () => {
   const { setSignInContext } = useContext(SignInContext)
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate()
@@ -42,52 +42,12 @@ const SignUp = (props) => {
           password_confirmation: data.password_confirmation
       };
       const user = await api.signUp(userData);
-      if (user) {
-          // props.setUserSignedIn(true)
-          // setSignInContext({user})
-      }
       dispatch({type: 'setToken', data: user.jwt})
       dispatch({type: 'setUserSignedIn', data: user.username})
-
       sessionStorage.setItem("token", user.jwt)
       sessionStorage.setItem("user", user.username)
       navigate("/user_details")
   };
-
-  // METHOD 1:
-  // const handleOnSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const username = event.target.username.value;
-  //   const email = event.target.email.value;
-  //   const password = event.target.password.value;
-  //   const passwordConfirm = event.target.passwordConfirm.value;
-
-
-  //   console.log("username: ", username);
-  //   console.log("email: ", email);
-  //   console.log("password: ", password);
-  //   console.log("password confirm: ", passwordConfirm);
-
-  //   const options = {
-  //     method: "POST",
-  //     headers: {
-  //       Accept: "application/json",
-  //       "Content-Type": "application/json;charset=UTF-8"
-  //     },
-  //     body: JSON.stringify({
-  //       "username": username,
-  //       "email": email,
-  //       "password": password,
-  //       "password_confirmation": passwordConfirm
-  //     })
-  //   }
-
-  //   const signUpResponse = await fetch("api/auth/sign_up", options)
-  //   const user = await signUpResponse.json()
-  //   console.log(user)
-  //   setSignInContext({ user })
-  //   navigate("/user_details")
-  // };
 
   return (
     <>
