@@ -46,7 +46,7 @@ const SignUp = (props) => {
           // props.setUserSignedIn(true)
           // setSignInContext({user})
       }
-      dispatch({type: 'setUserSignedIn', data: username})
+      dispatch({type: 'setUserSignedIn', data: user.username})
 
       sessionStorage.setItem("token", user.jwt)
       sessionStorage.setItem("user", user.username)
