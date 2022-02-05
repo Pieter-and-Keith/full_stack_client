@@ -42,8 +42,9 @@ const SignUp = () => {
           password_confirmation: data.password_confirmation
       };
       const user = await api.signUp(userData);
-      dispatch({type: 'setToken', data: user.jwt})
+
       dispatch({type: 'setUserSignedIn', data: user.username})
+
       sessionStorage.setItem("token", user.jwt)
       sessionStorage.setItem("user", user.username)
       navigate("/user_details")
