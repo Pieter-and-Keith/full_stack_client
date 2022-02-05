@@ -1,12 +1,8 @@
-import { useContext } from "react"
 import { Link } from "react-router-dom"
 
-import SignInContext from "../utils/SignInContext"
 import ServiceItem from "../components/service-item";
 
 const Home = (props) => {
-    const { signInContext } = useContext(SignInContext)
-
     const serviceTypes = props.services.map((service) => {
 		return (          
 			    <ServiceItem key={service.id} service_type={service.service_type} description={service.description} price={service.price} />
@@ -28,9 +24,7 @@ const Home = (props) => {
             <main style={{marginTop:"0px", marginRight:"100px", marginBottom:"0px", marginLeft:"100px"}}>
                 {serviceTypes}
             </main>
-            
-            {/* <h3>username: {props.userSignedIn && signInContext?.user?.username}</h3> 
-            <h6>jwt: {props.userSignedIn && signInContext?.user?.jwt}</h6>  */}
+    
         </>
     )
 }

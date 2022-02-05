@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 
-import SignInContext from "../utils/SignInContext"
-
 const UserDetails = () => {
-    const { signInContext, setSignInContext } = useContext(SignInContext)
     const navigate = useNavigate()
 
     const [data, setData] = useState({
@@ -56,8 +53,6 @@ const UserDetails = () => {
     return(
         <>
         <h2>User detail Page</h2>
-        <h3>Welcome: {signInContext?.user?.username}</h3> 
-        <h6>jwt: {signInContext?.user?.jwt}</h6>
         <form onSubmit={handleOnSubmit}>
         <div>
           <label htmlFor="firstName">First name:</label>

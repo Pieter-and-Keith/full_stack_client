@@ -10,8 +10,10 @@ const Nav = () => {
 		event.preventDefault()
 		dispatch({type: 'setUserSignedIn', data: null})
         dispatch({type: 'setToken', data: null})
+
         sessionStorage.setItem("token", null)
         sessionStorage.setItem("user", null)
+
 	}
 
     return (
