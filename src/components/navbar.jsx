@@ -10,6 +10,7 @@ const Nav = () => {
 		event.preventDefault()
         userSignedIn.username
 		dispatch({type: 'setUserSignedIn', data: null})
+        dispatch({type: 'setToken', data: null})
 	}
 
     return (
