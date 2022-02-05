@@ -57,7 +57,6 @@ const UserDetails = () => {
         <>
         <h2>User detail Page</h2>
         <h3>Welcome: {signInContext?.user?.username}</h3> 
-        <h6>jwt: {signInContext?.user?.jwt}</h6>
         <form onSubmit={handleOnSubmit}>
         <div>
           <label htmlFor="firstName">First name:</label>
