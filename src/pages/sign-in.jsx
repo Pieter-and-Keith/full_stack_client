@@ -1,16 +1,13 @@
-import { useState, useContext} from "react"
+import { useState} from "react"
 import { useNavigate } from "react-router-dom"
 
-import SignInContext from "../utils/SignInContext"
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
 
 
-const SignIn = (props) => {
-    const { setSignInContext } = useContext(SignInContext);
+const SignIn = () => {
     const navigate = useNavigate()
 
-    // METHOD 3:
     const [data, setData] = useState({
             email: "",
             password: ""
@@ -19,10 +16,10 @@ const SignIn = (props) => {
 
     const handleChange = (e) => {
         const target = e.target;
-            setData({
-                ...data,
-                [target.name]: target.value
-            });
+        setData({
+            ...data,
+            [target.name]: target.value
+        });
     };
 
     const handleSubmit = async (event) => {
@@ -32,57 +29,12 @@ const SignIn = (props) => {
             password: data.password
         };
         const user = await api.signIn(userData);
-        if (user) {
-            // props.setUserSignedIn(true)
-            // setSignInContext({user})
-        } else {
-            throw "the email/password is not correct!"
-        }
-        dispatch({type: 'setToken', data: user.jwt})
-        dispatch({type: 'setUserSignedIn', data: user.username})
-
-        sessionStorage.setItem("token", user.jwt)
-        sessionStorage.setItem("user", user.username)
+        dispatch({type: 'setToken', data: user.jwt});
+        dispatch({type: 'setUserSignedIn', data: user.username});
+        sessionStorage.setItem("token", user.jwt);
+        sessionStorage.setItem("user", user.username);
         navigate("/")
     };
-
-    // METHOD 2:
-
-    // const [user, setUser] = useState({
-    //     email: "",
-    //     password: ""
-    // });
-    
-    //   const handleChange = (e) => {
-    //     const value = e.target.value;
-    //     setUser({
-    //       ...user,
-    //       [e.target.name]: value
-    //     });
-    //   };
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault()
-    //     const userData = {
-    //         email: user.email,
-    //         password: user.password
-    //     };
-    //     axios
-    //     .post("api/auth/sign_in", userData)
-    //     .then((response) => {
-    //         console.log(response);
-    //     })
-    //     .catch((error) => {
-    //         if (error.response) {
-    //           console.log(error.response);
-    //           console.log("server responded");
-    //         } else if (error.request) {
-    //           console.log("network error");
-    //         } else {
-    //           console.log(error);
-    //         }
-    //     });
-    //     navigate("/")
-    // };
 
     return (
         <>
@@ -100,48 +52,6 @@ const SignIn = (props) => {
             </form>
         </>
     )
-
-    // METHOD 1:
-    // const { setContext } = useContext(Context)
-    // const navigate = useNavigate()
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault()
-    //     const email = event.target.email.value 
-    //     const password = event.target.password.value
-    //     console.log("email: ", email)
-    //     console.log("password: ", password)
-    //     const options = {
-    //          method:"POST",
-    //          headers: {
-    //              Accept: "application/json",
-    //              "Content-Type": "application/json;charset=UTF-8"
-    //          },
-    //              body: JSON.stringify({
-    //              "email": email, 
-    //              "password": password
-    //          })
-    //     }
-    //      const signInResponse = await fetch("api/auth/sign_in", options)
-    //      const user = await signInResponse.json()
-    //      console.log(user)
-    //      setContext({ user })
-    //      navigate("/")
-    // }
-
-    // return (
-    //     <>
-    //         <Nav />
-    //         <h1>Sing-in Page</h1>
-    //         <form onSubmit={handleSubmit}>
-    //             <label htmlFor="email">Email</label>
-    //             <input type="email" name="email" />
-    //             <label htmlFor="password">password</label>
-    //             <input type="password" name="password" />
-    //             <button type="submit">Login</button>
-    //         </form>
-    //     </>
-    // )
 }
 
 export default SignIn
