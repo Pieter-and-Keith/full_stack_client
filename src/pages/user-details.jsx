@@ -4,7 +4,6 @@ import api from "../config/api"
 
 import SignInContext from "../utils/SignInContext"
 
-
 const UserDetails = () => {
     const { signInContext, setSignInContext } = useContext(SignInContext)
     const navigate = useNavigate()

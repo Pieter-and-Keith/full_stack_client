@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 
 import SignInContext from "../utils/SignInContext"
 import ServiceItem from "../components/service-item";
-import Nav from "../components/navbar"
 
 const Home = (props) => {
     const { signInContext } = useContext(SignInContext)

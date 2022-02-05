@@ -13,16 +13,16 @@ const Nav = () => {
 	}
 
     return (
-        <nav>
-            <Link to="/">Home</Link>
+        <nav style={{display:"flex", justifyContent:"flex-end"}}>
+            <Link to="/" style={{margin:"5px"}}>Home</Link>
             {userSignedIn ? 
                 <>
-                    <button onClick={handleSignOut}>Sign Out</button>	
+                    <button onClick={handleSignOut} style={{margin:"5px"}}>Sign Out</button>	
                 </>
             :
                 <>
-                    <Link to="/sign_in">Sign In</Link>
-                    <Link to="/sign_up">Sign Up</Link>
+                    <Link to="/sign_up" style={{margin:"5px"}}>Sign Up</Link>
+                    <Link to="/sign_in" style={{margin:"5px"}}>Sign In</Link>
                 </>
             }
         </nav>

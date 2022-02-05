@@ -2,7 +2,6 @@ import { useState, useContext} from "react"
 import { useNavigate } from "react-router-dom"
 
 import SignInContext from "../utils/SignInContext"
-import Nav from "../components/navbar"
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
 
