@@ -1,7 +1,6 @@
 import { useReducer, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import SignInContext from "./utils/SignInContext"
 import UserDetailContext from "./utils/UserDetailContext"
 import Home from "./pages/home";
 import SignIn from "./pages/sign-in";
@@ -17,10 +16,8 @@ import StateReducer from './utils/StateReducer'
 import Nav from './components/navbar'
 
 function App() {
-  // const [signInContext, setSignInContext] = useState({})
   const [userDetailContext, setUserDetailContext] = useState({})
   const [services, setServices] = useState([])
-  // const [userSignedIn, setUserSignedIn] = useState(false)
 
   const initialState = {
     userSignedIn: sessionStorage.getItem("user") || null,
