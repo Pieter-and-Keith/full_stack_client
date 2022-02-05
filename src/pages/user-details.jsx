@@ -1,11 +1,12 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import api from "../config/api"
 
-import Context from "../context/SignInContext"
+import SignInContext from "../context/SignInContext"
 
 
 const UserDetails = () => {
-    const { context, setContext } = useContext(Context)
+    const { signInContext, setSignInContext } = useContext(SignInContext)
     const navigate = useNavigate()
 
     const [data, setData] = useState({
@@ -29,10 +30,18 @@ const UserDetails = () => {
                 [target.name]: target.value
             });
       };
-    
-    const handleOnSubmit = async (event)=> {
+
+    const handleOnSubmit = async (event) => {
         event.preventDefault()
 
+        // const token = sessionStorage.getItem('token')
+        // console.log("session storage jwt token:", token)
+
+        const userName = signInContext?.user?.username
+        const jwtToken = signInContext?.user?.jwt
+
+        console.log("JWT: ", jwtToken)
+        console.log("userName: ", userName)
         console.log("firstName: ", data.firstName)
         console.log("lastName: ", data.lastName)
         console.log("phoneNumber: ", data.phoneNumber)
@@ -44,41 +53,32 @@ const UserDetails = () => {
         console.log("rego: ", data.rego)
         console.log("make: ", data.make)
         console.log("model: ", data.model)
-        // console.log("jwt: ", context.user.jwt)
 
-        // const options = {
-        //     method:"POST",
-        //     headers: {
-        //         Accept: "application/json",
-        //         Authorization: `Bearer ${context.user.jwt}`,
-        //         "Content-Type": "application/json;charset=UTF-8"
-        //     },
-        //     body: JSON.stringify({  
-        //                             "first_name": firstName,
-        //                             "last_name": lastName,
-        //                             "phone_number": phoneNumber,
-        //                             "street_number": streetNumber,
-        //                             "street_name": streetName,
-        //                             "suburb": suburb,
-        //                             "postcode": postcode,
-        //                             "state": state,
-        //                             "rego": rego,
-        //                             "make": make,
-        //                             "model": model
-        //                         })
-        // }
-        // const userDetailsResponse = await fetch("api/details", options)
-        // const userDetails = await userDetailsResponse.json()
-        // console.log(userDetails)
-        // setContext({userDetails})
-        // navigate("/")
+        const detailsData = {
+            first_name: data.firstName,
+            last_name: data.lastName,
+            phone_number: data.phoneNumber,
+            street_number: parseInt(data.streetNumber),
+            street_name: data.streetName,
+            suburb: data.suburb,
+            postcode: parseInt(data.postcode),
+            state: data.state,
+            rego: data.rego,
+            make: data.make,
+            model: data.model
+        } 
+        const details = await api.inputDetails(detailsData)
+        if (details){
+            console.log("entered details successfull")
+        }
+
     }
 
     return(
         <>
         <h2>User detail Page</h2>
-        <h3>Welcome: {context?.user?.username}</h3> 
-        <h6>jwt: {context?.user?.jwt}</h6>
+        <h3>Welcome: {signInContext?.user?.username}</h3> 
+        <h6>jwt: {signInContext?.user?.jwt}</h6>
         <form onSubmit={handleOnSubmit}>
         <div>
           <label htmlFor="firstName">First name:</label>

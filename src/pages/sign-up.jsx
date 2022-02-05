@@ -45,6 +45,8 @@ const SignUp = (props) => {
           props.setUserSignedIn(true)
           setSignInContext({user})
       }
+      console.log("JWT: ", user.jwt)
+      sessionStorage.setItem("token", user.jwt)
       navigate("/user_details")
   };
 
