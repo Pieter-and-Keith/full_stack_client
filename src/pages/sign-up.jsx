@@ -43,6 +43,7 @@ const SignUp = () => {
       };
       const user = await api.signUp(userData);
 
+      dispatch({type: 'setToken', data: user.jwt});
       dispatch({type: 'setUserSignedIn', data: user.username})
 
       sessionStorage.setItem("token", user.jwt)
