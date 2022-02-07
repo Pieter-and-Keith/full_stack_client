@@ -34,7 +34,8 @@ function App() {
         }
       }
       fetchData();
-    }, []);
+    },[]);
+
 
   return (
     <StateContext.Provider value={{store,dispatch}}>
