@@ -1,7 +1,7 @@
 import { useReducer, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import UserDetailContext from "./utils/UserDetailContext"
+import ConfirmContext from "./utils/ConfirmContext"
 import Home from "./pages/home";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
@@ -17,7 +17,9 @@ import Nav from './components/navbar'
 
 function App() {
   const [services, setServices] = useState([])
-
+  const [confirmContext, setConfirmContext] = useState([]);
+  console.log(confirmContext)
+  
   const initialState = {
     userSignedIn: sessionStorage.getItem("user") || null,
     auth: {token:sessionStorage.getItem("token") || null}
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <StateContext.Provider value={{store,dispatch}}>
-      {/* <UserDetailContext.Provider value={{userDetailContext, setUserDetailContext}}> */}
+      <ConfirmContext.Provider value={{confirmContext, setConfirmContext}}>
         <BrowserRouter>
           <Nav />
           <Routes>
@@ -46,11 +48,11 @@ function App() {
             <Route path="/user_details" element={<UserDetails />} />
             <Route path="/options" element={<OptionPage services={services}/>} />
             <Route path="/make_booking" element={<MakeBooking services={services}/>} />
-            <Route path="/confirm_booking" element={<ConfirmBooking />} />
+            <Route path="/confirm_booking" element={<ConfirmBooking confirmContext={confirmContext}/>} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
-      {/* </UserDetailContext.Provider> */}
+      </ConfirmContext.Provider>
     </StateContext.Provider>
   )
 }

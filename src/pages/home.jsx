@@ -5,7 +5,7 @@ import ServiceItem from "../components/service-item";
 const Home = (props) => {
     const serviceTypes = props.services.map((service) => {
 		return (          
-			    <ServiceItem key={service.id} service_type={service.service_type} description={service.description} price={service.price} />
+			<ServiceItem key={service.id} service_type={service.service_type} description={service.description} price={service.price} />
 		);
 	});
 
