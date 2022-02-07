@@ -25,12 +25,15 @@ function App() {
   }
   const [store, dispatch] = useReducer(StateReducer, initialState)
 
-    useEffect(async () => {
+    useEffect(() => {
+      async function fetchData() {
         const data = await api.getOptions();
-            if (data) {
-                console.log("services", data);
-                setServices(data);
-            }
+        if (data) {
+          console.log("services", data);
+          setServices(data);
+        }
+      }
+      fetchData();
     }, []);
 
   return (
@@ -44,7 +47,7 @@ function App() {
             <Route path="/sign_up" element={<SignUp />} />
             <Route path="/user_details" element={<UserDetails />} />
             <Route path="/options" element={<OptionPage services={services}/>} />
-            <Route path="/make_booking" element={<MakeBooking />} />
+            <Route path="/make_booking" element={<MakeBooking services={services}/>} />
             <Route path="/confirm_booking" element={<ConfirmBooking />} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
