@@ -63,7 +63,7 @@ const inputDetails = async ({first_name, last_name, phone_number, street_number,
 	}
 }
 
-const createBooking = async ({option, date, comment}) =>{
+const createBooking = async ({option_id, date, comment}) =>{
 
 	const token = sessionStorage.getItem('token')
 	console.log("sessionStorage JWT token:", token)
@@ -78,7 +78,7 @@ const createBooking = async ({option, date, comment}) =>{
 
 	try {
 		const { status, data } = await axios.post("api/bookings",{
-			option, date, comment
+			option_id, date, comment
 		}, tokenHeader);
 		console.log("api.createBooking", data)
 		if (status === 200 || status === 201) {

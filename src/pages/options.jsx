@@ -15,7 +15,7 @@ const OptionPage = props => {
                 <select onChange={e => setOption(e.target.value)}>
                     <option disabled>Please Select</option>
                     {props.services.map((service, index) => (
-                        <option key={index} value={service?.service_type}>{service?.service_type} ${service?.price}</option>
+                        <option key={index} value={service?.id}>{service?.id}. {service?.service_type} ${service?.price}</option>
                     ))}
                 </select>
                 <div>

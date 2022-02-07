@@ -9,7 +9,7 @@ const MakeBooking = (props) => {
     const navigate = useNavigate()
 
     const [option, setOption] = useState("")
-
+    const [bookingData, setBookingData] = useState("")
     const [selectedDate, setSelectedDate] = useState({ format: "MM/DD/YYYY" });
     const convert = (date, format = selectedDate.format) => {
         let object = { date, format }
@@ -27,14 +27,9 @@ const MakeBooking = (props) => {
         }
     }  
 
-    const [bookingData, setBookingData] = useState({
-        comment: ""
-    })
-
     const handleChange = (e) => {
         const target = e.target;
             setBookingData({
-                ...bookingData,
                 [target.name]: target.value
             });
       };
@@ -43,7 +38,7 @@ const MakeBooking = (props) => {
         event.preventDefault()
 
         const data = {
-            option: option,
+            option_id: option,
             date: selectedDate.jsDate,
             comment: bookingData.comment
         } 
@@ -62,19 +57,13 @@ const MakeBooking = (props) => {
                 <select onChange={e => setOption(e.target.value)}>
                     <Drop disabled>Please Select</Drop>
                     {props.services.map((service, index) => (
-                        <Drop key={index} value={service?.service_type}>{service?.service_type} ${service?.price}</Drop>
+                        <Drop key={index} value={service?.id}>{service?.service_type} ${service?.price}</Drop>
                     ))}
                 </select>
                 
                 <div>
-
-                <span>click to select: </span>
-                <DatePicker 
-                    selected={selectedDate.date} 
-                    onChange={convert} 
-                    minDate={new Date()}
-                    filterDate={filterDays}
-                />
+                    <span>Please select the date: </span>
+                    <DatePicker selected={selectedDate.date} onChange={convert} minDate={new Date()} filterDate={filterDays} />
                 </div>
 
                 <div>
