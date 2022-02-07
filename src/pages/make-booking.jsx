@@ -54,8 +54,9 @@ const MakeBooking = (props) => {
         <>
             <h1>Booking Page</h1>
             <form onSubmit={handleSubmit}>
-                <select onChange={e => setOption(e.target.value)}>
-                    <Drop disabled>Please Select</Drop>
+                <span>Serivce:</span>
+                <select onChange={e => setOption(e.target.value)} defaultValue={'DEFAULT'}> 
+                    <option value="DEFAULT" disabled>Please Select</option>
                     {props.services.map((service, index) => (
                         <Drop key={index} value={service?.id}>{service?.service_type} ${service?.price}</Drop>
                     ))}
@@ -68,9 +69,11 @@ const MakeBooking = (props) => {
 
                 <div>
                     <label htmlFor="comment">Additional Comment:</label>
+                </div>
+                <div>
                     <textarea type="text" name="comment" value={bookingData.comment} onChange={handleChange}  />
                 </div>
-
+                
                 <div>
                     <button>Submit</button>
                 </div>

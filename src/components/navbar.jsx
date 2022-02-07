@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import {useGlobalState} from '../utils/StateContext'
+import {signOut} from '../services/authServices'
 
 const Nav = () => {
 
@@ -8,11 +9,12 @@ const Nav = () => {
 
     function handleSignOut(event) {
 		event.preventDefault()
+        signOut(userSignedIn)
 		dispatch({type: 'setUserSignedIn', data: null})
         dispatch({type: 'setToken', data: null})
 
-        sessionStorage.setItem("token", null)
-        sessionStorage.setItem("user", null)
+        // sessionStorage.setItem("token", null)
+        // sessionStorage.setItem("user", null)
 
 	}
 
