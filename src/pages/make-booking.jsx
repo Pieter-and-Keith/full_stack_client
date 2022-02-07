@@ -25,7 +25,7 @@ const MakeBooking = (props) => {
           jsDate: date.toDateString(),
           ...object
         })
-      }
+    }
     const filterDays = (date) => {
         if (date.getDay() === 0 || date.getDay() === 6) {
             return false;
@@ -39,7 +39,7 @@ const MakeBooking = (props) => {
             setComment({
                 [target.name]: target.value
             });
-      };
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -52,7 +52,6 @@ const MakeBooking = (props) => {
         } 
         const booking = await api.createBooking(data);
         setConfirmContext({booking});
-        // navigate("/")
         navigate("/confirm_booking")
     }
 

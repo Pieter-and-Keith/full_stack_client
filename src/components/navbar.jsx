@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import {useGlobalState} from '../utils/StateContext'
-import {signOut} from '../services/authServices'
 
 const Nav = () => {
 
@@ -9,7 +8,6 @@ const Nav = () => {
 
     function handleSignOut(event) {
 		event.preventDefault()
-        signOut(userSignedIn)
 		dispatch({type: 'setUserSignedIn', data: null})
         dispatch({type: 'setToken', data: null})
 
@@ -21,6 +19,7 @@ const Nav = () => {
     return (
         <nav style={{display:"flex", justifyContent:"flex-end"}}>
             <Link to="/" style={{margin:"5px"}}>Home</Link>
+            <Link to="/admin_option_create" style={{margin:"5px"}}>Create Option</Link>
             {userSignedIn ? 
                 <>
                     <button onClick={handleSignOut} style={{margin:"5px"}}>Sign Out</button>	
