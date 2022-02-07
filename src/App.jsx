@@ -16,7 +16,6 @@ import StateReducer from './utils/StateReducer'
 import Nav from './components/navbar'
 
 function App() {
-  const [userDetailContext, setUserDetailContext] = useState({})
   const [services, setServices] = useState([])
 
   const initialState = {
@@ -29,7 +28,6 @@ function App() {
       async function fetchData() {
         const data = await api.getOptions();
         if (data) {
-          console.log("services", data);
           setServices(data);
         }
       }
@@ -38,7 +36,7 @@ function App() {
 
   return (
     <StateContext.Provider value={{store,dispatch}}>
-      <UserDetailContext.Provider value={{userDetailContext, setUserDetailContext}}>
+      {/* <UserDetailContext.Provider value={{userDetailContext, setUserDetailContext}}> */}
         <BrowserRouter>
           <Nav />
           <Routes>
@@ -52,7 +50,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
-      </UserDetailContext.Provider>
+      {/* </UserDetailContext.Provider> */}
     </StateContext.Provider>
   )
 }

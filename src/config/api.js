@@ -95,7 +95,7 @@ const createBooking = async ({option_id, date, comment}) =>{
 const getOptions = async () => {
 	try {
 		const { status, data } = await axios.get("/api/options");
-		console.log("api.getOptions", data);
+		// console.log("api.getOptions", data);
 		if (status === 200) {
 			return data;
 		} else {

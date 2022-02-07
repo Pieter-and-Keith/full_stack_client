@@ -13,7 +13,7 @@ const OptionPage = props => {
             <h1>Options Page</h1>
             <form onSubmit={handleSubmit}>
                 <select onChange={e => setOption(e.target.value)}>
-                    <option disabled>Please Select</option>
+                    <option value="">Select your option</option>
                     {props.services.map((service, index) => (
                         <option key={index} value={service?.id}>{service?.id}. {service?.service_type} ${service?.price}</option>
                     ))}

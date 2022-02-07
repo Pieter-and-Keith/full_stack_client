@@ -1,12 +1,21 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 
 const Admin = () => {
 
-    // const bookings = await api.getBookings();
-    // console.log("bookings:", bookings)
+    const [bookings, setBookings] = useState([])
 
+    useEffect(() => {
+        async function fetchData() {
+          const data = await api.getBookings();
+          if (data) {
+            setBookings(data);
+          }
+        }
+        fetchData();
+      },[]);
+      console.log("BOOKINGS:", bookings)
 
     return(
         <>

@@ -1,21 +1,11 @@
-import { useContext, useEffect, useState } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-import SignInContext from "../utils/SignInContext"
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
 
 const SignUp = () => {
-  const { setSignInContext } = useContext(SignInContext)
-  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate()
-
-  useEffect(() => {
-    // issues
-    if (!setSignInContext?.user?.email) {
-      setErrorMessage("The email is already registered, please sign-up with another email.")
-    }
-  }, [])
 
   const [data, setData] = useState({
       username: "",
