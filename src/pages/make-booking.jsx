@@ -9,7 +9,11 @@ const MakeBooking = (props) => {
     const navigate = useNavigate()
 
     const [option, setOption] = useState("")
-    const [bookingData, setBookingData] = useState("")
+    const [comment, setComment] = useState("")
+    const [transaction, setTransaction] = useState({
+        finished: false,
+        paid: false
+    })
     const [selectedDate, setSelectedDate] = useState({ format: "MM/DD/YYYY" });
     const convert = (date, format = selectedDate.format) => {
         let object = { date, format }
@@ -29,18 +33,19 @@ const MakeBooking = (props) => {
 
     const handleChange = (e) => {
         const target = e.target;
-            setBookingData({
+            setComment({
                 [target.name]: target.value
             });
       };
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-
         const data = {
             option_id: option,
             date: selectedDate.jsDate,
-            comment: bookingData.comment
+            comment: comment.comment,
+            finished: transaction.finished,
+            paid: transaction.paid
         } 
         console.log(data)
         const booking = await api.createBooking(data)
@@ -71,7 +76,7 @@ const MakeBooking = (props) => {
                     <label htmlFor="comment">Additional Comment:</label>
                 </div>
                 <div>
-                    <textarea type="text" name="comment" value={bookingData.comment} onChange={handleChange}  />
+                    <textarea type="text" name="comment" value={comment.comment} onChange={handleChange}  />
                 </div>
                 
                 <div>
