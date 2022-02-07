@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 import {Drop} from '../components/Styled'
+import ConfirmContext from "../utils/ConfirmContext"
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const MakeBooking = (props) => {
     const navigate = useNavigate()
+    const { setConfirmContext } = useContext(ConfirmContext);
 
     const [option, setOption] = useState("")
     const [comment, setComment] = useState("")
@@ -47,12 +50,10 @@ const MakeBooking = (props) => {
             finished: transaction.finished,
             paid: transaction.paid
         } 
-        console.log(data)
-        const booking = await api.createBooking(data)
-        if (booking){
-            console.log("Successfully create a booking")
-        }
-        navigate("/")
+        const booking = await api.createBooking(data);
+        setConfirmContext({booking});
+        // navigate("/")
+        navigate("/confirm_booking")
     }
 
     return(

@@ -18,7 +18,8 @@ import Nav from './components/navbar'
 function App() {
   const [services, setServices] = useState([])
   const [confirmContext, setConfirmContext] = useState([]);
-
+  console.log(confirmContext)
+  
   const initialState = {
     userSignedIn: sessionStorage.getItem("user") || null,
     auth: {token:sessionStorage.getItem("token") || null}
@@ -47,7 +48,7 @@ function App() {
             <Route path="/user_details" element={<UserDetails />} />
             <Route path="/options" element={<OptionPage services={services}/>} />
             <Route path="/make_booking" element={<MakeBooking services={services}/>} />
-            <Route path="/confirm_booking" element={<ConfirmBooking />} />
+            <Route path="/confirm_booking" element={<ConfirmBooking confirmContext={confirmContext}/>} />
             <Route path="/admin" element={<Admin />} />
           </Routes>
         </BrowserRouter>
