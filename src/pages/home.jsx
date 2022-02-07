@@ -12,7 +12,7 @@ const Home = (props) => {
     return(
         <>
             <header style={{display:"flex", justifyContent:"center"}}>
-                <h1 style={{margin:"0px"}}><u>Sydey Motor Service Centre</u></h1>
+                <h1 style={{margin:"0px"}}><u>Sydney Motor Service Centre</u></h1>
             </header>
 
             <nav style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
