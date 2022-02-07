@@ -18,6 +18,7 @@ import Nav from './components/navbar'
 function App() {
   const [services, setServices] = useState([])
 
+
   const initialState = {
     userSignedIn: sessionStorage.getItem("user") || null,
     auth: {token:sessionStorage.getItem("token") || null}
@@ -33,6 +34,7 @@ function App() {
       }
       fetchData();
     },[]);
+
 
   return (
     <StateContext.Provider value={{store,dispatch}}>

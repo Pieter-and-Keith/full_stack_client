@@ -1,25 +1,32 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
+import {useGlobalState} from '../utils/StateContext'
+
 
 const Admin = () => {
-
-    const [bookings, setBookings] = useState([])
+    const navigate = useNavigate()
+    const {store} = useGlobalState()
+    const {userSignedIn} = store
 
     useEffect(() => {
-        async function fetchData() {
-          const data = await api.getBookings();
-          if (data) {
-            setBookings(data);
-          }
+        if (userSignedIn != "admin"){
+            navigate("/")
+        } else {
+            console.log("SignedIn user:", userSignedIn)
         }
-        fetchData();
-      },[]);
-      console.log("BOOKINGS:", bookings)
+    })
 
+ 
     return(
         <>
-        <h1>Admin Page</h1>
+            <h1>Admin Page</h1>
+            {/* {bookings.map((booking, index)=>{
+                <div key={index} value={booking.id}>
+                    <p>{booking?.date}</p>
+                    <p>{booking?.comment}</p>
+                </div>
+            })} */}
         </>
     )
 }
