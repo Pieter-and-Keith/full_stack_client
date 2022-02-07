@@ -25,12 +25,15 @@ function App() {
   }
   const [store, dispatch] = useReducer(StateReducer, initialState)
 
-    useEffect(async () => {
+    useEffect(() => {
+      async function fetchData() {
         const data = await api.getOptions();
-            if (data) {
-                console.log("services", data);
-                setServices(data);
-            }
+        if (data) {
+          console.log("services", data);
+          setServices(data);
+        }
+      }
+      fetchData();
     }, []);
 
   return (
