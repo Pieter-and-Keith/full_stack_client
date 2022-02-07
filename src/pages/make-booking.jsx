@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 import {Drop} from '../components/Styled'
+import ConfirmContext from "../utils/ConfirmContext"
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const MakeBooking = (props) => {
     const navigate = useNavigate()
+    const { setConfirmContext } = useContext(ConfirmContext);
 
     const [option, setOption] = useState("")
-    const [bookingData, setBookingData] = useState("")
+    const [comment, setComment] = useState("")
+    const [transaction, setTransaction] = useState({
+        finished: false,
+        paid: false
+    })
     const [selectedDate, setSelectedDate] = useState({ format: "MM/DD/YYYY" });
     const convert = (date, format = selectedDate.format) => {
         let object = { date, format }
@@ -29,25 +36,24 @@ const MakeBooking = (props) => {
 
     const handleChange = (e) => {
         const target = e.target;
-            setBookingData({
+            setComment({
                 [target.name]: target.value
             });
       };
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-
         const data = {
             option_id: option,
             date: selectedDate.jsDate,
-            comment: bookingData.comment
+            comment: comment.comment,
+            finished: transaction.finished,
+            paid: transaction.paid
         } 
-        console.log(data)
-        const booking = await api.createBooking(data)
-        if (booking){
-            console.log("Successfully create a booking")
-        }
-        navigate("/")
+        const booking = await api.createBooking(data);
+        setConfirmContext({booking});
+        // navigate("/")
+        navigate("/confirm_booking")
     }
 
     return(
@@ -71,7 +77,7 @@ const MakeBooking = (props) => {
                     <label htmlFor="comment">Additional Comment:</label>
                 </div>
                 <div>
-                    <textarea type="text" name="comment" value={bookingData.comment} onChange={handleChange}  />
+                    <textarea type="text" name="comment" value={comment.comment} onChange={handleChange}  />
                 </div>
                 
                 <div>
