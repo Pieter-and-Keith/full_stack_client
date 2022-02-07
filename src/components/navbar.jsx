@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {useGlobalState} from '../utils/StateContext'
 
@@ -5,6 +6,13 @@ const Nav = () => {
 
     const {store,dispatch} = useGlobalState()
 	const {userSignedIn} = store
+    const myUserName = sessionStorage.getItem('user')
+
+    // useEffect(() => {
+    //     myUserName = sessionStorage.getItem('user')
+    //     console.log("sessionStorage myUserName:", myUserName)
+    // },[])
+
 
     function handleSignOut(event) {
 		event.preventDefault()
@@ -18,8 +26,11 @@ const Nav = () => {
 
     return (
         <nav style={{display:"flex", justifyContent:"flex-end"}}>
+            { userSignedIn === "admin" &&
+            <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>
+            }
             <Link to="/" style={{margin:"5px"}}>Home</Link>
-            {userSignedIn ? 
+            { userSignedIn ? 
                 <>
                     <button onClick={handleSignOut} style={{margin:"5px"}}>Sign Out</button>	
                 </>
