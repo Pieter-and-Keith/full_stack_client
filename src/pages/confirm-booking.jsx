@@ -14,7 +14,7 @@ const ConfirmBooking = (props) => {
             <header>
                 <h1 style={{display:"flex", margin:"0px", justifyContent:"center"}}><u>Sydey Motor Service Centre</u></h1>
             </header>
-            <form style={{display:"flex", flexDirection:"column", marginTop:"0px", marginRight:"300px", marginBottom:"0px", marginLeft:"300px", borderStyle:"solid", borderRadius:"15px"}}>
+            <form style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"0px", marginRight:"300px", marginBottom:"0px", marginLeft:"300px", borderStyle:"solid", borderRadius:"15px"}}>
                 <h1 style={{display:"flex", justifyContent:"center", margin:"5px"}}><u>Confirm Details</u></h1>
                 <h3>Name: </h3> 
                     <span>{confirmBooking.first_name} {confirmBooking.last_name}</span>
