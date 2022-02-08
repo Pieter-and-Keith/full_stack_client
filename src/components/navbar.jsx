@@ -23,8 +23,8 @@ const Nav = () => {
 	}
 
     return (
-        <nav style={{display:"flex", justifyContent:"flex-end"}}>
-            { userSignedIn && <h5>User: {userSignedIn}</h5>}
+        <nav style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}>
+            { userSignedIn && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
             { userSignedIn === "admin" &&
                 <>
                     <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>

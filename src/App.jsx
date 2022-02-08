@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ConfirmContext from "./utils/ConfirmContext"
 import Home from "./pages/home";
+import About from "./pages/about";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
 import UserDetails from "./pages/user-details";
@@ -44,6 +45,7 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Home services={services} />} />
+            <Route path="/about" element={<About />} />
             <Route path="/sign_in" element={<SignIn />} />
             <Route path="/sign_up" element={<SignUp />} />
             <Route path="/user_details" element={<UserDetails />} />
