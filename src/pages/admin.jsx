@@ -1,34 +1,56 @@
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import api from "../config/api"
-import {useGlobalState} from '../utils/StateContext'
-
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../config/api";
+import { useGlobalState } from "../utils/StateContext";
+import BookingsItem from "../components/booking-item"
 
 const Admin = () => {
-    const navigate = useNavigate()
-    const {store} = useGlobalState()
-    const {userSignedIn} = store
+    
+  const navigate = useNavigate();
+  const { store } = useGlobalState();
+  const { userSignedIn } = store;
+  const [bookings, setBookings] = useState([]);
+
+    // useEffect(async ()=> {
+
+    //     if (userSignedIn != "admin"){
+    //         navigate("/")
+    //     } else {
+    //         const data = await api.getBookings()
+    //         if (data){
+    //             console.log("bookings", data)
+    //             setBookings(data)
+    //         }
+    //     }
+    // },[])
 
     useEffect(() => {
-        if (userSignedIn != "admin"){
-            navigate("/")
-        } else {
-            console.log("SignedIn user:", userSignedIn)
+        async function fetchData() {
+          const data = await api.getBookings();
+          if (data) {
+            setBookings(data);
+          }
         }
+        fetchData();
+      }, []);
+
+    const bookingsItems = bookings.map((booking) => {
+        return (
+            <BookingsItem 
+                key={booking.id}
+                id={booking.id}
+                date={booking.date}
+                comment={booking.comment}
+            />
+        )
     })
 
- 
-    return(
-        <>
-            <h1>Admin Page</h1>
-            {/* {bookings.map((booking, index)=>{
-                <div key={index} value={booking.id}>
-                    <p>{booking?.date}</p>
-                    <p>{booking?.comment}</p>
-                </div>
-            })} */}
-        </>
-    )
-}
+  return (
+    <>
+      <h1>Admin Page</h1>
+      {bookingsItems}
+    </>
+  );
+};
 
-export default Admin
+export default Admin;

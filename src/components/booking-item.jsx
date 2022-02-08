@@ -1,0 +1,30 @@
+import { Link, useNavigate } from "react-router-dom"
+import { useContext} from "react"
+
+import api from "../config/api";
+import BookingContext from "../utils/BookingContext";
+
+const BookingsItem = ({id, date, comment,}) => {
+
+    const navigate = useNavigate();
+    const { bookingContext, setBookingContext} = useContext(BookingContext)
+
+    const handleOnClick = async (event) => {
+        event.preventDefault()
+        const myBooking = await api.getBooking(id)
+        setBookingContext(myBooking)
+        navigate("/booking")
+    }
+
+
+    return (
+        <div style={{padding:"10px", border: "black solid 2px"}}>
+            <h3>job ID: {id}</h3>
+            <h4>date: {date}</h4>
+            <button onClick={handleOnClick}>SHOW</button>
+        </div>
+    )
+
+}
+
+export default BookingsItem
