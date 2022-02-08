@@ -1,39 +1,28 @@
 import { Link, useNavigate } from "react-router-dom"
+import { useContext} from "react"
+
 import api from "../config/api";
+import BookingContext from "../utils/BookingContext";
 
 const BookingsItem = ({id, date, comment,}) => {
+
     const navigate = useNavigate();
-
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault()
-    //     const userData = {
-    //         email: data.email,
-    //         password: data.password
-    //     };
-    //     const user = await api.signIn(userData);
-    //     dispatch({type: 'setToken', data: user.jwt});
-    //     dispatch({type: 'setUserSignedIn', data: user.username});
-    //     sessionStorage.setItem("token", user.jwt);
-    //     sessionStorage.setItem("user", user.username);
-    //     navigate("/")
-    // };
+    const { bookingContext, setBookingContext} = useContext(BookingContext)
 
     const handleOnClick = async (event) => {
         event.preventDefault()
         const myBooking = await api.getBooking(id)
+        setBookingContext(myBooking)
+        navigate("/booking")
     }
 
 
     return (
-
-        <h1>Booking Item</h1>
-        // <div>
-        //     <h3>ID {id}</h3>
-        //     <h4>date {date}</h4>
-        //     <p>comment {comment}</p>
-        //     <button onClick={handleOnClick}>SHOW</button>
-        // </div>
+        <div style={{padding:"10px", border: "black solid 2px"}}>
+            <h3>job ID: {id}</h3>
+            <h4>date: {date}</h4>
+            <button onClick={handleOnClick}>SHOW</button>
+        </div>
     )
 
 }

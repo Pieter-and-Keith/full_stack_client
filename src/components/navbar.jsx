@@ -21,10 +21,10 @@ const Nav = () => {
         navigate("/")
 
 	}
-
+    // console.log("USER",userSignedIn)
     return (
         <nav style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}>
-            { userSignedIn && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
+            { userSignedIn != null && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
             { userSignedIn === "admin" &&
                 <>
                     <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>

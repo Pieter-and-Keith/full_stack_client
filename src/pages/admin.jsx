@@ -24,21 +24,31 @@ const Admin = () => {
     //     }
     // },[])
 
-    // const bookingsItems = bookings.map((booking) => {
-    //     return (
-    //         <BookingsItem 
-    //             key={booking.id}
-    //             id={booking.id}
-    //             date={booking.date}
-    //             comment={booking.comment}
-    //         />
-    //     )
-    // })
+    useEffect(() => {
+        async function fetchData() {
+          const data = await api.getBookings();
+          if (data) {
+            setBookings(data);
+          }
+        }
+        fetchData();
+      }, []);
+
+    const bookingsItems = bookings.map((booking) => {
+        return (
+            <BookingsItem 
+                key={booking.id}
+                id={booking.id}
+                date={booking.date}
+                comment={booking.comment}
+            />
+        )
+    })
 
   return (
     <>
       <h1>Admin Page</h1>
-      {/* {bookingsItems} */}
+      {bookingsItems}
     </>
   );
 };
