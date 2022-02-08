@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 
 import {useGlobalState} from '../utils/StateContext'
-import {signOut} from '../services/authServices'
 
 const Nav = () => {
     
@@ -14,7 +13,6 @@ const Nav = () => {
 
     function handleSignOut(event) {
 		event.preventDefault()
-        signOut(userSignedIn)
 		dispatch({type: 'setUserSignedIn', data: null})
         dispatch({type: 'setToken', data: null})
 
@@ -28,10 +26,13 @@ const Nav = () => {
         <nav style={{display:"flex", justifyContent:"flex-end"}}>
             { userSignedIn && <h5>User: {userSignedIn}</h5>}
             { userSignedIn === "admin" &&
-            <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>
+                <>
+                    <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>
+                    <Link to="/admin_option_create" style={{margin:"5px"}}>Create Option</Link>
+                </>
             }
             <Link to="/" style={{margin:"5px"}}>Home</Link>
-            { userSignedIn ? 
+            {userSignedIn ? 
                 <>
                     <button onClick={handleSignOut} style={{margin:"5px"}}>Sign Out</button>	
                 </>
