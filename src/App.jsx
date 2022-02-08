@@ -19,7 +19,6 @@ import Nav from './components/navbar'
 function App() {
   const [services, setServices] = useState([])
   const [confirmContext, setConfirmContext] = useState([]);
-  console.log(confirmContext)
   
   const initialState = {
     userSignedIn: sessionStorage.getItem("user") || null,
@@ -35,7 +34,7 @@ function App() {
       }
     }
     fetchData();
-  }, []);
+  }, [services]);
 
 
   return (
