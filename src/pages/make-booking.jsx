@@ -17,9 +17,7 @@ const MakeBooking = (props) => {
     useEffect(() => {
         if (!userSignedIn){
             navigate("/")
-        } else {
-            console.log("You need to sign-in before you make a booking")
-        }
+        } 
     })
 
     const [option, setOption] = useState("")
