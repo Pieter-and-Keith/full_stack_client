@@ -25,8 +25,8 @@ function App() {
   const [bookingContext, setBookingContext] = useState([]);
   
   const initialState = {
-    userSignedIn: sessionStorage.getItem("user") !== "null" || null,
-    auth: {token:sessionStorage.getItem("token") !== "null" || null}
+    userSignedIn: sessionStorage.getItem("user") || sessionStorage.clear,
+    auth: {token:sessionStorage.getItem("token") || sessionStorage.clear}
   }
   const [store, dispatch] = useReducer(StateReducer, initialState)
   

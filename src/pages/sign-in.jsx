@@ -8,6 +8,8 @@ import {useGlobalState} from '../utils/StateContext'
 const SignIn = () => {
     const navigate = useNavigate()
 
+    
+
     const [data, setData] = useState({
             email: "",
             password: ""
@@ -29,6 +31,9 @@ const SignIn = () => {
             password: data.password
         };
         const user = await api.signIn(userData);
+        if (!user.username) {
+            console.log("testing")
+        }
         dispatch({type: 'setToken', data: user.jwt});
         dispatch({type: 'setUserSignedIn', data: user.username});
         sessionStorage.setItem("token", user.jwt);

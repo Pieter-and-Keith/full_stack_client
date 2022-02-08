@@ -44,7 +44,7 @@ const AdminOptionCreate = () => {
                     <textarea type="text" name="description" value={option.description} onChange={handleChange}/>
                 </div>
                 <div style={{padding:"10px"}}>
-                    <label htmlFor="price">Price:</label>
+                    <label htmlFor="price">Price($):</label>
                     <input type="text" name="price" value={option.price} onChange={handleChange}/>
                 </div>
                 <button type="submit">Submit</button>
