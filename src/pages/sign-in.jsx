@@ -8,6 +8,8 @@ import {useGlobalState} from '../utils/StateContext'
 const SignIn = () => {
     const navigate = useNavigate()
 
+    const [error, setError] = useState("")
+
     const [data, setData] = useState({
             email: "",
             password: ""
@@ -29,16 +31,28 @@ const SignIn = () => {
             password: data.password
         };
         const user = await api.signIn(userData);
+        if (!user.username) {
+            setError(user)
+        } else {
         dispatch({type: 'setToken', data: user.jwt});
         dispatch({type: 'setUserSignedIn', data: user.username});
         sessionStorage.setItem("token", user.jwt);
         sessionStorage.setItem("user", user.username);
         navigate("/")
+        }
     };
 
     return (
         <>
             <h1>Sign-in</h1>
+            { error ? 
+                <>
+                   <h3>{error}</h3> 
+                </>
+                :
+                <>
+                </>
+            }
             <form onSubmit={handleSubmit}>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="email">Email:</label>

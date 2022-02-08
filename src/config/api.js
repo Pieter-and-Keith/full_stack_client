@@ -6,14 +6,13 @@ const signIn = async ({email, password}) => {
 			email, password
 		});
 		console.log("api.signIn", data);
-		if (status === 200 || status === 201) {
+		if (status === 200 || status === 201 ) {
 			return data;
 		} else {
 			return null;
 		}
 	} catch (error) {
-		console.error(error);
-		return null;
+		return error.response.data.error;
 	}
 };
 
