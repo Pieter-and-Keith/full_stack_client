@@ -17,7 +17,7 @@ const Home = (props) => {
 
             <nav style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
                 <Link to="/"><h2 style={{padding:"20px", margin:"0px"}}>Car Services</h2></Link>
-                <Link to="/options"><h2 style={{padding:"20px", margin:"0px"}}>About Us</h2></Link>
+                <Link to="/about"><h2 style={{padding:"20px", margin:"0px"}}>About Us</h2></Link>
                 <Link to="/make_booking"><h2 style={{padding:"20px", margin:"0px"}}>Booking</h2></Link>
             </nav>
 

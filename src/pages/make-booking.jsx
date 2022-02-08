@@ -1,15 +1,24 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom"
+import { useState, useContext, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom"
 import api from "../config/api"
 import {Drop} from '../components/Styled'
 import ConfirmContext from "../utils/ConfirmContext"
+import {useGlobalState} from '../utils/StateContext'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const MakeBooking = (props) => {
     const navigate = useNavigate()
+    const {store} = useGlobalState()
+    const {userSignedIn} = store
     const { setConfirmContext } = useContext(ConfirmContext);
+
+    useEffect(() => {
+        if (!userSignedIn){
+            navigate("/")
+        } 
+    })
 
     const [option, setOption] = useState("")
     const [comment, setComment] = useState("")
@@ -25,7 +34,7 @@ const MakeBooking = (props) => {
           jsDate: date.toDateString(),
           ...object
         })
-      }
+    }
     const filterDays = (date) => {
         if (date.getDay() === 0 || date.getDay() === 6) {
             return false;
@@ -39,7 +48,7 @@ const MakeBooking = (props) => {
             setComment({
                 [target.name]: target.value
             });
-      };
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -52,16 +61,15 @@ const MakeBooking = (props) => {
         } 
         const booking = await api.createBooking(data);
         setConfirmContext({booking});
-        // navigate("/")
         navigate("/confirm_booking")
     }
 
     return(
         <>
-            <h1>Booking Page</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 style={{display:"flex", margin:"0px", justifyContent:"center"}}>Booking Page</h1>
+            <form style={{display:"flex", flexDirection:"column" ,marginTop:"10px", marginRight:"300px", marginLeft:"300px"}}>
                 <span>Serivce:</span>
-                <select onChange={e => setOption(e.target.value)} defaultValue={'DEFAULT'}> 
+                <select onChange={e => setOption(e.target.value)} defaultValue={'DEFAULT'} > 
                     <option value="DEFAULT" disabled>Please Select</option>
                     {props.services.map((service, index) => (
                         <Drop key={index} value={service?.id}>{service?.service_type} ${service?.price}</Drop>
@@ -80,8 +88,9 @@ const MakeBooking = (props) => {
                     <textarea type="text" name="comment" value={comment.comment} onChange={handleChange}  />
                 </div>
                 
-                <div>
-                    <button>Submit</button>
+                <div style={{display:"flex", marginTop:"10px", justifyContent:"center"}}>
+                    <Link to="/"><button style={{margin:"5px"}}>Cancel</button></Link>
+                    <button onClick={handleSubmit} style={{margin:"5px"}}>Confirm</button>
                 </div>
             </form>
         </>

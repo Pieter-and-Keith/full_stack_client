@@ -45,7 +45,7 @@ const inputDetails = async ({first_name, last_name, phone_number, street_number,
 			Authorization: `Bearer ${token}`,
 			"Content-Type": "application/json;charset=UTF-8"
 		}
-	  };
+	};
 
 	try {
 		const { status, data } = await axios.post("api/details",{
@@ -74,7 +74,7 @@ const createBooking = async ({option_id, date, comment, finished, paid}) =>{
 			Authorization: `Bearer ${token}`,
 			"Content-Type": "application/json;charset=UTF-8"
 		}
-	  };
+	};
 
 	try {
 		const { status, data } = await axios.post("api/bookings",{
@@ -107,6 +107,35 @@ const getOptions = async () => {
 	}
 };
 
+const createOptions = async ({service_type, description, price}) => {
+
+	const token = sessionStorage.getItem('token')
+	console.log("sessionStorage JWT token:", token)
+
+	let tokenHeader = {
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json;charset=UTF-8"
+		}
+	};
+
+	try {
+		const { status, data } = await axios.post("api/options",{
+			service_type, description, price
+		}, tokenHeader);
+		console.log("api.createOptions", data)
+		if (status === 200 || status === 201) {
+			return data;
+		} else {
+			return null
+		}
+	} catch (error) {
+		console.error(error);
+		return null
+	}
+}
+
 const getBookings = async () => {
 	try {
 		const { status, data } = await axios.get("/api/bookings");
@@ -138,5 +167,4 @@ const getBooking = async (id) => {
 };
 
 
-
-export default {signIn, signUp, inputDetails, createBooking, getOptions, getBookings, getBooking};
+export default {signIn, signUp, inputDetails, createBooking, getOptions, createOptions, getBookings, getBooking};

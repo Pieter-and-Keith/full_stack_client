@@ -1,13 +1,7 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const ConfirmBooking = (props) => {
-    const navigate = useNavigate()
     const confirmBooking = props.confirmContext.booking
-
-    const handleClick = async (event) => {
-        event.preventDefault()
-        navigate("/")
-    }
 
     return (
         <>
@@ -36,9 +30,8 @@ const ConfirmBooking = (props) => {
                     <span>{confirmBooking.model}</span>
                 <h3>Additional Comment: </h3> 
                     <span>{confirmBooking.comment}</span>
-                <div style={{display:"flex", marginTop:"10px", justifyContent:"center"}}>
-                    <Link to="/make_booking"><button style={{margin:"5px"}}>Cacnel</button></Link>
-                    <button onClick={handleClick} style={{margin:"5px"}}>Confirm</button>
+                <div style={{marginTop:"15px"}}>
+                    <Link to="/"><button>Home</button></Link>
                 </div>
             </form>
         </>
