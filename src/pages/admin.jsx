@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../config/api";
 import { useGlobalState } from "../utils/StateContext";
+import BookingsItem from "../components/booking-item"
 
 const Admin = () => {
+    
   const navigate = useNavigate();
   const { store } = useGlobalState();
   const { userSignedIn } = store;
@@ -14,7 +16,6 @@ const Admin = () => {
         if (userSignedIn != "admin"){
             navigate("/")
         } else {
-            console.log("Hi there")
             const data = await api.getBookings()
             if (data){
                 console.log("bookings", data)
@@ -23,13 +24,14 @@ const Admin = () => {
         }
     },[])
 
-    const bookingsItems = bookings.map(( booking,index ) => {
+    const bookingsItems = bookings.map((booking) => {
         return (
-           <div key={index}>
-               <h3>ID: {booking.id}</h3>
-               <h5>comment:{booking.comment}</h5>
-               <h5>date:{booking.date}</h5>
-           </div>
+            <BookingsItem 
+                key={booking.id}
+                id={booking.id}
+                date={booking.date}
+                comment={booking.comment}
+            />
         )
     })
 
