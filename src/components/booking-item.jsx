@@ -18,10 +18,9 @@ const BookingsItem = ({id, date, comment,}) => {
 
 
     return (
-        <div>
-            <h3>ID {id}</h3>
-            <h4>date {date}</h4>
-            <p>comment {comment}</p>
+        <div style={{padding:"10px", border: "black solid 2px"}}>
+            <h3>job ID: {id}</h3>
+            <h4>date: {date}</h4>
             <button onClick={handleOnClick}>SHOW</button>
         </div>
     )
