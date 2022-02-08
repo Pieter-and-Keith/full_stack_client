@@ -37,6 +37,7 @@ function App() {
     fetchData();
   }, []);
 
+
   return (
     <StateContext.Provider value={{store,dispatch}}>
       <ConfirmContext.Provider value={{confirmContext, setConfirmContext}}>

@@ -136,4 +136,20 @@ const createOptions = async ({service_type, description, price}) => {
 	}
 }
 
-export default {signIn, signUp, inputDetails, createBooking, getOptions, createOptions};
+const getBookings = async () => {
+	try {
+		const { status, data } = await axios.get("/api/bookings");
+		console.log("api.getBookings", data);
+		if (status === 200) {
+			return data;
+		} else {
+			return null;
+		}
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+};
+
+export default {signIn, signUp, inputDetails, createBooking, getOptions, createOptions, getBookings};
+
