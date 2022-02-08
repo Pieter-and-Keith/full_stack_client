@@ -20,12 +20,15 @@ import Nav from './components/navbar'
 function App() {
   const [services, setServices] = useState([])
   const [confirmContext, setConfirmContext] = useState([]);
+  const [bookingContext, setBookingContext] = useState([]);
   
   const initialState = {
-    userSignedIn: sessionStorage.getItem("user") || null,
-    auth: {token:sessionStorage.getItem("token") || null}
+    userSignedIn: sessionStorage.getItem("user") !== "null" || null,
+    auth: {token:sessionStorage.getItem("token") !== "null" || null}
   }
+  // console.log("initial state:", initialState)
   const [store, dispatch] = useReducer(StateReducer, initialState)
+  
 
   useEffect(() => {
     async function fetchData() {
