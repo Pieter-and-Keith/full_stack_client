@@ -11,34 +11,34 @@ const Admin = () => {
   const { userSignedIn } = store;
   const [bookings, setBookings] = useState([]);
 
-    useEffect(async ()=> {
+    // useEffect(async ()=> {
 
-        if (userSignedIn != "admin"){
-            navigate("/")
-        } else {
-            const data = await api.getBookings()
-            if (data){
-                console.log("bookings", data)
-                setBookings(data)
-            }
-        }
-    },[])
+    //     if (userSignedIn != "admin"){
+    //         navigate("/")
+    //     } else {
+    //         const data = await api.getBookings()
+    //         if (data){
+    //             console.log("bookings", data)
+    //             setBookings(data)
+    //         }
+    //     }
+    // },[])
 
-    const bookingsItems = bookings.map((booking) => {
-        return (
-            <BookingsItem 
-                key={booking.id}
-                id={booking.id}
-                date={booking.date}
-                comment={booking.comment}
-            />
-        )
-    })
+    // const bookingsItems = bookings.map((booking) => {
+    //     return (
+    //         <BookingsItem 
+    //             key={booking.id}
+    //             id={booking.id}
+    //             date={booking.date}
+    //             comment={booking.comment}
+    //         />
+    //     )
+    // })
 
   return (
     <>
       <h1>Admin Page</h1>
-      {bookingsItems}
+      {/* {bookingsItems} */}
     </>
   );
 };
