@@ -45,14 +45,7 @@ const SignIn = () => {
     return (
         <>
             <h1>Sign-in</h1>
-            { error ? 
-                <>
-                   <h3>Error: {error}</h3> 
-                </>
-                :
-                <>
-                </>
-            }
+            { error ? <> <h3>Error: {error}</h3> </> : <> </> }
             <form onSubmit={handleSubmit}>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="email">Email:</label>
