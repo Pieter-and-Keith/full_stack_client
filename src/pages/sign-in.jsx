@@ -47,7 +47,7 @@ const SignIn = () => {
             <h1>Sign-in</h1>
             { error ? 
                 <>
-                   <h3>{error}</h3> 
+                   <h3>Error: {error}</h3> 
                 </>
                 :
                 <>
