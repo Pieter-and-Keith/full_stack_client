@@ -56,7 +56,6 @@ const UserDetails = () => {
             model: data.model
         } 
         const details = await api.inputDetails(detailsData)
-        console.log(details)
         if (!details.id) {
           { details.first_name? setFirstNameError(details.first_name[0]) : setFirstNameError("")}
           { details.last_name? setLastNameError(details.last_name[0]) : setLastNameError("")}

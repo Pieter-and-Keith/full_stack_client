@@ -14,9 +14,12 @@ const MakeBooking = (props) => {
     const {userSignedIn} = store
     const { setConfirmContext } = useContext(ConfirmContext);
 
+    const [dateError, setDateError] = useState("")
+    const [optionIdError, setOptionIdError] = useState("")
+
     useEffect(() => {
         if (!userSignedIn){
-            navigate("/")
+            navigate("/sign_in")
         } 
     })
 
@@ -60,13 +63,21 @@ const MakeBooking = (props) => {
             paid: transaction.paid
         } 
         const booking = await api.createBooking(data);
-        setConfirmContext({booking});
-        navigate("/confirm_booking")
+        console.log(booking)
+        if (!booking.booking_id) {
+            { booking.date? setDateError(booking.date[0]) : setDateError("")}
+            { booking.option_id? setOptionIdError(booking.option_id[0]) : setOptionIdError("")}
+        } else {
+            setConfirmContext({booking});
+            navigate("/confirm_booking")    
+        }
     }
 
     return(
         <>
             <h1 style={{display:"flex", margin:"0px", justifyContent:"center"}}>Booking Page</h1>
+            { dateError ? <> <h3>Error: Date {dateError}</h3> </> : <> </> } 
+            { optionIdError ? <> <h3>Error: Service {optionIdError}</h3> </> : <> </> }
             <form style={{display:"flex", flexDirection:"column" ,marginTop:"10px", marginRight:"300px", marginLeft:"300px"}}>
                 <span>Serivce:</span>
                 <select onChange={e => setOption(e.target.value)} defaultValue={'DEFAULT'} > 
@@ -82,7 +93,7 @@ const MakeBooking = (props) => {
                 </div>
 
                 <div>
-                    <label htmlFor="comment">Additional Comment:</label>
+                    <label htmlFor="comment">Additional Comment (Optional):</label>
                 </div>
                 <div>
                     <textarea type="text" name="comment" value={comment.comment} onChange={handleChange}  />
