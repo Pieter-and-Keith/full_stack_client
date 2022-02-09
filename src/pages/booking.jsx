@@ -66,11 +66,11 @@ const Booking = () => {
             <h5>First name: {bookingContext.first_name}</h5>
             <h5>Last name: {bookingContext.last_name}</h5>
             <p>Comment: {bookingContext.comment}</p>
-            {bookingContext.paid ? <h6> Invoice is Paid</h6> : <h6>Not paid yet</h6>}
-            {bookingContext.finished ? <h6>Car is ready</h6> : <h6>Car not ready</h6>}
+            <button onClick={handleFinishedButton}>Update job status</button>
+            {bookingContext.finished ? <h6>Job is finished</h6> : <h6>Job is not finished</h6>}
+            <button onClick={handlePaidButton}>Update payment status</button>
+            {bookingContext.paid ? <h6> Invoice is Paid</h6> : <h6>Invoice not paid</h6>}
             <button onClick={handleBackButton}>Back</button>
-            <button onClick={handlePaidButton}>Paid</button>
-            <button onClick={handleFinishedButton}>Finished</button>
         </>
     )
 
