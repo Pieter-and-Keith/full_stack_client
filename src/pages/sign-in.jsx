@@ -1,5 +1,5 @@
 import { useState} from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
@@ -55,7 +55,8 @@ const SignIn = () => {
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" value={data.password} onChange={handleChange}/>
                 </div>
-                <button type="submit">Sign In</button>
+                <button type="submit" style={{margin:"5px"}}>Sign In</button>
+                <Link to="/sign_up" style={{margin:"5px"}}><button>Sign Up</button></Link>
             </form>
         </>
     )

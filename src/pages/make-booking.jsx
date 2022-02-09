@@ -63,7 +63,6 @@ const MakeBooking = (props) => {
             paid: transaction.paid
         } 
         const booking = await api.createBooking(data);
-        console.log(booking)
         if (!booking.booking_id) {
             { booking.date? setDateError(booking.date[0]) : setDateError("")}
             { booking.option_id? setOptionIdError(booking.option_id[0]) : setOptionIdError("")}
