@@ -12,7 +12,6 @@ const signIn = async ({email, password}) => {
 			return null;
 		}
 	} catch (error) {
-		console.log(error.response)
 		return error.response.data.error;
 	}
 };
@@ -22,7 +21,6 @@ const signUp = async ({username, email, password, password_confirmation}) => {
 		const { status, data } = await axios.post("api/auth/sign_up", {
 			username, email, password, password_confirmation
 		});
-		console.log("api.signUp", data);
 		if (status === 200 || status === 201) {
 			return data;
 		} else {
@@ -57,8 +55,7 @@ const inputDetails = async ({first_name, last_name, phone_number, street_number,
 			return null
 		}
 	} catch (error) {
-		console.error(error);
-		return null
+		return error.response.data;
 	}
 }
 
