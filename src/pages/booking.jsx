@@ -58,6 +58,12 @@ const Booking = () => {
         setFinishedStatus(data)
     }
 
+    const handleDeleteButton = async () => {
+        const data = await api.deleteBooking(bookingContext.booking_id)
+        console.log(data)
+        navigate("/admin")
+    }
+
     return (
         <>
             <h1>Job: {bookingContext.service_type}</h1>
@@ -70,7 +76,12 @@ const Booking = () => {
             {bookingContext.finished ? <h6>Job is finished</h6> : <h6>Job is not finished</h6>}
             <button onClick={handlePaidButton}>Update payment status</button>
             {bookingContext.paid ? <h6> Invoice is Paid</h6> : <h6>Invoice not paid</h6>}
-            <button onClick={handleBackButton}>Back</button>
+            <div style={{margin: "10px 0px"}}>
+                <button onClick={handleBackButton}>Back</button>
+            </div>
+            <div style={{margin: "10px 0px"}}>
+                <button onClick={handleDeleteButton}>Delete</button>
+            </div>
         </>
     )
 
