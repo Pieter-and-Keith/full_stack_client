@@ -37,11 +37,10 @@ const SignUp = () => {
       };
       const user = await api.signUp(userData);
       if (!user.jwt) {
-        setUsernameError(user.username[0])
-        setEmailError(user.email[0])
-        setPasswordError(user.password_confirmation[0])
+        { user.username ? setUsernameError(user.username[0]) : setUsernameError("") } 
+        { user.email ? setEmailError(user.email[0]) : setEmailError("")}
+        { user.password_confirmation ? setPasswordError(user.password_confirmation[0]) : setPasswordError("")} 
       } else {
-      console.log(user)
       dispatch({type: 'setToken', data: user.jwt});
       dispatch({type: 'setUserSignedIn', data: user.username})
 

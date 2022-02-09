@@ -5,6 +5,19 @@ import api from "../config/api"
 const UserDetails = () => {
     const navigate = useNavigate()
 
+    const [firstNameError, setFirstNameError] = useState("")
+    const [lastNameError, setLastNameError] = useState("")
+    const [phoneNumberError, setPhoneNumberError] = useState("")
+    const [streetNumberError, setStreetNumberError] = useState("")
+    const [streetNameError, setStreetNameError] = useState("")
+    const [suburbError, setSuburbError] = useState("")
+    const [postcodeError, setPostcodeError] = useState("")
+    const [stateError, setStateError] = useState("")
+    const [regoError, setRegoError] = useState("")
+    const [makeError, setMakeError] = useState("")
+    const [modelError, setModelError] = useState("")
+
+
     const [data, setData] = useState({
         firstName: "",
         lastName: "",
@@ -29,7 +42,6 @@ const UserDetails = () => {
 
     const handleOnSubmit = async (event) => {
         event.preventDefault()
-
         const detailsData = {
             first_name: data.firstName,
             last_name: data.lastName,
@@ -44,15 +56,38 @@ const UserDetails = () => {
             model: data.model
         } 
         const details = await api.inputDetails(detailsData)
-        if (details){
-            console.log("entered details successfull")
-        }
+        console.log(details)
+        if (!details.id) {
+          { details.first_name? setFirstNameError(details.first_name[0]) : setFirstNameError("")}
+          { details.last_name? setLastNameError(details.last_name[0]) : setLastNameError("")}
+          { details.phone_number? setPhoneNumberError(details.phone_number[0]) : setPhoneNumberError("")}
+          { details.street_number? setStreetNumberError(details.street_number[0]) : setStreetNumberError("")}
+          { details.street_name? setStreetNameError(details.street_name[0]) : setStreetNameError("")}
+          { details.suburb? setSuburbError(details.suburb[0]) : setSuburbError("")}
+          { details.postcode? setPostcodeError(details.postcode[0]) : setPostcodeError("")}
+          { details.state? setStateError(details.state[0]) : setStateError("")}
+          { details.rego? setRegoError(details.rego[0]) : setRegoError("")}
+          { details.make? setMakeError(details.make[0]) : setMakeError("")}
+          { details.model? setModelError(details.model[0]) : setModelError("")}
+        } else {
         navigate("/")
+        }
     }
 
     return(
         <>
         <h2>User detail Page</h2>
+        { firstNameError ? <> <h3>Error: First Name {firstNameError}</h3> </> : <> </> } 
+        { lastNameError ? <> <h3>Error: Last Name {lastNameError}</h3> </> : <> </> }
+        { phoneNumberError ? <> <h3>Error: Phone Number {phoneNumberError}</h3> </> : <> </> }
+        { streetNumberError ? <> <h3>Error: Street Number {streetNumberError}</h3> </> : <> </> }
+        { streetNameError ? <> <h3>Error: Street Name {streetNameError}</h3> </> : <> </> }
+        { suburbError ? <> <h3>Error: Suburb {suburbError}</h3> </> : <> </> }
+        { postcodeError ? <> <h3>Error: Postcode {postcodeError}</h3> </> : <> </> }
+        { stateError ? <> <h3>Error: State {stateError}</h3> </> : <> </> }
+        { regoError ? <> <h3>Error: Rego {regoError}</h3> </> : <> </> }
+        { makeError ? <> <h3>Error: Make {makeError}</h3> </> : <> </> }
+        { modelError ? <> <h3>Error: Model {modelError}</h3> </> : <> </> }
         <form onSubmit={handleOnSubmit}>
         <div>
           <label htmlFor="firstName">First name:</label>
