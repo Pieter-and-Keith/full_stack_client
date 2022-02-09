@@ -1,27 +1,21 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 import {useGlobalState} from '../utils/StateContext'
 
 const Nav = () => {
-    
     const navigate = useNavigate()
     const {store,dispatch} = useGlobalState()
 	const {userSignedIn} = store
-    // const myUserName = sessionStorage.getItem('user')
 
     function handleSignOut(event) {
 		event.preventDefault()
 		dispatch({type: 'setUserSignedIn', data: null})
         dispatch({type: 'setToken', data: null})
-
         sessionStorage.setItem("token", null)
         sessionStorage.setItem("user", null)
         navigate("/")
-
 	}
-    // console.log("USER",userSignedIn)
+
     return (
         <nav style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}>
             { userSignedIn != null && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}

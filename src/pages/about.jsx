@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
 
+import {useGlobalState} from '../utils/StateContext'
+
 const About = () => {
+    const {store} = useGlobalState()
+	const {userSignedIn} = store
+
     return(
         <>
             <header style={{display:"flex", justifyContent:"center"}}>
@@ -10,7 +15,9 @@ const About = () => {
             <nav style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
                 <Link to="/"><h2 style={{padding:"20px", margin:"0px"}}>Car Services</h2></Link>
                 <Link to="/about"><h2 style={{padding:"20px", margin:"0px"}}>About Us</h2></Link>
-                <Link to="/make_booking"><h2 style={{padding:"20px", margin:"0px"}}>Booking</h2></Link>
+                { userSignedIn !== "admin" &&
+                    <Link to="/make_booking"><h2 style={{padding:"20px", margin:"0px"}}>Booking</h2></Link>
+                }
             </nav>
 
             <main style={{marginLeft:"300px", marginRight:"300px"}}>
