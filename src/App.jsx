@@ -39,7 +39,7 @@ function App() {
       }
     }
     fetchData();
-  }, [services]);
+  }, []);
 
 
   return (
