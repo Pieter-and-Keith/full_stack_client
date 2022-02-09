@@ -11,19 +11,6 @@ const Admin = () => {
   const { userSignedIn } = store;
   const [bookings, setBookings] = useState([]);
 
-    // useEffect(async ()=> {
-
-    //     if (userSignedIn != "admin"){
-    //         navigate("/")
-    //     } else {
-    //         const data = await api.getBookings()
-    //         if (data){
-    //             console.log("bookings", data)
-    //             setBookings(data)
-    //         }
-    //     }
-    // },[])
-
     useEffect(() => {
         async function fetchData() {
           const data = await api.getBookings();
