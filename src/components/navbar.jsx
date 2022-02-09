@@ -9,16 +9,16 @@ const Nav = () => {
 
     function handleSignOut(event) {
 		event.preventDefault()
-		dispatch({type: 'setUserSignedIn', data: null})
-        dispatch({type: 'setToken', data: null})
-        sessionStorage.setItem("token", null)
-        sessionStorage.setItem("user", null)
+		dispatch({type: 'setUserSignedIn', data: ""})
+        dispatch({type: 'setToken', data: ""})
+        sessionStorage.setItem("token", "")
+        sessionStorage.setItem("user", "")
         navigate("/")
 	}
 
     return (
         <nav style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}>
-            { userSignedIn != null && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
+            { userSignedIn != "" && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
             { userSignedIn === "admin" &&
                 <>
                     <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>
