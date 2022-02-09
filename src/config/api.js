@@ -83,8 +83,7 @@ const createBooking = async ({option_id, date, comment, finished, paid}) =>{
 			return null
 		}
 	} catch (error) {
-		console.error(error);
-		return null
+		return error.response.data;
 	}
 }
 
