@@ -165,5 +165,64 @@ const getBooking = async (id) => {
 	}
 };
 
+const updatePaid = async ({paid}, id) => {
 
-export default {signIn, signUp, inputDetails, createBooking, getOptions, createOptions, getBookings, getBooking};
+	const token = sessionStorage.getItem('token')
+	console.log("sessionStorage JWT token:", token)
+	console.log("ID:", id)
+
+	let tokenHeader = {
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json;charset=UTF-8"
+		}
+	};
+
+	try {
+		const { status, data } = await axios.put(`api/bookings/${id}`,{
+			paid
+		}, tokenHeader);
+		console.log("api.updatePaid", data)
+		if (status === 200 || status === 201) {
+			return data;
+		} else {
+			return null
+		}
+	} catch (error) {
+		console.error(error);
+		return null
+	}
+}
+
+const updateFinished = async ({finished}, id) => {
+
+	const token = sessionStorage.getItem('token')
+	console.log("sessionStorage JWT token:", token)
+	console.log("ID:", id)
+
+	let tokenHeader = {
+		headers: {
+			Accept: "application/json",
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json;charset=UTF-8"
+		}
+	};
+
+	try {
+		const { status, data } = await axios.put(`api/bookings/${id}`,{
+			finished
+		}, tokenHeader);
+		console.log("api.updatePaid", data)
+		if (status === 200 || status === 201) {
+			return data;
+		} else {
+			return null
+		}
+	} catch (error) {
+		console.error(error);
+		return null
+	}
+}
+
+export default {signIn, signUp, inputDetails, createBooking, getOptions, createOptions, getBookings, getBooking, updatePaid, updateFinished};
