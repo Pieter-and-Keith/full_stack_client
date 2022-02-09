@@ -12,6 +12,7 @@ const signIn = async ({email, password}) => {
 			return null;
 		}
 	} catch (error) {
+		console.log(error.response)
 		return error.response.data.error;
 	}
 };
@@ -28,8 +29,7 @@ const signUp = async ({username, email, password, password_confirmation}) => {
 			return null;
 		}
 	} catch (error) {
-		console.error(error);
-		return null;
+		return error.response.data;
 	}
 };
 

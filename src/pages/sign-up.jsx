@@ -7,6 +7,10 @@ import {useGlobalState} from '../utils/StateContext'
 const SignUp = () => {
   const navigate = useNavigate()
 
+  const [usernameError, setUsernameError] = useState("")
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("")
+
   const [data, setData] = useState({
       username: "",
       email: "",
@@ -32,21 +36,28 @@ const SignUp = () => {
           password_confirmation: data.password_confirmation
       };
       const user = await api.signUp(userData);
-
+      if (!user.jwt) {
+        setUsernameError(user.username[0])
+        setEmailError(user.email[0])
+        setPasswordError(user.password_confirmation[0])
+      } else {
+      console.log(user)
       dispatch({type: 'setToken', data: user.jwt});
       dispatch({type: 'setUserSignedIn', data: user.username})
 
       sessionStorage.setItem("token", user.jwt)
       sessionStorage.setItem("user", user.username)
       navigate("/user_details")
+      }
   };
 
   return (
     <>
       <h1>Sign-up page </h1>
-      {/* {errorMessage && <p className="error"> {errorMessage} </p> } */}
+      { usernameError ? <> <h3>Error: Username {usernameError}</h3> </> : <> </> } 
+      { emailError ? <> <h3>Error: Email {emailError}</h3> </> : <> </> }
+      { passwordError ? <> <h3>Error: Password Confirmation {passwordError}</h3> </> : <> </> }
       <form onSubmit={handleSubmit}>
-
         <div style={{padding:"10px"}}>
           <label htmlFor="username">Username:</label>
           <input type="text" name="username" value={data.username} onChange={handleChange}  />
