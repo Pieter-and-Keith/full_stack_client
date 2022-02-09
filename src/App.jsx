@@ -24,7 +24,7 @@ function App() {
   const [confirmContext, setConfirmContext] = useState([]);
   const [bookingContext, setBookingContext] = useState([]);
   const [serviceCreatedContext, setserviceCreatedContext] = useState([]);
-  
+
   const initialState = {
     userSignedIn: sessionStorage.getItem("user")  || (""),
     auth: {token:sessionStorage.getItem("token")  || ("")}
@@ -57,7 +57,7 @@ function App() {
                 <Route path="/sign_up" element={<SignUp />} />
                 <Route path="/user_details" element={<UserDetails />} />
                 <Route path="/make_booking" element={<MakeBooking services={services}/>} />
-                <Route path="/confirm_booking" element={<ConfirmBooking confirmContext={confirmContext}/>} />
+                <Route path="/confirm_booking" element={<ConfirmBooking />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/admin_option_create" element={<AdminOptionCreate />} />
                 <Route path="/booking" element={<Booking />} />
