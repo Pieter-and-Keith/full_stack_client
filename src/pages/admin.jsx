@@ -21,13 +21,17 @@ const Admin = () => {
         fetchData();
       }, []);
 
-    const bookingsItems = bookings.map((booking) => {
+    const bookingsItems = bookings.map((booking, index) => {
         return (
             <BookingsItem 
-                key={booking.id}
-                id={booking.id}
+                key={index}
+                id={booking.booking_id}
+                serviceType={booking.service_type}
+                make={booking.make} 
+                model={booking.model}
                 date={booking.date}
-                comment={booking.comment}
+                firstName={booking.first_name}
+                lastName={booking.last_name}
             />
         )
     })
