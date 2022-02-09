@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+import ConfirmContext from "../utils/ConfirmContext"
 
-const ConfirmBooking = (props) => {
-    const confirmBooking = props.confirmContext.booking
+const ConfirmBooking = () => {
+    const {confirmContext} = useContext(ConfirmContext);
+    const confirmBooking = confirmContext.booking
 
     return (
         <>
