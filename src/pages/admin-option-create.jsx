@@ -1,10 +1,12 @@
-import { useState} from "react"
+import { useContext, useState} from "react"
 import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
+import ServiceCreatedContext from "../utils/ServiceCreatedContext";
 
 const AdminOptionCreate = () => {
     const navigate = useNavigate()
+    const { serviceCreatedContext, setserviceCreatedContext } = useContext(ServiceCreatedContext)
 
     const [option, setOption] = useState({
         service_type: "",
@@ -27,7 +29,8 @@ const AdminOptionCreate = () => {
             description: option.description,
             price: option.price
         };
-        await api.createOptions(optionData);
+        const newOption = await api.createOptions(optionData);
+        setserviceCreatedContext(newOption.id)
         navigate("/")
     };
 
