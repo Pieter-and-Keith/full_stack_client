@@ -28,15 +28,31 @@ const Booking = () => {
     }
 
     const handlePaidButton = async () => {
-        const paidData = {
-            paid: true
+        let paidData = {}
+        if (bookingContext.paid === false){
+            paidData = {
+                paid: true
+            }
+        } else {
+            paidData = {
+                paid: false
+            }
         }
+        
         const data = await api.updatePaid(paidData, bookingContext.booking_id)
         setPaidStatus(data)
     }
+
     const handleFinishedButton = async () => {
-        const finishedData = {
-            finished: true
+        let finishedData = {}
+        if (bookingContext.finished === false) {
+            finishedData = {
+                finished: true
+            }
+        } else {
+            finishedData = {
+                finished: false
+            }
         }
         const data = await api.updateFinished(finishedData, bookingContext.booking_id)
         setFinishedStatus(data)
