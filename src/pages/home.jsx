@@ -17,7 +17,7 @@ const Home = (props) => {
         <>
             <HomeBox1>
                 <BusinessTitle>
-                    <h1 style={{margin:"0px"}}>Sydney Motor Service Centre</h1>
+                    <h1 style={{margin:"0px"}}><i>Sydney Motor Service Centre</i></h1>
                 </BusinessTitle>
             
                 <HomeNav>
@@ -30,7 +30,7 @@ const Home = (props) => {
             </HomeBox1>
 
             <HomeMargin>
-                <PageTitle><u>Service Provide</u></PageTitle>
+                <PageTitle>Service Provide</PageTitle>
                 {serviceTypes}
             </HomeMargin>
     

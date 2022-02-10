@@ -9,7 +9,7 @@ const ConfirmBooking = () => {
 
     return (
         <>
-            <ConfirmBookingTitle>Sydney Motor Service Centre</ConfirmBookingTitle>
+            <ConfirmBookingTitle><i>Sydney Motor Service Centre</i></ConfirmBookingTitle>
             <ConfirmBookingForm>
                 <SignTitle><u>Confirm Details</u></SignTitle>
                 <h3>Name: </h3> 

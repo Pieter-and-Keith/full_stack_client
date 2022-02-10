@@ -18,7 +18,7 @@ export const HomeMargin = styled.main`
     }
 `
 
-export const PageTitle = styled.h2`
+export const PageTitle = styled.h1`
     display: flex;
     justify-content: center;
 `
@@ -108,6 +108,9 @@ export const NavLinkWords = styled(Link)`
     color: blue;
     :hover {
         color: red;
+    }
+    @media (max-width: 500px) {
+        font-size: 0.9rem;
     }
 `
 

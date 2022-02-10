@@ -3,10 +3,12 @@ import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import ServiceCreatedContext from "../utils/ServiceCreatedContext";
+import { SignTitle, BookingForm, SignButton } from '../components/Styled'
+
 
 const AdminOptionCreate = () => {
     const navigate = useNavigate()
-    const { serviceCreatedContext, setserviceCreatedContext } = useContext(ServiceCreatedContext)
+    const { setserviceCreatedContext } = useContext(ServiceCreatedContext)
 
     const [option, setOption] = useState({
         service_type: "",
@@ -36,22 +38,27 @@ const AdminOptionCreate = () => {
 
     return(
         <>
-            <h1>Create Options</h1>
-            <form onSubmit={handleSubmit}>
+            <SignTitle>Create Options</SignTitle>
+            <BookingForm onSubmit={handleSubmit}>
                 <div style={{padding:"10px"}}>
-                    <label htmlFor="service_type">Service Type:</label>
+                    <label htmlFor="service_type">Service Name:</label>
+                    <br></br>
                     <input type="text" name="service_type" value={option.service_type} onChange={handleChange} />
                 </div>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="description">Description:</label>
-                    <textarea type="text" name="description" value={option.description} onChange={handleChange}/>
+                    <br></br>
+                    <textarea rows="15" cols="40" type="text" name="description" value={option.description} onChange={handleChange}/>
                 </div>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="price">Price($):</label>
+                    <br></br>
                     <input type="text" name="price" value={option.price} onChange={handleChange}/>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
+                <SignButton>
+                    <button type="submit" style={{margin:"10px"}}>Submit</button>
+                </SignButton>
+            </BookingForm>
         </>
     )
 }
