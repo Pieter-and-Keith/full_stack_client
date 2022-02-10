@@ -251,3 +251,22 @@ export const AdminOuterBox = styled.div`
 
 export const DropDownBox = styled.option`
 `
+
+export const JobDetails = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+
+    @media (max-width: 800px) {
+        width: 70%
+    }
+    @media (max-width: 450px) {
+        width: 90%
+    }
+`
