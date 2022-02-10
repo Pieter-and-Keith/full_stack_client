@@ -199,5 +199,36 @@ export const BookingForm = styled.form`
     }
 `
 
+export const ConfirmBookingForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+
+    @media (max-width: 800px) {
+        width: 70%
+    }
+    @media (max-width: 450px) {
+        width: 90%
+    }
+`
+
+export const ConfirmBookingTitle = styled.h1`
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 800px) {
+        font-size: 1.7rem;
+    }
+    @media (max-width: 500px) {
+        font-size: 1.2rem;
+    }
+`
+
 export const DropDownBox = styled.option`
 `
