@@ -49,11 +49,11 @@ const SignIn = () => {
             <form onSubmit={handleSubmit}>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="email">Email:</label>
-                    <input type="email" name="email" value={data.email} onChange={handleChange} />
+                    <input type="email" name="email" id="email" value={data.email} onChange={handleChange} />
                 </div>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" value={data.password} onChange={handleChange}/>
+                    <input type="password" name="password" id="password" value={data.password} onChange={handleChange}/>
                 </div>
                 <button type="submit" style={{margin:"5px"}}>Sign In</button>
                 <Link to="/sign_up" style={{margin:"5px"}}><button>Sign Up</button></Link>
