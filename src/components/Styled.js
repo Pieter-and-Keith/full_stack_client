@@ -90,12 +90,12 @@ export const AboutBox = styled.main`
     border: 1px ridge #2D2424;
 `
 
-export const SignInTitle = styled.h1`
+export const SignTitle = styled.h1`
     display: flex;
     justify-content: center;
 `
 
-export const SignInForm = styled.form`
+export const SignForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,7 +106,7 @@ export const SignInForm = styled.form`
     border: 1px ridge #2D2424;
 `
 
-export const ErrorDisplay = styled.h3`
+export const ErrorMessage = styled.h3`
     color: red;
     margin: 5px;
     display: flex;
@@ -118,7 +118,7 @@ export const LinkE = styled(Link)`
     color: black;
 `
 
-export const SignInButton = styled.div`
+export const SignButton = styled.div`
     display: flex;
     justify-content: center;
 `
