@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
-
 import {useGlobalState} from '../utils/StateContext'
+
+import { HomeMargin, BusinessTitle, HomeBox1, HomeLink } from '../components/Styled'
 import ServiceItem from "../components/service-item";
 
 const Home = (props) => {
@@ -15,21 +16,23 @@ const Home = (props) => {
 
     return(
         <>
-            <header style={{display:"flex", justifyContent:"center"}}>
-                <h1 style={{margin:"0px"}}><u>Sydney Motor Service Centre</u></h1>
-            </header>
+            <HomeBox1>
+                <BusinessTitle>
+                    <h1 style={{margin:"0px"}}>Sydney Motor Service Centre</h1>
+                </BusinessTitle>
+            
+                <nav style={{display:"flex", backgroundColor:"#2E3335"}}>
+                    <Link to="/"><HomeLink>Car Services</HomeLink></Link>
+                    <Link to="/about"><HomeLink>About Us</HomeLink></Link>
+                    { userSignedIn !== "admin" &&
+                        <Link to="/make_booking"><HomeLink>Booking</HomeLink></Link>
+                    }
+                </nav>
+            </HomeBox1>
 
-            <nav style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
-                <Link to="/"><h2 style={{padding:"20px", margin:"0px"}}>Car Services</h2></Link>
-                <Link to="/about"><h2 style={{padding:"20px", margin:"0px"}}>About Us</h2></Link>
-                { userSignedIn !== "admin" &&
-                    <Link to="/make_booking"><h2 style={{padding:"20px", margin:"0px"}}>Booking</h2></Link>
-                }
-            </nav>
-
-            <main style={{marginTop:"0px", marginRight:"100px", marginBottom:"0px", marginLeft:"100px"}}>
+            <HomeMargin>
                 {serviceTypes}
-            </main>
+            </HomeMargin>
     
         </>
     )

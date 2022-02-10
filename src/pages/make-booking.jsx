@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom"
 import api from "../config/api"
-import {Drop} from '../components/Styled'
+import {DropDownBox} from '../components/Styled'
 import ConfirmContext from "../utils/ConfirmContext"
 import {useGlobalState} from '../utils/StateContext'
 
@@ -82,7 +82,7 @@ const MakeBooking = (props) => {
                 <select onChange={e => setOption(e.target.value)} defaultValue={'DEFAULT'} > 
                     <option value="DEFAULT" disabled>Please Select</option>
                     {props.services.map((service, index) => (
-                        <Drop key={index} value={service?.id}>{service?.service_type} ${service?.price}</Drop>
+                        <DropDownBox key={index} value={service?.id}>{service?.service_type} ${service?.price}</DropDownBox>
                     ))}
                 </select>
                 
