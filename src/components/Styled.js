@@ -19,10 +19,10 @@ export const PageTitle = styled.h2`
     display: flex;
     justify-content: center;
 `
+
 export const HomeNav = styled.nav`
     display: flex;
     background-color: #2E3335;
-    
 `
 
 export const HomeLink = styled.h4`
@@ -88,6 +88,39 @@ export const AboutBox = styled.main`
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
+`
+
+export const SignInTitle = styled.h1`
+    display: flex;
+    justify-content: center;
+`
+
+export const SignInForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+`
+
+export const ErrorDisplay = styled.h3`
+    color: red;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+`
+
+export const LinkE = styled(Link)`
+    text-decoration: none;
+    color: black;
+`
+
+export const SignInButton = styled.div`
+    display: flex;
+    justify-content: center;
 `
 
 export const DropDownBox = styled.option`

@@ -2,6 +2,7 @@ import { useState} from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 import api from "../config/api";
+import { SignInTitle, SignInForm, ErrorDisplay, LinkE, SignInButton } from '../components/Styled'
 import {useGlobalState} from '../utils/StateContext'
 
 
@@ -44,20 +45,24 @@ const SignIn = () => {
 
     return (
         <>
-            <h1>Sign-in</h1>
-            { error ? <> <h3>Error: {error}</h3> </> : <> </> }
-            <form onSubmit={handleSubmit}>
-                <div style={{padding:"10px"}}>
+            <SignInTitle>Sign-in</SignInTitle>
+            { error ? <> <ErrorDisplay>Error: {error}</ErrorDisplay> </> : <> </> }
+            <SignInForm onSubmit={handleSubmit}>
+                <div style={{margin:"5px"}}>
                     <label htmlFor="email">Email:</label>
+                    <br></br>
                     <input type="email" name="email" id="email" value={data.email} onChange={handleChange} />
                 </div>
-                <div style={{padding:"10px"}}>
+                <div style={{margin:"5px"}}>
                     <label htmlFor="password">Password:</label>
+                    <br></br>
                     <input type="password" name="password" id="password" value={data.password} onChange={handleChange}/>
                 </div>
-                <button type="submit" style={{margin:"5px"}}>Sign In</button>
-                <Link to="/sign_up" style={{margin:"5px"}}><button>Sign Up</button></Link>
-            </form>
+                <SignInButton>
+                    <button type="submit" style={{margin: "10px"}}>Sign In</button>
+                    <button style={{margin: "10px"}}><LinkE to="/sign_up">Sign Up</LinkE></button>
+                </SignInButton>
+            </SignInForm>
         </>
     )
 }
