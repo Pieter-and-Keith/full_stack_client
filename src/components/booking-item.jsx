@@ -1,13 +1,14 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useContext} from "react"
 
 import api from "../config/api";
 import BookingContext from "../utils/BookingContext";
+import { AdminInnerBox } from './Styled'
 
 const BookingsItem = ({id, date, serviceType, make, model, firstName, lastName}) => {
 
     const navigate = useNavigate();
-    const { bookingContext, setBookingContext} = useContext(BookingContext)
+    const { setBookingContext} = useContext(BookingContext)
 
     const handleOnClick = async (event) => {
         event.preventDefault()
@@ -18,13 +19,13 @@ const BookingsItem = ({id, date, serviceType, make, model, firstName, lastName})
 
 
     return (
-        <div style={{padding:"10px", border: "black solid 2px"}}>
+        <AdminInnerBox>
             <h3>Job: {serviceType}</h3>
-            <h4>Date: {date}</h4>
+            <h4>Booking Date: {date}</h4>
             <h5>Car: {make} {model}</h5>
-            <h5>Client: {firstName} {lastName}</h5>
+            <h5>Client Name: {firstName} {lastName}</h5>
             <button onClick={handleOnClick}>SHOW</button>
-        </div>
+        </AdminInnerBox>
     )
 
 }

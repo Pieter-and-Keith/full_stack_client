@@ -233,5 +233,21 @@ export const ConfirmBookingTitle = styled.h1`
     }
 `
 
+export const AdminInnerBox = styled.section`
+    background-color: #F7FD04;
+    box-shadow: 2px 3px black;
+    border: 1px ridge #2D2424;
+    padding: 10px;
+    width: 20%;
+    margin: 5px;
+`
+
+export const AdminOuterBox = styled.div`
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+`
+
+
 export const DropDownBox = styled.option`
 `

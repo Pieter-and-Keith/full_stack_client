@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import api from "../config/api";
-import { useGlobalState } from "../utils/StateContext";
 import BookingsItem from "../components/booking-item"
+import { SignTitle, AdminOuterBox} from '../components/Styled'
+
 
 const Admin = () => {
-    
-  const navigate = useNavigate();
-  const { store } = useGlobalState();
-  const { userSignedIn } = store;
   const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
@@ -38,8 +34,10 @@ const Admin = () => {
 
   return (
     <>
-      <h1>Admin Page</h1>
-      {bookingsItems}
+      <SignTitle>Admin Page</SignTitle>
+      <AdminOuterBox>  
+        {bookingsItems}
+      </AdminOuterBox>  
     </>
   );
 };
