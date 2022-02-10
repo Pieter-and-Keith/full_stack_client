@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom"
 import {useGlobalState} from '../utils/StateContext'
 
-import { HomeMargin, BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords } from '../components/Styled'
+import { HomeMargin, BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords, PageTitle } from '../components/Styled'
 import ServiceItem from "../components/service-item";
 
 const Home = (props) => {
@@ -31,6 +30,7 @@ const Home = (props) => {
             </HomeBox1>
 
             <HomeMargin>
+                <PageTitle><u>Service Provide</u></PageTitle>
                 {serviceTypes}
             </HomeMargin>
     

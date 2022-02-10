@@ -15,6 +15,10 @@ export const HomeMargin = styled.main`
     }
 `
 
+export const PageTitle = styled.h2`
+    display: flex;
+    justify-content: center;
+`
 export const HomeNav = styled.nav`
     display: flex;
     background-color: #2E3335;
@@ -48,7 +52,9 @@ export const BusinessTitle = styled.header`
 `
 
 export const Service = styled.div`
-    background-color: blue;
+    background-color: #f4f4f4;
+    box-shadow: 2px 3px black;
+    border: 1px ridge #2D2424;
     padding: 10px;
     margin: 5px;
 `
@@ -74,6 +80,14 @@ export const NavLinkWords = styled(Link)`
     :hover {
         color: red;
     }
+`
+
+export const AboutBox = styled.main`
+    margin: 10px 300px;
+    padding: 0 20px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 3px black;
+    border: 1px ridge #2D2424;
 `
 
 export const DropDownBox = styled.option`
