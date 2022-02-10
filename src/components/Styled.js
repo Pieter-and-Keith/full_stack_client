@@ -100,6 +100,7 @@ export const SignForm = styled.form`
     flex-direction: column;
     align-items: center;
     width: 25%;
+    padding: 10px;
     margin: 5px auto;
     background-color: #f4f4f4;
     border-radius: 10px;

@@ -1,5 +1,5 @@
 import { useState} from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import { SignTitle, SignForm, ErrorMessage, LinkE, SignButton } from '../components/Styled'

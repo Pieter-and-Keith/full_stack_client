@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { NavBox, NavLinkWords } from './Styled'
 import {useGlobalState} from '../utils/StateContext'
