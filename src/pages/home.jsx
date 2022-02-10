@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import {useGlobalState} from '../utils/StateContext'
 
-import { HomeMargin, BusinessTitle, HomeBox1, HomeLink } from '../components/Styled'
+import { HomeMargin, BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords } from '../components/Styled'
 import ServiceItem from "../components/service-item";
 
 const Home = (props) => {
@@ -21,13 +21,13 @@ const Home = (props) => {
                     <h1 style={{margin:"0px"}}>Sydney Motor Service Centre</h1>
                 </BusinessTitle>
             
-                <nav style={{display:"flex", backgroundColor:"#2E3335"}}>
-                    <Link to="/"><HomeLink>Car Services</HomeLink></Link>
-                    <Link to="/about"><HomeLink>About Us</HomeLink></Link>
+                <HomeNav>
+                    <HomeLink><HomeLinkWords to="/">Car Services</HomeLinkWords></HomeLink>
+                    <HomeLink><HomeLinkWords to="/about">About Us</HomeLinkWords></HomeLink>
                     { userSignedIn !== "admin" &&
-                        <Link to="/make_booking"><HomeLink>Booking</HomeLink></Link>
+                        <HomeLink><HomeLinkWords to="/make_booking">Booking</HomeLinkWords></HomeLink>
                     }
-                </nav>
+                </HomeNav>
             </HomeBox1>
 
             <HomeMargin>
