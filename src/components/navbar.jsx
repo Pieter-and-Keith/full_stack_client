@@ -1,5 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+import { NavBox, NavLinkWords } from './Styled'
 import {useGlobalState} from '../utils/StateContext'
 
 const Nav = () => {
@@ -17,26 +18,26 @@ const Nav = () => {
 	}
 
     return (
-        <nav style={{display:"flex", justifyContent:"flex-end", alignItems:"center"}}>
-            { userSignedIn != "" && <h5 style={{margin:"5px"}}>User: {userSignedIn}</h5>}
+        <NavBox>
+            { userSignedIn != "" && <h4 style={{margin:"5px"}}><u>User: {userSignedIn}</u></h4>}
             { userSignedIn === "admin" &&
                 <>
-                    <Link to="/admin" style={{margin:"5px"}}>Admin Page</Link>
-                    <Link to="/admin_option_create" style={{margin:"5px"}}>Create Option</Link>
+                    <NavLinkWords to="/admin">Admin Page</NavLinkWords>
+                    <NavLinkWords to="/admin_option_create">Create Option</NavLinkWords>
                 </>
             }
-            <Link to="/" style={{margin:"5px"}}>Home</Link>
+            <NavLinkWords to="/">Home</NavLinkWords>
             {userSignedIn ? 
                 <>
                     <button onClick={handleSignOut} style={{margin:"5px"}}>Sign Out</button>	
                 </>
             :
                 <>
-                    <Link to="/sign_up" style={{margin:"5px"}}>Sign Up</Link>
-                    <Link to="/sign_in" style={{margin:"5px"}}>Sign In</Link>
+                    <NavLinkWords to="/sign_up">Sign Up</NavLinkWords>
+                    <NavLinkWords to="/sign_in">Sign In</NavLinkWords>
                 </>
             }
-        </nav>
+        </NavBox>
     )
 }
 

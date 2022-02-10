@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
+import { SignTitle, ErrorMessage, SignForm, SignButton } from '../components/Styled'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -52,33 +53,39 @@ const SignUp = () => {
 
   return (
     <>
-      <h1>Sign-up page </h1>
-      { usernameError ? <> <h3>Error: Username {usernameError}</h3> </> : <> </> } 
-      { emailError ? <> <h3>Error: Email {emailError}</h3> </> : <> </> }
-      { passwordError ? <> <h3>Error: Password Confirmation {passwordError}</h3> </> : <> </> }
-      <form onSubmit={handleSubmit}>
+      <SignTitle>Sign-up page </SignTitle>
+      { usernameError ? <> <ErrorMessage>Error: Username {usernameError}</ErrorMessage> </> : <> </> } 
+      { emailError ? <> <ErrorMessage>Error: Email {emailError}</ErrorMessage> </> : <> </> }
+      { passwordError ? <> <ErrorMessage>Error: Password Confirmation {passwordError}</ErrorMessage> </> : <> </> }
+      <SignForm onSubmit={handleSubmit}>
         <div style={{padding:"10px"}}>
           <label htmlFor="username">Username:</label>
+          <br></br>
           <input type="text" name="username" id="username" value={data.username} onChange={handleChange}  />
         </div>
 
         <div style={{padding:"10px"}}>
           <label htmlFor="email">Email:</label>
+          <br></br>
           <input type="email" name="email" id="email" value={data.email} onChange={handleChange} />
         </div>
 
         <div style={{padding:"10px"}}>
           <label htmlFor="password">Password:</label>
+          <br></br>
           <input type="password" name="password" id="password" value={data.password} onChange={handleChange} />
         </div>
 
         <div style={{padding:"10px"}}>
           <label htmlFor="password_confirmation">Password Confirmation:</label>
+          <br></br>
           <input type="password" name="password_confirmation" id="password_confirmation" value={data.password_confirmation} onChange={handleChange} />
         </div>
         
-        <button type="submit">Sign Up</button>
-      </form>
+        <SignButton>
+           <button type="submit" style={{margin: "10px"}}>Sign Up</button>
+        </SignButton>
+      </SignForm>
     </>
   );
 };

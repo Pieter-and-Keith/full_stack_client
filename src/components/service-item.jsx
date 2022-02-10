@@ -1,10 +1,12 @@
+import { Service, ServiceTitle, ServicePrice } from './Styled'
+
 const ServiceItem = ({ service_type, description, price }) => {
 	return (
-        <>
-			<h2><u>{service_type}</u></h2>
+        <Service>
+			<ServiceTitle><u>{service_type}</u></ServiceTitle>
             <p>{description}</p>
-            <h4>Price: $<i>{price}</i></h4>
-        </>
+            <ServicePrice>Price: $<i>{price}</i></ServicePrice>
+        </Service>
 	);
 };
 

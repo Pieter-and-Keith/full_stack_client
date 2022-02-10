@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
 import ConfirmContext from "../utils/ConfirmContext"
+import { SignTitle, ConfirmBookingForm, ConfirmBookingTitle } from '../components/Styled'
 
 const ConfirmBooking = () => {
     const {confirmContext} = useContext(ConfirmContext);
@@ -8,11 +9,9 @@ const ConfirmBooking = () => {
 
     return (
         <>
-            <header>
-                <h1 style={{display:"flex", margin:"0px", justifyContent:"center"}}><u>Sydney Motor Service Centre</u></h1>
-            </header>
-            <form style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"0px", marginRight:"300px", marginBottom:"0px", marginLeft:"300px", borderStyle:"solid", borderRadius:"15px"}}>
-                <h1 style={{display:"flex", justifyContent:"center", margin:"5px"}}><u>Confirm Details</u></h1>
+            <ConfirmBookingTitle><i>Sydney Motor Service Centre</i></ConfirmBookingTitle>
+            <ConfirmBookingForm>
+                <SignTitle><u>Confirm Details</u></SignTitle>
                 <h3>Name: </h3> 
                     <span>{confirmBooking.first_name} {confirmBooking.last_name}</span>
                 <h3>Email: </h3> 
@@ -34,9 +33,9 @@ const ConfirmBooking = () => {
                 <h3>Additional Comment: </h3> 
                     <span>{confirmBooking.comment}</span>
                 <div style={{marginTop:"15px"}}>
-                    <Link to="/"><button>Home</button></Link>
+                    <Link to="/"><button style={{margin: "10px"}}>Home</button></Link>
                 </div>
-            </form>
+            </ConfirmBookingForm>
         </>
     );
 }

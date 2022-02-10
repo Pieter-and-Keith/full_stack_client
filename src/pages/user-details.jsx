@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+
 import api from "../config/api"
+import { SignTitle, ErrorMessage, SignForm } from '../components/Styled'
 
 const UserDetails = () => {
     const navigate = useNavigate()
@@ -16,7 +18,6 @@ const UserDetails = () => {
     const [regoError, setRegoError] = useState("")
     const [makeError, setMakeError] = useState("")
     const [modelError, setModelError] = useState("")
-
 
     const [data, setData] = useState({
         firstName: "",
@@ -60,10 +61,10 @@ const UserDetails = () => {
           { details.first_name? setFirstNameError(details.first_name[0]) : setFirstNameError("")}
           { details.last_name? setLastNameError(details.last_name[0]) : setLastNameError("")}
           { details.phone_number? setPhoneNumberError(details.phone_number[0]) : setPhoneNumberError("")}
-          { details.street_number? setStreetNumberError(details.street_number[0]) : setStreetNumberError("")}
+          { details.street_number? setStreetNumberError(details.street_number) : setStreetNumberError("")}
           { details.street_name? setStreetNameError(details.street_name[0]) : setStreetNameError("")}
           { details.suburb? setSuburbError(details.suburb[0]) : setSuburbError("")}
-          { details.postcode? setPostcodeError(details.postcode[0]) : setPostcodeError("")}
+          { details.postcode? setPostcodeError(details.postcode) : setPostcodeError("")}
           { details.state? setStateError(details.state[0]) : setStateError("")}
           { details.rego? setRegoError(details.rego[0]) : setRegoError("")}
           { details.make? setMakeError(details.make[0]) : setMakeError("")}
@@ -75,65 +76,78 @@ const UserDetails = () => {
 
     return(
         <>
-        <h2>User detail Page</h2>
-        { firstNameError ? <> <h3>Error: First Name {firstNameError}</h3> </> : <> </> } 
-        { lastNameError ? <> <h3>Error: Last Name {lastNameError}</h3> </> : <> </> }
-        { phoneNumberError ? <> <h3>Error: Phone Number {phoneNumberError}</h3> </> : <> </> }
-        { streetNumberError ? <> <h3>Error: Street Number {streetNumberError}</h3> </> : <> </> }
-        { streetNameError ? <> <h3>Error: Street Name {streetNameError}</h3> </> : <> </> }
-        { suburbError ? <> <h3>Error: Suburb {suburbError}</h3> </> : <> </> }
-        { postcodeError ? <> <h3>Error: Postcode {postcodeError}</h3> </> : <> </> }
-        { stateError ? <> <h3>Error: State {stateError}</h3> </> : <> </> }
-        { regoError ? <> <h3>Error: Rego {regoError}</h3> </> : <> </> }
-        { makeError ? <> <h3>Error: Make {makeError}</h3> </> : <> </> }
-        { modelError ? <> <h3>Error: Model {modelError}</h3> </> : <> </> }
-        <form onSubmit={handleOnSubmit}>
-        <div>
-          <label htmlFor="firstName">First name:</label>
-          <input type="text" name="firstName" value={data.firstName} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last name:</label>
-          <input type="text" name="lastName" value={data.lastName} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input type="text" name="phoneNumber" value={data.phoneNumber} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="streetNumber">Street Number:</label>
-          <input type="text" name="streetNumber" value={data.streetNumber} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="streetName">Street Name:</label>
-          <input type="text" name="streetName" value={data.streetName} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="suburb">Suburb:</label>
-          <input type="text" name="suburb" value={data.suburb} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="postcode">Postcode:</label>
-          <input type="text" name="postcode" value={data.postcode} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="state">State:</label>
-          <input type="text" name="state" value={data.state} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="rego">Rego:</label>
-          <input type="text" name="rego" value={data.rego} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="make">Make:</label>
-          <input type="text" name="make" value={data.make} onChange={handleChange}  />
-        </div>
-        <div>
-          <label htmlFor="model">Model:</label>
-          <input type="text" name="model" value={data.model} onChange={handleChange}  />
-        </div>
-            <button type="submit">submit</button>
-        </form>
+          <SignTitle>User detail Page</SignTitle>
+          { firstNameError ? <> <ErrorMessage>Error: First Name {firstNameError}</ErrorMessage> </> : <> </> } 
+          { lastNameError ? <> <ErrorMessage>Error: Last Name {lastNameError}</ErrorMessage> </> : <> </> }
+          { phoneNumberError ? <> <ErrorMessage>Error: Phone Number {phoneNumberError}</ErrorMessage> </> : <> </> }
+          { streetNumberError ? <> <ErrorMessage>Error: Street Number {streetNumberError[0]} or {streetNumberError[1]}</ErrorMessage> </> : <> </> }
+          { streetNameError ? <> <ErrorMessage>Error: Street Name {streetNameError}</ErrorMessage> </> : <> </> }
+          { suburbError ? <> <ErrorMessage>Error: Suburb {suburbError}</ErrorMessage> </> : <> </> }
+          { postcodeError ? <> <ErrorMessage>Error: Postcode {postcodeError[0]} or {postcodeError[1]}</ErrorMessage> </> : <> </> }
+          { stateError ? <> <ErrorMessage>Error: State {stateError}</ErrorMessage> </> : <> </> }
+          { regoError ? <> <ErrorMessage>Error: Rego {regoError}</ErrorMessage> </> : <> </> }
+          { makeError ? <> <ErrorMessage>Error: Make {makeError}</ErrorMessage> </> : <> </> }
+          { modelError ? <> <ErrorMessage>Error: Model {modelError}</ErrorMessage> </> : <> </> }
+          <SignForm onSubmit={handleOnSubmit}>
+            <div>
+              <label htmlFor="firstName">First name:</label>
+              <br></br>
+              <input type="text" name="firstName" value={data.firstName} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="lastName">Last name:</label>
+              <br></br>
+              <input type="text" name="lastName" value={data.lastName} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="phoneNumber">Phone Number:</label>
+              <br></br>
+              <input type="text" name="phoneNumber" value={data.phoneNumber} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="streetNumber">Street Number:</label>
+              <br></br>
+              <input type="text" name="streetNumber" value={data.streetNumber} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="streetName">Street Name:</label>
+              <br></br>
+              <input type="text" name="streetName" value={data.streetName} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="suburb">Suburb:</label>
+              <br></br>
+              <input type="text" name="suburb" value={data.suburb} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="postcode">Postcode:</label>
+              <br></br>
+              <input type="text" name="postcode" value={data.postcode} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="state">State:</label>
+              <br></br>
+              <input type="text" name="state" value={data.state} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="rego">Rego:</label>
+              <br></br>
+              <input type="text" name="rego" value={data.rego} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="make">Make:</label>
+              <br></br>
+              <input type="text" name="make" value={data.make} onChange={handleChange}  />
+            </div>
+            <div>
+              <label htmlFor="model">Model:</label>
+              <br></br>
+              <input type="text" name="model" value={data.model} onChange={handleChange}  />
+            </div>
+
+            <button type="submit" style={{margin: "10px"}}>submit</button>
+
+          </SignForm>
         </>
     )
 }
