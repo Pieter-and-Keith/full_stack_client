@@ -13,6 +13,9 @@ export const HomeMargin = styled.main`
     @media (max-width: 800px) {
         margin: 0px 50px;
     }
+    @media (max-width: 550px) {
+        margin: 0px 10px;
+    }
 `
 
 export const PageTitle = styled.h2`
@@ -34,6 +37,14 @@ export const HomeLink = styled.h4`
     :hover {
         background-color: #FF0000;
     }
+
+    @media (max-width: 800px) {
+        padding: 10px;
+    }
+    @media (max-width: 650px) {
+        padding: 5px;
+    }
+    
 `
 
 export const HomeLinkWords = styled(Link)`
@@ -42,6 +53,10 @@ export const HomeLinkWords = styled(Link)`
     :hover {
         color: #2E3335;
     }
+
+    @media (max-width: 650px) {
+        font-size: 0.8rem;
+    }
 `
 
 export const BusinessTitle = styled.header`
@@ -49,6 +64,20 @@ export const BusinessTitle = styled.header`
     display: flex;
     align-items: center;
     width: 80%;
+
+    @media (max-width: 800px) {
+        font-size: 0.8rem;
+    }
+    @media (max-width: 650px) {
+        font-size: 0.6rem;
+    }
+    @media (max-width: 500px) {
+        font-size: 0.5rem;
+    }
+    @media (max-width: 300px) {
+        font-size: 0.3rem;
+    }
+
 `
 
 export const Service = styled.div`
@@ -88,6 +117,13 @@ export const AboutBox = styled.main`
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
+
+    @media (max-width: 1200px) {
+        margin: 10px 50px;
+    }
+    @media (max-width: 500px) {
+        margin: 5px 20px;
+    }
 `
 
 export const SignTitle = styled.h1`
