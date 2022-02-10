@@ -124,6 +124,9 @@ export const AboutBox = styled.main`
     @media (max-width: 500px) {
         margin: 5px 20px;
     }
+    @media (max-width: 350px) {
+        margin: 2px 5px;
+    }
 `
 
 export const SignTitle = styled.h1`
@@ -141,6 +144,13 @@ export const SignForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+
+    @media (max-width: 800px) {
+        width: 50%
+    }
+    @media (max-width: 450px) {
+        width: 75%
+    }
 `
 
 export const ErrorMessage = styled.h3`
@@ -148,6 +158,10 @@ export const ErrorMessage = styled.h3`
     margin: 5px;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 500px) {
+        font-size: 0.7rem;
+    }
 `
 
 export const LinkE = styled(Link)`
@@ -158,6 +172,31 @@ export const LinkE = styled(Link)`
 export const SignButton = styled.div`
     display: flex;
     justify-content: center;
+`
+
+export const BookingForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    border: 1px ridge #2D2424;
+
+    @media (max-width: 1400px) {
+        width: 50%
+    }
+    @media (max-width: 850px) {
+        width: 75%
+    }
+    @media (max-width: 550px) {
+        width: 90%
+    }
+    @media (max-width: 450px) {
+        width: 95%
+    }
 `
 
 export const DropDownBox = styled.option`
