@@ -1,6 +1,7 @@
 import { useReducer, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Global from "./styles/global";
 import ConfirmContext from "./utils/ConfirmContext"
 import BookingContext from "./utils/BookingContext";
 import ServiceCreatedContext from "./utils/ServiceCreatedContext";
@@ -44,29 +45,32 @@ function App() {
 
 
   return (
-    <StateContext.Provider value={{store,dispatch}}>
-      <ConfirmContext.Provider value={{confirmContext, setConfirmContext}}>
-        <BookingContext.Provider value={{bookingContext, setBookingContext}}>
-          <ServiceCreatedContext.Provider value={{serviceCreatedContext, setserviceCreatedContext}}>
-            <BrowserRouter>
-              <Nav />
-              <Routes>
-                <Route path="/" element={<Home services={services} />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/sign_in" element={<SignIn />} />
-                <Route path="/sign_up" element={<SignUp />} />
-                <Route path="/user_details" element={<UserDetails />} />
-                <Route path="/make_booking" element={<MakeBooking services={services}/>} />
-                <Route path="/confirm_booking" element={<ConfirmBooking />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/admin_option_create" element={<AdminOptionCreate />} />
-                <Route path="/booking" element={<Booking />} />
-              </Routes>
-            </BrowserRouter>
-          </ServiceCreatedContext.Provider>
-        </BookingContext.Provider>
-      </ConfirmContext.Provider>
-    </StateContext.Provider>
+    <>
+    <Global />
+      <StateContext.Provider value={{store,dispatch}}>
+        <ConfirmContext.Provider value={{confirmContext, setConfirmContext}}>
+          <BookingContext.Provider value={{bookingContext, setBookingContext}}>
+            <ServiceCreatedContext.Provider value={{serviceCreatedContext, setserviceCreatedContext}}>
+              <BrowserRouter>
+                <Nav />
+                <Routes>
+                  <Route path="/" element={<Home services={services} />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/sign_in" element={<SignIn />} />
+                  <Route path="/sign_up" element={<SignUp />} />
+                  <Route path="/user_details" element={<UserDetails />} />
+                  <Route path="/make_booking" element={<MakeBooking services={services}/>} />
+                  <Route path="/confirm_booking" element={<ConfirmBooking />} />
+                  <Route path="/admin" element={<Admin />} />
+                  <Route path="/admin_option_create" element={<AdminOptionCreate />} />
+                  <Route path="/booking" element={<Booking />} />
+                </Routes>
+              </BrowserRouter>
+            </ServiceCreatedContext.Provider>
+          </BookingContext.Provider>
+        </ConfirmContext.Provider>
+      </StateContext.Provider>
+    </>
   )
 }
 

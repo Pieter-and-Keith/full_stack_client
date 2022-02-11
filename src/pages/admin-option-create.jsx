@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import ServiceCreatedContext from "../utils/ServiceCreatedContext";
-import { SignTitle, BookingForm, SignButton } from '../components/Styled'
+import { SignTitle, BookingForm, SignButton, BackgroundImage } from '../components/Styled'
 
 
 const AdminOptionCreate = () => {
@@ -37,7 +37,7 @@ const AdminOptionCreate = () => {
     };
 
     return(
-        <>
+        <BackgroundImage>
             <SignTitle>Create Options</SignTitle>
             <BookingForm onSubmit={handleSubmit}>
                 <div style={{padding:"10px"}}>
@@ -59,7 +59,7 @@ const AdminOptionCreate = () => {
                     <button type="submit" style={{margin:"10px"}}>Submit</button>
                 </SignButton>
             </BookingForm>
-        </>
+        </BackgroundImage>
     )
 }
 

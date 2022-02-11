@@ -21,7 +21,7 @@ const Home = (props) => {
                 </BusinessTitle>
             
                 <HomeNav>
-                    <HomeLink><HomeLinkWords to="/">Car Services</HomeLinkWords></HomeLink>
+                    <HomeLink ><HomeLinkWords to="/">Car Services</HomeLinkWords></HomeLink>
                     <HomeLink><HomeLinkWords to="/about">About Us</HomeLinkWords></HomeLink>
                     { userSignedIn !== "admin" &&
                         <HomeLink><HomeLinkWords to="/make_booking">Booking</HomeLinkWords></HomeLink>

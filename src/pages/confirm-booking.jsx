@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
 import ConfirmContext from "../utils/ConfirmContext"
-import { SignTitle, ConfirmBookingForm, ConfirmBookingTitle } from '../components/Styled'
+import { SignTitle, ConfirmBookingForm, ConfirmBookingTitle, BackgroundImage } from '../components/Styled'
 
 const ConfirmBooking = () => {
     const {confirmContext} = useContext(ConfirmContext);
     const confirmBooking = confirmContext.booking
 
     return (
-        <>
+        <BackgroundImage>
             <ConfirmBookingTitle><i>Sydney Motor Service Centre</i></ConfirmBookingTitle>
             <ConfirmBookingForm>
                 <SignTitle><u>Confirm Details</u></SignTitle>
@@ -36,7 +36,7 @@ const ConfirmBooking = () => {
                     <Link to="/"><button style={{margin: "10px"}}>Home</button></Link>
                 </div>
             </ConfirmBookingForm>
-        </>
+        </BackgroundImage>
     );
 }
 

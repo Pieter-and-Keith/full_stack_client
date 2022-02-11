@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import api from "../config/api"
-import { SignTitle, ErrorMessage, SignForm } from '../components/Styled'
+import { SignTitle, ErrorMessage, SignForm, BackgroundImage } from '../components/Styled'
 
 const UserDetails = () => {
     const navigate = useNavigate()
@@ -75,7 +75,7 @@ const UserDetails = () => {
     }
 
     return(
-        <>
+        <BackgroundImage>
           <SignTitle>User detail Page</SignTitle>
           { firstNameError ? <> <ErrorMessage>Error: First Name {firstNameError}</ErrorMessage> </> : <> </> } 
           { lastNameError ? <> <ErrorMessage>Error: Last Name {lastNameError}</ErrorMessage> </> : <> </> }
@@ -148,7 +148,7 @@ const UserDetails = () => {
             <button type="submit" style={{margin: "10px"}}>submit</button>
 
           </SignForm>
-        </>
+        </BackgroundImage>
     )
 }
 

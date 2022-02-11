@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom"
 import api from "../config/api"
-import {DropDownBox, SignTitle, BookingForm, SignButton} from '../components/Styled'
+import {DropDownBox, SignTitle, BookingForm, SignButton, BackgroundImage, ErrorMessage} from '../components/Styled'
 import ConfirmContext from "../utils/ConfirmContext"
 import {useGlobalState} from '../utils/StateContext'
 
@@ -73,10 +73,10 @@ const MakeBooking = (props) => {
     }
 
     return(
-        <>
+        <BackgroundImage>
             <SignTitle>Booking Page</SignTitle>
-            { dateError ? <> <h3>Error: Date {dateError}</h3> </> : <> </> } 
-            { optionIdError ? <> <h3>Error: Service {optionIdError}</h3> </> : <> </> }
+            { dateError ? <> <ErrorMessage>Error: Date {dateError}</ErrorMessage> </> : <> </> } 
+            { optionIdError ? <> <ErrorMessage>Error: Service {optionIdError}</ErrorMessage> </> : <> </> }
             <BookingForm>
                 <div style={{margin:"5px"}}>
                     <span>Select serivce:</span>
@@ -106,7 +106,7 @@ const MakeBooking = (props) => {
                     <button onClick={handleSubmit} style={{margin:"10px"}}>Confirm</button>
                 </SignButton>
             </BookingForm>
-        </>
+        </BackgroundImage>
     )
 }
 

@@ -2,7 +2,7 @@ import { useState} from "react"
 import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
-import { SignTitle, SignForm, ErrorMessage, LinkE, SignButton } from '../components/Styled'
+import { SignTitle, SignForm, ErrorMessage, LinkE, SignButton, BackgroundImage } from '../components/Styled'
 import {useGlobalState} from '../utils/StateContext'
 
 
@@ -44,7 +44,7 @@ const SignIn = () => {
     };
 
     return (
-        <>
+        <BackgroundImage>
             <SignTitle>Sign-in</SignTitle>
             { error ? <> <ErrorMessage>Error: {error}</ErrorMessage> </> : <> </> }
             <SignForm onSubmit={handleSubmit}>
@@ -63,7 +63,7 @@ const SignIn = () => {
                     <button style={{margin: "10px"}}><LinkE to="/sign_up">Sign Up</LinkE></button>
                 </SignButton>
             </SignForm>
-        </>
+        </BackgroundImage>
     )
 }
 
