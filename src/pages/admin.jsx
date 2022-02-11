@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../config/api";
 import BookingsItem from "../components/booking-item"
-import { SignTitle, AdminOuterBox} from '../components/Styled'
+import { SignTitle, AdminOuterBox, BackgroundImage2} from '../components/Styled'
 
 
 const Admin = () => {
@@ -33,12 +33,12 @@ const Admin = () => {
     })
 
   return (
-    <>
-      <SignTitle>Admin Page</SignTitle>
+    <BackgroundImage2>
+      <SignTitle>Jobs PinBoard</SignTitle>
       <AdminOuterBox>  
         {bookingsItems}
       </AdminOuterBox>  
-    </>
+    </BackgroundImage2>
   );
 };
 

@@ -8,6 +8,9 @@
     "cypress": "cypress open"
   },
   "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "axios": "^0.25.0",
     "react": "^16.14.0",
     "react-datepicker": "^4.6.0",

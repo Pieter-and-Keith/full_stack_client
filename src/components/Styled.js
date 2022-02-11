@@ -5,20 +5,31 @@ export const HomeBox1 = styled.main`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-image: url(/navbar3.jpg);
+    background-size: contain;
+    padding: 10px;
 `
 
 export const HomeMargin = styled.main`
-    margin: 0px 100px;
+    padding: 0px 200px;
+    background-image: url(/img3.jpg);
+    background-size: contain;
 
     @media (max-width: 800px) {
-        margin: 0px 50px;
+        padding: 0px 50px;
     }
     @media (max-width: 550px) {
-        margin: 0px 10px;
+        padding: 0px 10px;
     }
 `
 
 export const PageTitle = styled.h1`
+    display: flex;
+    justify-content: center;
+    color: white;
+`
+
+export const PageTitle2 = styled.h1`
     display: flex;
     justify-content: center;
 `
@@ -50,6 +61,7 @@ export const HomeLink = styled.h4`
 export const HomeLinkWords = styled(Link)`
     text-decoration: none;
     color: white;
+    
     :hover {
         color: #2E3335;
     }
@@ -64,6 +76,7 @@ export const BusinessTitle = styled.header`
     display: flex;
     align-items: center;
     width: 80%;
+    color: white;
 
     @media (max-width: 800px) {
         font-size: 0.8rem;
@@ -86,10 +99,12 @@ export const Service = styled.div`
     border: 1px ridge #2D2424;
     padding: 10px;
     margin: 5px;
+    opacity: 0.80;
 `
 
 export const ServiceTitle = styled.h2`
     margin: 10px 0;
+    text-transform: capitalize;
 `
 
 export const ServicePrice = styled.h4`
@@ -120,6 +135,7 @@ export const AboutBox = styled.main`
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
+    opacity: 0.9;
 
     @media (max-width: 1200px) {
         margin: 10px 50px;
@@ -147,6 +163,7 @@ export const SignForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 800px) {
         width: 50%
@@ -187,6 +204,7 @@ export const BookingForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 1400px) {
         width: 50%
@@ -212,6 +230,7 @@ export const ConfirmBookingForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 800px) {
         width: 70%
@@ -234,11 +253,11 @@ export const ConfirmBookingTitle = styled.h1`
 `
 
 export const AdminInnerBox = styled.section`
-    background-color: #F7FD04;
+    background-color: #F2EECB;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
     padding: 10px;
-    width: 20%;
+    width: 22.4%;
     margin: 5px;
 `
 
@@ -247,7 +266,6 @@ export const AdminOuterBox = styled.div`
     align-content: flex-start;
     flex-wrap: wrap;
 `
-
 
 export const DropDownBox = styled.option`
 `
@@ -262,6 +280,7 @@ export const JobDetails = styled.div`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 800px) {
         width: 70%
@@ -269,4 +288,25 @@ export const JobDetails = styled.div`
     @media (max-width: 450px) {
         width: 90%
     }
+`
+
+export const BackgroundImage = styled.div`
+    background-image: url(/img1.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+`
+
+export const BackgroundImage2 = styled.div`
+    background-image: url(/img2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+`
+
+export const BackgroundImage4 = styled.div`
+    background-image: url(/img4.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 `

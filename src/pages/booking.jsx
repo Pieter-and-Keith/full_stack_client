@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import api from "../config/api"
 
 import BookingContext from "../utils/BookingContext"
-import { SignButton, JobDetails, SignTitle } from '../components/Styled'
+import { SignButton, JobDetails, SignTitle, BackgroundImage } from '../components/Styled'
 
 const Booking = () => {
     const navigate = useNavigate()
@@ -63,23 +63,25 @@ const Booking = () => {
     }
 
     return (
-        <JobDetails>
-            <SignTitle><u>Job Details</u></SignTitle>
-            <h2>Job: {bookingContext.service_type}</h2>
-            <h2>Date: {bookingContext.date}</h2>
-            <h3>Car: {bookingContext.make} {bookingContext.model}</h3>
-            <h3>First name: {bookingContext.first_name}</h3>
-            <h3>Last name: {bookingContext.last_name}</h3>
-            <p>Comment: {bookingContext.comment}</p>
-            <button onClick={handleFinishedButton}>Update job status</button>
-                {bookingContext.finished ? <h3 style={{color:"green"}}>Job is finished</h3> : <h3 style={{color:"red"}}>Job is NOT finished</h3>}
-            <button onClick={handlePaidButton}>Update payment status</button>
-                {bookingContext.paid ? <h3 style={{color:"green"}}> Invoice is Paid</h3> : <h3 style={{color:"red"}}>Invoice NOT paid</h3>}
-            <SignButton>
-                <button onClick={handleBackButton} style={{margin:"10px"}}>Back</button>
-                <button onClick={handleDeleteButton} style={{margin:"10px"}}>Delete</button>
-            </SignButton>
-        </JobDetails>
+        <BackgroundImage>
+            <JobDetails>
+                <SignTitle><u>Job Details</u></SignTitle>
+                <h2>Job: {bookingContext.service_type}</h2>
+                <h2>Date: {bookingContext.date}</h2>
+                <h3>Car: {bookingContext.make} {bookingContext.model}</h3>
+                <h3>First name: {bookingContext.first_name}</h3>
+                <h3>Last name: {bookingContext.last_name}</h3>
+                <p>Comment: {bookingContext.comment}</p>
+                <button onClick={handleFinishedButton}>Update job status</button>
+                    {bookingContext.finished ? <h3 style={{color:"green"}}>Job is finished</h3> : <h3 style={{color:"red"}}>Job is NOT finished</h3>}
+                <button onClick={handlePaidButton}>Update payment status</button>
+                    {bookingContext.paid ? <h3 style={{color:"green"}}> Invoice is Paid</h3> : <h3 style={{color:"red"}}>Invoice NOT paid</h3>}
+                <SignButton>
+                    <button onClick={handleBackButton} style={{margin:"10px"}}>Back</button>
+                    <button onClick={handleDeleteButton} style={{margin:"10px"}}>Delete</button>
+                </SignButton>
+            </JobDetails>
+        </BackgroundImage>
     )
 
 }
