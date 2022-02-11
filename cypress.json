@@ -1,6 +1,8 @@
 {
+    "experimentalStudio": true,
     "component": {
       "testFiles": "**/*.spec.ct.{js,ts,jsx,tsx}",
       "componentFolder": "src"
     }
+
   }
