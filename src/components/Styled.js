@@ -5,6 +5,9 @@ export const HomeBox1 = styled.main`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-image: url(/navbar3.jpg);
+    background-size: contain;
+    padding: 10px;
 `
 
 export const HomeMargin = styled.main`
@@ -50,6 +53,7 @@ export const HomeLink = styled.h4`
 export const HomeLinkWords = styled(Link)`
     text-decoration: none;
     color: white;
+    
     :hover {
         color: #2E3335;
     }
@@ -90,6 +94,7 @@ export const Service = styled.div`
 
 export const ServiceTitle = styled.h2`
     margin: 10px 0;
+    text-transform: capitalize;
 `
 
 export const ServicePrice = styled.h4`
@@ -147,6 +152,7 @@ export const SignForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 800px) {
         width: 50%
@@ -187,6 +193,7 @@ export const BookingForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 1400px) {
         width: 50%
@@ -212,6 +219,7 @@ export const ConfirmBookingForm = styled.form`
     background-color: #f4f4f4;
     border-radius: 10px;
     border: 1px ridge #2D2424;
+    opacity: 0.96;
 
     @media (max-width: 800px) {
         width: 70%
@@ -248,7 +256,6 @@ export const AdminOuterBox = styled.div`
     flex-wrap: wrap;
 `
 
-
 export const DropDownBox = styled.option`
 `
 
@@ -269,4 +276,11 @@ export const JobDetails = styled.div`
     @media (max-width: 450px) {
         width: 90%
     }
+`
+
+export const BackgroundImage = styled.div`
+    background-image: url(/img1.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 `

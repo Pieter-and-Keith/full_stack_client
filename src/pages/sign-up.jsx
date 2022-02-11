@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import api from "../config/api";
 import {useGlobalState} from '../utils/StateContext'
-import { SignTitle, ErrorMessage, SignForm, SignButton } from '../components/Styled'
+import { SignTitle, ErrorMessage, SignForm, SignButton, BackgroundImage } from '../components/Styled'
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -52,7 +52,7 @@ const SignUp = () => {
   };
 
   return (
-    <>
+    <BackgroundImage>
       <SignTitle>Sign-up page </SignTitle>
       { usernameError ? <> <ErrorMessage>Error: Username {usernameError}</ErrorMessage> </> : <> </> } 
       { emailError ? <> <ErrorMessage>Error: Email {emailError}</ErrorMessage> </> : <> </> }
@@ -86,7 +86,7 @@ const SignUp = () => {
            <button type="submit" style={{margin: "10px"}}>Sign Up</button>
         </SignButton>
       </SignForm>
-    </>
+    </BackgroundImage>
   );
 };
 

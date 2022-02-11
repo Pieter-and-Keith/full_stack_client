@@ -13,7 +13,7 @@ const About = () => {
                 </BusinessTitle>
 
                 <HomeNav>
-                    <HomeLink><HomeLinkWords to="/">Car Services</HomeLinkWords></HomeLink>
+                <HomeLinkWords to="/"><HomeLink>Car Services</HomeLink></HomeLinkWords>
                     <HomeLink><HomeLinkWords to="/about">About Us</HomeLinkWords></HomeLink>
                     { userSignedIn !== "admin" &&
                         <HomeLink><HomeLinkWords to="/make_booking">Booking</HomeLinkWords></HomeLink>
