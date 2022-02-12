@@ -92,57 +92,57 @@ const UserDetails = () => {
             <div>
               <label htmlFor="firstName">First name:</label>
               <br></br>
-              <input type="text" name="firstName" value={data.firstName} onChange={handleChange}  />
+              <input type="text" name="firstName" id="firstName" value={data.firstName} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="lastName">Last name:</label>
               <br></br>
-              <input type="text" name="lastName" value={data.lastName} onChange={handleChange}  />
+              <input type="text" name="lastName" id="lastName" value={data.lastName} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="phoneNumber">Phone Number:</label>
               <br></br>
-              <input type="text" name="phoneNumber" value={data.phoneNumber} onChange={handleChange}  />
+              <input type="text" name="phoneNumber" id="phoneNumber" value={data.phoneNumber} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="streetNumber">Street Number:</label>
               <br></br>
-              <input type="text" name="streetNumber" value={data.streetNumber} onChange={handleChange}  />
+              <input type="text" name="streetNumber" id="streetNumber" value={data.streetNumber} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="streetName">Street Name:</label>
               <br></br>
-              <input type="text" name="streetName" value={data.streetName} onChange={handleChange}  />
+              <input type="text" name="streetName" id="streetName" value={data.streetName} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="suburb">Suburb:</label>
               <br></br>
-              <input type="text" name="suburb" value={data.suburb} onChange={handleChange}  />
+              <input type="text" name="suburb" id="suburb" value={data.suburb} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="postcode">Postcode:</label>
               <br></br>
-              <input type="text" name="postcode" value={data.postcode} onChange={handleChange}  />
+              <input type="text" name="postcode" id="postcode" value={data.postcode} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="state">State:</label>
               <br></br>
-              <input type="text" name="state" value={data.state} onChange={handleChange}  />
+              <input type="text" name="state" id="state" value={data.state} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="rego">Rego:</label>
               <br></br>
-              <input type="text" name="rego" value={data.rego} onChange={handleChange}  />
+              <input type="text" name="rego" id="rego" value={data.rego} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="make">Make:</label>
               <br></br>
-              <input type="text" name="make" value={data.make} onChange={handleChange}  />
+              <input type="text" name="make" id="make" value={data.make} onChange={handleChange}  />
             </div>
             <div>
               <label htmlFor="model">Model:</label>
               <br></br>
-              <input type="text" name="model" value={data.model} onChange={handleChange}  />
+              <input type="text" name="model" id="model" value={data.model} onChange={handleChange}  />
             </div>
 
             <button type="submit" style={{margin: "10px"}}>submit</button>

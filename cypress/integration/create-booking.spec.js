@@ -14,10 +14,12 @@ describe("Create Booking", () => {
         getInputByLabel("Email").type("pieter@test.com")
         getInputByLabel("Password").type("Password1")
         cy.get("button").contains("Sign In").click()
-        cy.get(':nth-child(3) > .sc-jRQBWg').click();
-        cy.get('select').select('1');
+        cy.get(':nth-child(3) > .sc-gKclnd').click();
+        cy.url().should("match",/make_booking/)
+        cy.get('select').select('2');
         cy.get('input').click();
-        cy.get('.react-datepicker__day--023').click();
-        cy.get('.sc-hBUSln > :nth-child(2)').click();
+        cy.get('.react-datepicker__day--018').click();
+        cy.get('.sc-fotOHu > :nth-child(2)').click();
+        cy.url().should("match",/confirm_booking/)
     })
 })
