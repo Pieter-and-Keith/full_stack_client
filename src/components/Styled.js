@@ -357,10 +357,7 @@ export const BackgroundImage = styled.div`
 
 export const BackgroundImage2 = styled.div`
     background-image: url(/img2.jpg);
-    background-size: cover;
-    background-repeat: repeat-y;
-    width: 100vw;
-    height: 100vh;
+    background-size: contain;
 `
 
 export const BackgroundImage3 = styled.div`
