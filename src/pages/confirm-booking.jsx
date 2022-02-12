@@ -34,7 +34,8 @@ const ConfirmBooking = () => {
                     <>
                         <h3>Additional Comment:</h3>
                         <span>{confirmBooking.comment}</span>
-                    </> :
+                    </> 
+                    :
                     <></>
                 }
                 <div style={{marginTop:"15px"}}>

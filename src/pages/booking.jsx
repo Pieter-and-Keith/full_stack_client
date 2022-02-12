@@ -74,7 +74,8 @@ const Booking = () => {
                 { bookingContext.comment?
                     <>
                         <p>Comment: {bookingContext.comment}</p>
-                    </> :
+                    </> 
+                    :
                     <></>
                 }
                 <button onClick={handleFinishedButton}>Update job status</button>
