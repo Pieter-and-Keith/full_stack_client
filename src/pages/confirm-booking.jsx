@@ -30,8 +30,13 @@ const ConfirmBooking = () => {
                     <span>{confirmBooking.make}</span>
                 <h3>Car Model: </h3>
                     <span>{confirmBooking.model}</span>
-                <h3>Additional Comment: </h3> 
-                    <span>{confirmBooking.comment}</span>
+                { confirmBooking.comment ? 
+                    <>
+                        <h3>Additional Comment:</h3>
+                        <span>{confirmBooking.comment}</span>
+                    </> :
+                    <></>
+                }
                 <div style={{marginTop:"15px"}}>
                     <Link to="/"><button style={{margin: "10px"}}>Home</button></Link>
                 </div>

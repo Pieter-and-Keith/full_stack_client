@@ -71,7 +71,12 @@ const Booking = () => {
                 <h3>Car: {bookingContext.make} {bookingContext.model}</h3>
                 <h3>First name: {bookingContext.first_name}</h3>
                 <h3>Last name: {bookingContext.last_name}</h3>
-                <p>Comment: {bookingContext.comment}</p>
+                { bookingContext.comment?
+                    <>
+                        <p>Comment: {bookingContext.comment}</p>
+                    </> :
+                    <></>
+                }
                 <button onClick={handleFinishedButton}>Update job status</button>
                     {bookingContext.finished ? <h3 style={{color:"green"}}>Job is finished</h3> : <h3 style={{color:"red"}}>Job is NOT finished</h3>}
                 <button onClick={handlePaidButton}>Update payment status</button>
