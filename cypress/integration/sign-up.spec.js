@@ -7,15 +7,28 @@ const getInputByLabel = (label) => {
 		});
 };
 
-describe("Basic", () => {
-    it("Login redirects", () => {
+describe("Sign up", () => {
+    it("New user signed up", () => {
         cy.visit("http://localhost:3001/sign_up")
         cy.url().should("match",/sign_up/)
-        getInputByLabel("Username").type("new-user@test.com")
-        getInputByLabel("Email").type("newuser@test.com")
-        getInputByLabel("Password").type("password")
-        getInputByLabel("Password Confirmation").type("password")
+        getInputByLabel("Username").type("Adam_ant4")
+        getInputByLabel("Email").type("adam_ant4@test.com")
+        getInputByLabel("Password").type("Password1")
+        getInputByLabel("Password Confirmation").type("Password1")
         cy.get("button").contains("Sign Up").click()
         cy.url().should("match",/details/)
+        getInputByLabel("First name").type("Adam")
+        getInputByLabel("Last name").type("Ant")
+        getInputByLabel("Phone Number").type("0469789876")
+        getInputByLabel("Street Number").type(19)
+        getInputByLabel("Street Name").type("George Street")
+        getInputByLabel("Suburb").type("Sydney")
+        getInputByLabel("Postcode").type("2000")
+        getInputByLabel("State").type("NSW")
+        getInputByLabel("Rego").type("FDS87B")
+        getInputByLabel("Make").type("Tesla")
+        getInputByLabel("Model").type("Model 3")
+        cy.get("button").contains("submit").click()
+        cy.url().should("match",/^\S+$/)
     })
 })

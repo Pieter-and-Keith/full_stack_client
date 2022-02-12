@@ -43,17 +43,17 @@ const AdminOptionCreate = () => {
                 <div style={{padding:"10px"}}>
                     <label htmlFor="service_type">Service Name:</label>
                     <br></br>
-                    <input type="text" name="service_type" value={option.service_type} onChange={handleChange} />
+                    <input type="text" name="service_type" id="service_type" value={option.service_type} onChange={handleChange} />
                 </div>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="description">Description:</label>
                     <br></br>
-                    <textarea rows="15" cols="40" type="text" name="description" value={option.description} onChange={handleChange}/>
+                    <textarea rows="15" cols="40" type="text" id="description" name="description" value={option.description} onChange={handleChange}/>
                 </div>
                 <div style={{padding:"10px"}}>
                     <label htmlFor="price">Price($):</label>
                     <br></br>
-                    <input type="text" name="price" value={option.price} onChange={handleChange}/>
+                    <input type="text" name="price" id="price" value={option.price} onChange={handleChange}/>
                 </div>
                 <SignButton>
                     <button type="submit" style={{margin:"10px"}}>Submit</button>
