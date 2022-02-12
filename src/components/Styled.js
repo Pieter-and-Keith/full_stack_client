@@ -221,6 +221,17 @@ export const ErrorMessage = styled.h3`
     }
 `
 
+export const ErrorMessage2 = styled.h5`
+    color: red;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 500px) {
+        font-size: 0.7rem;
+    }
+`
+
 export const LinkE = styled(Link)`
     text-decoration: none;
     color: black;
@@ -371,3 +382,4 @@ export const BackgroundImage5 = styled.div`
     width: 100vw;
     height: 30vh;
 `
+

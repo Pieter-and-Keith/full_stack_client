@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import api from "../config/api"
-import { SignTitle, ErrorMessage, SignForm, BackgroundImage } from '../components/Styled'
+import { SignTitle, ErrorMessage2, SignForm, BackgroundImage } from '../components/Styled'
 
 const UserDetails = () => {
     const navigate = useNavigate()
@@ -77,17 +77,17 @@ const UserDetails = () => {
     return(
         <BackgroundImage>
           <SignTitle>User detail Page</SignTitle>
-          { firstNameError ? <> <ErrorMessage>Error: First Name {firstNameError}</ErrorMessage> </> : <> </> } 
-          { lastNameError ? <> <ErrorMessage>Error: Last Name {lastNameError}</ErrorMessage> </> : <> </> }
-          { phoneNumberError ? <> <ErrorMessage>Error: Phone Number {phoneNumberError}</ErrorMessage> </> : <> </> }
-          { streetNumberError ? <> <ErrorMessage>Error: Street Number {streetNumberError[0]} or {streetNumberError[1]}</ErrorMessage> </> : <> </> }
-          { streetNameError ? <> <ErrorMessage>Error: Street Name {streetNameError}</ErrorMessage> </> : <> </> }
-          { suburbError ? <> <ErrorMessage>Error: Suburb {suburbError}</ErrorMessage> </> : <> </> }
-          { postcodeError ? <> <ErrorMessage>Error: Postcode {postcodeError[0]} or {postcodeError[1]}</ErrorMessage> </> : <> </> }
-          { stateError ? <> <ErrorMessage>Error: State {stateError}</ErrorMessage> </> : <> </> }
-          { regoError ? <> <ErrorMessage>Error: Rego {regoError}</ErrorMessage> </> : <> </> }
-          { makeError ? <> <ErrorMessage>Error: Make {makeError}</ErrorMessage> </> : <> </> }
-          { modelError ? <> <ErrorMessage>Error: Model {modelError}</ErrorMessage> </> : <> </> }
+          { firstNameError ? <> <ErrorMessage2>Error: First Name {firstNameError}</ErrorMessage2> </> : <> </> } 
+          { lastNameError ? <> <ErrorMessage2>Error: Last Name {lastNameError}</ErrorMessage2> </> : <> </> }
+          { phoneNumberError ? <> <ErrorMessage2>Error: Phone Number {phoneNumberError}</ErrorMessage2> </> : <> </> }
+          { streetNumberError ? <> <ErrorMessage2>Error: Street Number {streetNumberError[0]} or {streetNumberError[1]}</ErrorMessage2> </> : <> </> }
+          { streetNameError ? <> <ErrorMessage2>Error: Street Name {streetNameError}</ErrorMessage2> </> : <> </> }
+          { suburbError ? <> <ErrorMessage2>Error: Suburb {suburbError}</ErrorMessage2> </> : <> </> }
+          { postcodeError ? <> <ErrorMessage2>Error: Postcode {postcodeError[0]} or {postcodeError[1]}</ErrorMessage2> </> : <> </> }
+          { stateError ? <> <ErrorMessage2>Error: State {stateError}</ErrorMessage2> </> : <> </> }
+          { regoError ? <> <ErrorMessage2>Error: Rego {regoError}</ErrorMessage2> </> : <> </> }
+          { makeError ? <> <ErrorMessage2>Error: Make {makeError}</ErrorMessage2> </> : <> </> }
+          { modelError ? <> <ErrorMessage2>Error: Model {modelError}</ErrorMessage2> </> : <> </> }
           <SignForm onSubmit={handleOnSubmit}>
             <div>
               <label htmlFor="firstName">First name:</label>
