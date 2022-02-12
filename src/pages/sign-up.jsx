@@ -61,25 +61,25 @@ const SignUp = () => {
         <div style={{padding:"10px"}}>
           <label htmlFor="username">Username:</label>
           <br></br>
-          <input type="text" name="username" id="username" value={data.username} onChange={handleChange}  />
+          <input type="text" name="username" id="username" value={data.username} onChange={handleChange} style={{width:"200px"}} />
         </div>
 
         <div style={{padding:"10px"}}>
           <label htmlFor="email">Email:</label>
           <br></br>
-          <input type="email" name="email" id="email" value={data.email} onChange={handleChange} />
+          <input type="email" name="email" id="email" value={data.email} onChange={handleChange} style={{width:"200px"}} />
         </div>
 
         <div style={{padding:"10px"}}>
           <label htmlFor="password">Password:</label>
           <br></br>
-          <input type="password" name="password" id="password" value={data.password} onChange={handleChange} />
+          <input type="password" name="password" id="password" value={data.password} onChange={handleChange} style={{width:"200px"}} />
         </div>
 
-        <div style={{padding:"10px"}}>
+        <div style={{padding:"10px" }}>
           <label htmlFor="password_confirmation">Password Confirmation:</label>
           <br></br>
-          <input type="password" name="password_confirmation" id="password_confirmation" value={data.password_confirmation} onChange={handleChange} />
+          <input type="password" name="password_confirmation" id="password_confirmation" value={data.password_confirmation} onChange={handleChange} style={{width:"200px"}} />
         </div>
         
         <SignButton>
