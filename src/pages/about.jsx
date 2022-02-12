@@ -1,4 +1,4 @@
-import { BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords, PageTitle2, AboutBox, BackgroundImage4, HomeNav2, HomeLinkWords2 } from '../components/Styled'
+import { BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords, PageTitle2, AboutBox, BackgroundImage4, HomeNav2, HomeLinkWords2, HomeLink2 } from '../components/Styled'
 import {useGlobalState} from '../utils/StateContext'
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
                 </HomeNav>
                 <HomeNav2>
                     { userSignedIn !== "admin" &&
-                        <HomeLink><HomeLinkWords2 to="/make_booking">Make Booking</HomeLinkWords2></HomeLink>
+                        <HomeLink2><HomeLinkWords2 to="/make_booking">Make Booking</HomeLinkWords2></HomeLink2>
                     }
                 </HomeNav2>
 
