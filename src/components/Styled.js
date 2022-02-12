@@ -14,6 +14,7 @@ export const HomeMargin = styled.main`
     padding: 0px 200px;
     background-image: url(/img3.jpg);
     background-size: contain;
+    margin: 50px 0 0 0;
 
     @media (max-width: 800px) {
         padding: 0px 50px;
@@ -27,6 +28,9 @@ export const PageTitle = styled.h1`
     display: flex;
     justify-content: center;
     color: white;
+    @media (max-width: 800px) {
+        font-size: 1.5rem;
+    }
 `
 
 export const PageTitle2 = styled.h1`
@@ -39,6 +43,11 @@ export const HomeNav = styled.nav`
     background-color: #2E3335;
 `
 
+export const HomeNav2 = styled.nav`
+    display: flex;
+    background-color: #F1D00A;
+`
+
 export const HomeLink = styled.h4`
     padding: 20px;
     margin: 0px;
@@ -46,26 +55,54 @@ export const HomeLink = styled.h4`
     border: solid 1px;
     border-color: white;
     :hover {
-        background-color: #FF0000;
+        background-color: #DA1212;
     }
 
     @media (max-width: 800px) {
         padding: 10px;
+        white-space: normal;
     }
     @media (max-width: 650px) {
         padding: 5px;
     }
-    
+`
+
+export const HomeLink2 = styled.h4`
+    padding: 20px;
+    margin: 0px;
+    white-space: nowrap;
+    border: solid 1px;
+    border-color: white;
+    :hover {
+        background-color: #3E7C17;
+    }
+
+    @media (max-width: 800px) {
+        padding: 10px;
+        white-space: normal;
+    }
+    @media (max-width: 650px) {
+        padding: 5px;
+    }
 `
 
 export const HomeLinkWords = styled(Link)`
     text-decoration: none;
     color: white;
-    
     :hover {
         color: #2E3335;
     }
+    @media (max-width: 650px) {
+        font-size: 0.8rem;
+    }
+`
 
+export const HomeLinkWords2 = styled(Link)`
+    text-decoration: none;
+    color: white;
+    :hover {
+        color: #F1D00A;
+    }
     @media (max-width: 650px) {
         font-size: 0.8rem;
     }
@@ -259,6 +296,16 @@ export const AdminInnerBox = styled.section`
     padding: 10px;
     width: 22.4%;
     margin: 5px;
+
+    @media (max-width: 1250px) {
+        width: 28%;
+    }
+    @media (max-width: 700px) {
+        width: 40%;
+    }
+    @media (max-width: 500px) {
+        width: 85%;
+    }
 `
 
 export const AdminOuterBox = styled.div`
@@ -300,13 +347,27 @@ export const BackgroundImage = styled.div`
 export const BackgroundImage2 = styled.div`
     background-image: url(/img2.jpg);
     background-size: cover;
+    background-repeat: repeat-y;
     width: 100vw;
     height: 100vh;
 `
+
+export const BackgroundImage3 = styled.div`
+    background-image: url(/navbar3.jpg);
+    background-size: cover;
+`
+
 
 export const BackgroundImage4 = styled.div`
     background-image: url(/img4.jpg);
     background-size: cover;
     width: 100vw;
     height: 100vh;
+`
+
+export const BackgroundImage5 = styled.div`
+    background-image: url(/img5.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 30vh;
 `

@@ -1,4 +1,4 @@
-import { BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords, PageTitle2, AboutBox, BackgroundImage4 } from '../components/Styled'
+import { BusinessTitle, HomeBox1, HomeLink, HomeNav, HomeLinkWords, PageTitle2, AboutBox, BackgroundImage4, HomeNav2, HomeLinkWords2 } from '../components/Styled'
 import {useGlobalState} from '../utils/StateContext'
 
 const About = () => {
@@ -11,13 +11,17 @@ const About = () => {
                 <BusinessTitle>
                     <h1 style={{margin:"0px"}}><i>Sydney Motor Service Centre</i></h1>
                 </BusinessTitle>
+
                 <HomeNav>
-                <HomeLinkWords to="/"><HomeLink>Car Services</HomeLink></HomeLinkWords>
-                <HomeLink><HomeLinkWords to="/about">About Us</HomeLinkWords></HomeLink>
-                    { userSignedIn !== "admin" &&
-                        <HomeLink><HomeLinkWords to="/make_booking">Booking</HomeLinkWords></HomeLink>
-                    }
+                <HomeLink><HomeLinkWords to="/">Car Services</HomeLinkWords></HomeLink>
+                    <HomeLink><HomeLinkWords to="/about">About Us</HomeLinkWords></HomeLink>
                 </HomeNav>
+                <HomeNav2>
+                    { userSignedIn !== "admin" &&
+                        <HomeLink><HomeLinkWords2 to="/make_booking">Make Booking</HomeLinkWords2></HomeLink>
+                    }
+                </HomeNav2>
+
             </HomeBox1>
             <AboutBox>
                 <PageTitle2><u>About us</u></PageTitle2>
