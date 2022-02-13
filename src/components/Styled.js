@@ -352,12 +352,20 @@ export const BackgroundImage = styled.div`
     background-image: url(/img1.jpg);
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
 `
 
 export const BackgroundImage2 = styled.div`
     background-image: url(/img2.jpg);
     background-size: contain;
+    
+`
+
+export const BackgroundImage2a = styled.div`
+    background-image: url(/img2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 110vh;
 `
 
 export const BackgroundImage3 = styled.div`
