@@ -1,4 +1,4 @@
-import { Service, ServiceTitle, ServicePrice } from "./Styled";
+import { Service, ServiceTitle, ServiceDescription, ServicePrice } from "./Styled";
 
 const ServiceItem = ({ service_type, description, price }) => {
   return (
@@ -6,7 +6,7 @@ const ServiceItem = ({ service_type, description, price }) => {
       <ServiceTitle>
         <u>{service_type}</u>
       </ServiceTitle>
-      <p>{description}</p>
+      <ServiceDescription>{description}</ServiceDescription>
       <ServicePrice>
         Price: $<i>{price}</i>
       </ServicePrice>

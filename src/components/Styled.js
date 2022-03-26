@@ -10,19 +10,18 @@ export const HomeBox1 = styled.main`
     padding: 10px;
 `
 
-export const HomeMargin = styled.main`
-    padding: 0px 200px;
+export const HomeMargin = styled.div`
+    padding: 25px 200px;
     background-image: url(/img3.jpg);
-    background-size: contain;
-    margin: 50px 0 0 0;
-
+    background-size: 100%;
+    margin: 0;
     @media (max-width: 800px) {
         padding: 0px 50px;
     }
     @media (max-width: 550px) {
         padding: 0px 10px;
     }
-`
+    `
 
 export const PageTitle = styled.h1`
     display: flex;
@@ -55,7 +54,7 @@ export const HomeLink = styled.h4`
     border: solid 1px;
     border-color: white;
     :hover {
-        background-color: #DA1212;
+        background-color: blue;
     }
 
     @media (max-width: 800px) {
@@ -90,7 +89,7 @@ export const HomeLinkWords = styled(Link)`
     text-decoration: none;
     color: white;
     :hover {
-        color: #2E3335;
+        color: black;
     }
     @media (max-width: 650px) {
         font-size: 0.8rem;
@@ -131,21 +130,28 @@ export const BusinessTitle = styled.header`
 `
 
 export const Service = styled.div`
+    width: 70%;
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
     padding: 10px;
-    margin: 5px;
+    margin: 0px auto 10px;
     opacity: 0.80;
 `
 
 export const ServiceTitle = styled.h2`
-    margin: 10px 0;
+    text-align:center;
+    margin: 0;
     text-transform: capitalize;
+`
+export const ServiceDescription =styled.p`
+    text-align:center;
+    margin: 5px;
 `
 
 export const ServicePrice = styled.h4`
-    margin: 10px 0;
+    text-align: center;
+    margin: 0;
 `
 
 export const NavBox = styled.nav`
@@ -167,7 +173,7 @@ export const NavLinkWords = styled(Link)`
 `
 
 export const AboutBox = styled.main`
-    margin: 10px 300px;
+    margin: 60px 300px;
     padding: 0 20px;
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
@@ -175,7 +181,10 @@ export const AboutBox = styled.main`
     opacity: 0.9;
 
     @media (max-width: 1200px) {
-        margin: 10px 50px;
+        margin: 60px 200px;
+    }
+    @media (max-width: 800px) {
+        margin: 50px 100px;
     }
     @media (max-width: 500px) {
         margin: 5px 20px;
@@ -186,6 +195,8 @@ export const AboutBox = styled.main`
 `
 
 export const SignTitle = styled.h1`
+    margin-top: 0px;
+    padding-top: 15px;
     display: flex;
     justify-content: center;
 `
@@ -194,7 +205,6 @@ export const SignForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%;
     padding: 10px;
     margin: 5px auto;
     background-color: #f4f4f4;
@@ -243,29 +253,47 @@ export const SignButton = styled.div`
 `
 
 export const BookingForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 30%;
-    padding: 10px;
-    margin: 5px auto;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    border: 1px ridge #2D2424;
-    opacity: 0.96;
+display: flex;
+width: 360px;
+padding: 10px;
+margin: 5px auto;
+background-color: #f4f4f4;
+border-radius: 10px;
+border: 1px ridge #2D2424;
+opacity: 0.96;
+flex-direction: column;
+justify-content: flex-start;
+@media (max-width: 400px) {
+    width: 90%
+}
 
-    @media (max-width: 1400px) {
-        width: 50%
+`
+// @media (max-width: 1400px) {
+//     width: 30%
+// }
+// @media (max-width: 1100px) {
+//     width: 35%
+// }
+// @media (max-width: 880px) {
+//     width: 50%
+// }
+// @media (max-width: 625px) {
+//     width: 70%
+// }
+
+export const Button = styled.button`
+    margin: 10px 20px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    :hover{
+        color:white;
+        background-color: blue;
     }
-    @media (max-width: 850px) {
-        width: 75%
-    }
-    @media (max-width: 550px) {
-        width: 90%
-    }
-    @media (max-width: 450px) {
-        width: 95%
-    }
+`
+
+export const BookingContainer = styled.div`
+    margin: 10px auto 0;
 `
 
 export const ConfirmBookingForm = styled.form`
@@ -351,9 +379,9 @@ export const JobDetails = styled.div`
 export const BackgroundImage = styled.div`
     background-image: url(/img1.jpg);
     background-size: cover;
-    width: 100vw;
-    height: 120vh;
-`
+    width: 100%;
+    min-height: 100vh;
+    `
 
 export const BackgroundImage2 = styled.div`
     background-image: url(/img2.jpg);
@@ -377,14 +405,14 @@ export const BackgroundImage3 = styled.div`
 export const BackgroundImage4 = styled.div`
     background-image: url(/img4.jpg);
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 `
 
 export const BackgroundImage5 = styled.div`
     background-image: url(/img5.jpg);
+    width: 100%;
     background-size: cover;
-    width: 100vw;
     height: 30vh;
-`
+    `
 

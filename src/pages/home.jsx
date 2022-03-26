@@ -35,7 +35,7 @@ const Home = (props) => {
       <HomeBox1>
         <BusinessTitle>
           <h1 style={{ margin: "0px" }}>
-            <i>Sydney Motor Service Centre</i>
+            Sydney Motor Service Centre
           </h1>
         </BusinessTitle>
 
@@ -56,7 +56,7 @@ const Home = (props) => {
         </HomeNav2>
       </HomeBox1>
       <HomeMargin>
-        <PageTitle>Services Provided</PageTitle>
+        <PageTitle>Services Available</PageTitle>
         {serviceTypes}
       </HomeMargin>
     </BackgroundImage5>

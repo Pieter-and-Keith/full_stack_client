@@ -8,6 +8,8 @@ import {
   SignButton,
   BackgroundImage,
   ErrorMessage,
+  BookingContainer,
+  Button
 } from "../components/Styled";
 import ConfirmContext from "../utils/ConfirmContext";
 import { useGlobalState } from "../utils/StateContext";
@@ -105,55 +107,55 @@ const MakeBooking = (props) => {
         <> </>
       )}
       <BookingForm>
-        <div style={{ margin: "5px" }}>
-          <span>Select serivce:</span>
-          <br></br>
-          <select
-            onChange={(e) => setOption(e.target.value)}
-            defaultValue={"DEFAULT"}
-          >
-            <option value="DEFAULT" disabled>
-              Please Select
-            </option>
-            {props.services.map((service, index) => (
-              <DropDownBox key={index} value={service?.id}>
-                {service?.service_type} ${service?.price}
-              </DropDownBox>
-            ))}
-          </select>
-        </div>
-
-        <div style={{ margin: "5px" }}>
-          <span>Please select the date: </span>
-          <br></br>
-          <DatePicker
-            selected={selectedDate.date}
-            onChange={convert}
-            minDate={new Date()}
-            filterDate={filterDays}
-          />
-        </div>
-
-        <div style={{ margin: "5px" }}>
-          <label htmlFor="comment">Additional Comment (Optional):</label>
-          <br></br>
-          <textarea
-            rows="15"
-            cols="40"
-            type="text"
-            name="comment"
-            value={comment.comment}
-            onChange={handleChange}
-          />
-        </div>
+        <BookingContainer>
+          <div style={{ margin: "5px" }}>
+            <span>Select service:</span>
+            <br></br>
+            <select
+              onChange={(e) => setOption(e.target.value)}
+              defaultValue={"DEFAULT"}
+            >
+              <option value="DEFAULT" disabled>
+                Please Select
+              </option>
+              {props.services.map((service, index) => (
+                <DropDownBox key={index} value={service?.id}>
+                  {service?.service_type}
+                </DropDownBox>
+              ))}
+            </select>
+          </div>
+          <div style={{ margin: "5px" }}>
+            <span>Please select the date: </span>
+            <br></br>
+            <DatePicker
+              selected={selectedDate.date}
+              onChange={convert}
+              minDate={new Date()}
+              filterDate={filterDays}
+            />
+          </div>
+          <div style={{ margin: "5px" }}>
+            <label htmlFor="comment">Additional Comment (optional):</label>
+            <br></br>
+            <textarea
+              rows="8"
+              cols="35"
+              type="text"
+              name="comment"
+              value={comment.comment}
+              onChange={handleChange}
+            />
+          </div>
+        </BookingContainer>
 
         <SignButton>
           <Link to="/">
-            <button style={{ margin: "10px" }}>Cancel</button>
+            <Button >Cancel</Button>
           </Link>
-          <button onClick={handleSubmit} style={{ margin: "10px" }}>
+          <Button onClick={handleSubmit}>
             Confirm
-          </button>
+          </Button>
         </SignButton>
       </BookingForm>
     </BackgroundImage>

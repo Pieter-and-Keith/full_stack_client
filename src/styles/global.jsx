@@ -4,9 +4,9 @@ import { Global, css } from "@emotion/react";
 export default () => (
 	<Global
 		styles={css`
-			@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
+			@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 			body {
-				font-family: "Roboto Mono", monospace;
+				font-family: 'Roboto', sans-serif;
                 margin: 0;
 			}
 		`}
