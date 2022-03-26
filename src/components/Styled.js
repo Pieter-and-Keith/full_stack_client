@@ -252,16 +252,16 @@ export const SignButton = styled.div`
 `
 
 export const BookingForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 30%;
-    padding: 10px;
-    margin: 5px auto;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    border: 1px ridge #2D2424;
-    opacity: 0.96;
+display: flex;
+width: 30%;
+padding: 10px;
+margin: 5px auto;
+background-color: #f4f4f4;
+border-radius: 10px;
+border: 1px ridge #2D2424;
+opacity: 0.96;
+flex-direction: column;
+justify-content: flex-start;
 
     @media (max-width: 1400px) {
         width: 50%
@@ -275,6 +275,10 @@ export const BookingForm = styled.form`
     @media (max-width: 450px) {
         width: 95%
     }
+`
+
+export const BookingContainer = styled.div`
+    margin: 10px auto 0;
 `
 
 export const ConfirmBookingForm = styled.form`
