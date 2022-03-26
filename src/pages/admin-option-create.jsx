@@ -8,6 +8,7 @@ import {
   BookingForm,
   SignButton,
   BackgroundImage,
+  Button
 } from "../components/Styled";
 
 const AdminOptionCreate = () => {
@@ -42,7 +43,7 @@ const AdminOptionCreate = () => {
 
   return (
     <BackgroundImage>
-      <SignTitle>Create Options</SignTitle>
+      <SignTitle>Create New Option</SignTitle>
       <BookingForm onSubmit={handleSubmit}>
         <div style={{ padding: "10px" }}>
           <label htmlFor="service_type">Service Name:</label>
@@ -59,8 +60,8 @@ const AdminOptionCreate = () => {
           <label htmlFor="description">Description:</label>
           <br></br>
           <textarea
-            rows="15"
-            cols="40"
+            rows="10"
+            cols="39"
             type="text"
             id="description"
             name="description"
@@ -80,9 +81,9 @@ const AdminOptionCreate = () => {
           />
         </div>
         <SignButton>
-          <button type="submit" style={{ margin: "10px" }}>
+          <Button type="submit">
             Submit
-          </button>
+          </Button>
         </SignButton>
       </BookingForm>
     </BackgroundImage>

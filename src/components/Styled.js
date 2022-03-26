@@ -205,8 +205,8 @@ export const SignForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    padding: 10px;
+    width: 260px;
+    padding: 20px;
     margin: 5px auto;
     background-color: #f4f4f4;
     border-radius: 10px;
@@ -228,7 +228,7 @@ export const ErrorMessage = styled.h3`
     justify-content: center;
 
     @media (max-width: 500px) {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 `
 
@@ -239,7 +239,7 @@ export const ErrorMessage2 = styled.h5`
     justify-content: center;
 
     @media (max-width: 500px) {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 `
 

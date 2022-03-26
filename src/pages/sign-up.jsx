@@ -9,6 +9,7 @@ import {
   SignForm,
   SignButton,
   BackgroundImage,
+  Button
 } from "../components/Styled";
 
 const SignUp = () => {
@@ -70,32 +71,6 @@ const SignUp = () => {
   return (
     <BackgroundImage>
       <SignTitle>Sign-up page </SignTitle>
-      {usernameError ? (
-        <>
-          {" "}
-          <ErrorMessage>Error: Username {usernameError}</ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
-      {emailError ? (
-        <>
-          {" "}
-          <ErrorMessage>Error: Email {emailError}</ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
-      {passwordError ? (
-        <>
-          {" "}
-          <ErrorMessage>
-            Error: Password Confirmation {passwordError}
-          </ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
       <SignForm onSubmit={handleSubmit}>
         <div style={{ padding: "10px" }}>
           <label htmlFor="username">Username:</label>
@@ -107,7 +82,7 @@ const SignUp = () => {
             value={data.username}
             onChange={handleChange}
             style={{ width: "200px" }}
-          />
+            />
         </div>
 
         <div style={{ padding: "10px" }}>
@@ -120,7 +95,7 @@ const SignUp = () => {
             value={data.email}
             onChange={handleChange}
             style={{ width: "200px" }}
-          />
+            />
         </div>
 
         <div style={{ padding: "10px" }}>
@@ -133,7 +108,7 @@ const SignUp = () => {
             value={data.password}
             onChange={handleChange}
             style={{ width: "200px" }}
-          />
+            />
         </div>
 
         <div style={{ padding: "10px" }}>
@@ -146,15 +121,41 @@ const SignUp = () => {
             value={data.password_confirmation}
             onChange={handleChange}
             style={{ width: "200px" }}
-          />
+            />
         </div>
 
         <SignButton>
-          <button type="submit" style={{ margin: "10px" }}>
+          <Button type="submit" >
             Sign Up
-          </button>
+          </Button>
         </SignButton>
       </SignForm>
+            {usernameError ? (
+              <>
+                {" "}
+                <ErrorMessage>Error: Username {usernameError}</ErrorMessage>{" "}
+              </>
+            ) : (
+              <> </>
+            )}
+            {emailError ? (
+              <>
+                {" "}
+                <ErrorMessage>Error: Email {emailError}</ErrorMessage>{" "}
+              </>
+            ) : (
+              <> </>
+            )}
+            {passwordError ? (
+              <>
+                {" "}
+                <ErrorMessage>
+                  Error: Password Confirmation {passwordError}
+                </ErrorMessage>{" "}
+              </>
+            ) : (
+              <> </>
+            )}
     </BackgroundImage>
   );
 };

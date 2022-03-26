@@ -63,6 +63,7 @@ const SignIn = () => {
             id="email"
             value={data.email}
             onChange={handleChange}
+            style={{ width: "200px" }}
           />
         </div>
         <div style={{ margin: "5px" }}>
@@ -74,6 +75,7 @@ const SignIn = () => {
             id="password"
             value={data.password}
             onChange={handleChange}
+            style={{ width: "200px" }}
           />
         </div>
         <SignButton>
