@@ -13,16 +13,16 @@ export const HomeBox1 = styled.main`
 export const HomeMargin = styled.main`
     padding: 0px 200px;
     background-image: url(/img3.jpg);
-    background-size: contain;
+    background-size: 100%;
     margin: 50px 0 0 0;
-
+    
     @media (max-width: 800px) {
         padding: 0px 50px;
     }
     @media (max-width: 550px) {
         padding: 0px 10px;
     }
-`
+    `
 
 export const PageTitle = styled.h1`
     display: flex;
@@ -131,20 +131,26 @@ export const BusinessTitle = styled.header`
 `
 
 export const Service = styled.div`
+    width: 70%;
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
     padding: 10px;
-    margin: 5px;
+    margin: 5px auto;
     opacity: 0.80;
 `
 
 export const ServiceTitle = styled.h2`
+    text-align:center;
     margin: 10px 0;
     text-transform: capitalize;
 `
+export const ServiceDescription =styled.p`
+    text-align:center;
+`
 
 export const ServicePrice = styled.h4`
+    text-align: center;
     margin: 10px 0;
 `
 
@@ -351,9 +357,9 @@ export const JobDetails = styled.div`
 export const BackgroundImage = styled.div`
     background-image: url(/img1.jpg);
     background-size: cover;
-    width: 100vw;
-    height: 120vh;
-`
+    width: 100%;
+    min-height: 100vh;
+    `
 
 export const BackgroundImage2 = styled.div`
     background-image: url(/img2.jpg);
@@ -383,8 +389,8 @@ export const BackgroundImage4 = styled.div`
 
 export const BackgroundImage5 = styled.div`
     background-image: url(/img5.jpg);
-    background-size: cover;
     width: 100vw;
+    background-size: cover;
     height: 30vh;
-`
+    `
 
