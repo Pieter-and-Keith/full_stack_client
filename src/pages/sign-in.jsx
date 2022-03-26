@@ -9,6 +9,7 @@ import {
   LinkE,
   SignButton,
   BackgroundImage,
+  Button
 } from "../components/Styled";
 import { useGlobalState } from "../utils/StateContext";
 
@@ -52,14 +53,6 @@ const SignIn = () => {
   return (
     <BackgroundImage>
       <SignTitle>Sign-in</SignTitle>
-      {error ? (
-        <>
-          {" "}
-          <ErrorMessage>Error: {error}</ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
       <SignForm onSubmit={handleSubmit}>
         <div style={{ margin: "5px" }}>
           <label htmlFor="email">Email:</label>
@@ -84,14 +77,22 @@ const SignIn = () => {
           />
         </div>
         <SignButton>
-          <button type="submit" style={{ margin: "10px" }}>
+          <Button type="submit" >
             Sign In
-          </button>
-          <button style={{ margin: "10px" }}>
+          </Button>
+          <Button>
             <LinkE to="/sign_up">Sign Up</LinkE>
-          </button>
+          </Button>
         </SignButton>
       </SignForm>
+      {error ? (
+        <>
+          {" "}
+          <ErrorMessage>Error: {error}</ErrorMessage>{" "}
+        </>
+      ) : (
+        <> </>
+      )}
     </BackgroundImage>
   );
 };

@@ -205,6 +205,7 @@ export const SignForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 300px;
     padding: 10px;
     margin: 5px auto;
     background-color: #f4f4f4;
@@ -245,6 +246,9 @@ export const ErrorMessage2 = styled.h5`
 export const LinkE = styled(Link)`
     text-decoration: none;
     color: black;
+    :hover{
+        color:white;
+    }
 `
 
 export const SignButton = styled.div`
