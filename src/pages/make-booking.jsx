@@ -135,7 +135,7 @@ const MakeBooking = (props) => {
             />
           </div>
           <div style={{ margin: "5px" }}>
-            <label htmlFor="comment">Additional Comment (Optional):</label>
+            <label htmlFor="comment">Additional Comment (optional):</label>
             <br></br>
             <textarea
               rows="8"

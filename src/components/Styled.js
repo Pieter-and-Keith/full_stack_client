@@ -195,6 +195,8 @@ export const AboutBox = styled.main`
 `
 
 export const SignTitle = styled.h1`
+    margin-top: 0px;
+    padding-top: 15px;
     display: flex;
     justify-content: center;
 `
@@ -203,7 +205,6 @@ export const SignForm = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25%;
     padding: 10px;
     margin: 5px auto;
     background-color: #f4f4f4;
@@ -264,16 +265,19 @@ flex-direction: column;
 justify-content: flex-start;
 
     @media (max-width: 1400px) {
+        width: 30%
+    }
+    @media (max-width: 1100px) {
+        width: 35%
+    }
+    @media (max-width: 880px) {
         width: 50%
     }
-    @media (max-width: 850px) {
-        width: 75%
-    }
-    @media (max-width: 550px) {
-        width: 90%
+    @media (max-width: 625px) {
+        width: 70%
     }
     @media (max-width: 450px) {
-        width: 95%
+        width: 90%
     }
 `
 
