@@ -8,7 +8,8 @@ import {
   SignButton,
   BackgroundImage,
   ErrorMessage,
-  BookingContainer
+  BookingContainer,
+  Button
 } from "../components/Styled";
 import ConfirmContext from "../utils/ConfirmContext";
 import { useGlobalState } from "../utils/StateContext";
@@ -150,11 +151,11 @@ const MakeBooking = (props) => {
 
         <SignButton>
           <Link to="/">
-            <button style={{ margin: "10px" }}>Cancel</button>
+            <Button >Cancel</Button>
           </Link>
-          <button onClick={handleSubmit} style={{ margin: "10px" }}>
+          <Button onClick={handleSubmit}>
             Confirm
-          </button>
+          </Button>
         </SignButton>
       </BookingForm>
     </BackgroundImage>
