@@ -10,12 +10,11 @@ export const HomeBox1 = styled.main`
     padding: 10px;
 `
 
-export const HomeMargin = styled.main`
-    padding: 0px 200px;
+export const HomeMargin = styled.div`
+    padding: 25px 200px;
     background-image: url(/img3.jpg);
     background-size: 100%;
-    margin: 50px 0 0 0;
-    
+    margin: 0;
     @media (max-width: 800px) {
         padding: 0px 50px;
     }
@@ -55,7 +54,7 @@ export const HomeLink = styled.h4`
     border: solid 1px;
     border-color: white;
     :hover {
-        background-color: #DA1212;
+        background-color: blue;
     }
 
     @media (max-width: 800px) {
@@ -90,7 +89,7 @@ export const HomeLinkWords = styled(Link)`
     text-decoration: none;
     color: white;
     :hover {
-        color: #2E3335;
+        color: black;
     }
     @media (max-width: 650px) {
         font-size: 0.8rem;
@@ -136,22 +135,23 @@ export const Service = styled.div`
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
     padding: 10px;
-    margin: 5px auto;
+    margin: 0px auto 10px;
     opacity: 0.80;
 `
 
 export const ServiceTitle = styled.h2`
     text-align:center;
-    margin: 10px 0;
+    margin: 0;
     text-transform: capitalize;
 `
 export const ServiceDescription =styled.p`
     text-align:center;
+    margin: 5px;
 `
 
 export const ServicePrice = styled.h4`
     text-align: center;
-    margin: 10px 0;
+    margin: 0;
 `
 
 export const NavBox = styled.nav`
@@ -173,7 +173,7 @@ export const NavLinkWords = styled(Link)`
 `
 
 export const AboutBox = styled.main`
-    margin: 10px 300px;
+    margin: 60px 300px;
     padding: 0 20px;
     background-color: #f4f4f4;
     box-shadow: 2px 3px black;
@@ -181,7 +181,10 @@ export const AboutBox = styled.main`
     opacity: 0.9;
 
     @media (max-width: 1200px) {
-        margin: 10px 50px;
+        margin: 60px 200px;
+    }
+    @media (max-width: 800px) {
+        margin: 50px 100px;
     }
     @media (max-width: 500px) {
         margin: 5px 20px;
@@ -383,13 +386,13 @@ export const BackgroundImage3 = styled.div`
 export const BackgroundImage4 = styled.div`
     background-image: url(/img4.jpg);
     background-size: cover;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 `
 
 export const BackgroundImage5 = styled.div`
     background-image: url(/img5.jpg);
-    width: 100vw;
+    width: 100%;
     background-size: cover;
     height: 30vh;
     `

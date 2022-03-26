@@ -21,8 +21,8 @@ const About = () => {
     <BackgroundImage4>
       <HomeBox1>
         <BusinessTitle>
-          <h1 style={{ margin: "0px" }}>
-            <i>Sydney Motor Service Centre</i>
+          <h1 style={{ margin: "10px" }}>
+            Sydney Motor Service Centre
           </h1>
         </BusinessTitle>
 

@@ -56,7 +56,7 @@ const Home = (props) => {
         </HomeNav2>
       </HomeBox1>
       <HomeMargin>
-        <PageTitle>Services Provided</PageTitle>
+        <PageTitle>Services Available</PageTitle>
         {serviceTypes}
       </HomeMargin>
     </BackgroundImage5>
