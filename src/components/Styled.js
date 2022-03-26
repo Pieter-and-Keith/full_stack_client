@@ -5,15 +5,13 @@ export const HomeBox1 = styled.main`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-image: url(/navbar3.jpg);
-    background-size: contain;
     padding: 10px;
-`
+    `
+    // background-image: url(/navbar3.jpg);
+    // background-size: contain;
 
 export const HomeMargin = styled.div`
     padding: 25px 200px;
-    background-image: url(/img3.jpg);
-    background-size: 100%;
     margin: 0;
     @media (max-width: 800px) {
         padding: 0px 50px;
@@ -22,6 +20,8 @@ export const HomeMargin = styled.div`
         padding: 0px 10px;
     }
     `
+    // background-image: url(/img3.jpg);
+    // background-size: 100%;
 
 export const PageTitle = styled.h1`
     display: flex;
@@ -414,9 +414,9 @@ export const BackgroundImage4 = styled.div`
 `
 
 export const BackgroundImage5 = styled.div`
-    background-image: url(/img5.jpg);
+    background-image: url(/img3.jpg);
     width: 100%;
     background-size: cover;
-    height: 30vh;
+    height: 110vh;
     `
 
