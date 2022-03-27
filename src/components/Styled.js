@@ -177,8 +177,8 @@ export const NavLinkWords = styled(Link)`
 `
 
 export const AboutBox = styled.main`
-    margin: 50px 300px;
-    padding: 0 20px;
+    margin: 50px 300px 0px;
+    padding: 20px;
     background-color: #f4f4f4;
     border: 1px solid black;
     border-radius: 5px;
@@ -434,6 +434,6 @@ export const BackgroundImage5 = styled.div`
     background-image: url(/img3.jpg);
     width: 100%;
     background-size: cover;
-    height: 110vh;
+    min-height: 110vh;
     `
 

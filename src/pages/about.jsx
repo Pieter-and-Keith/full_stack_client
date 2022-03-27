@@ -3,10 +3,7 @@ import { useGlobalState } from "../utils/StateContext";
 import {
   BusinessTitle,
   HomeBox1,
-  HomeLink,
   HomeNav,
-  HomeLinkWords,
-  PageTitle2,
   AboutBox,
   BackgroundImage4,
   ButtonPlus,

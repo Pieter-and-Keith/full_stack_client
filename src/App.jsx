@@ -5,7 +5,7 @@ import Global from "./styles/global";
 import ConfirmContext from "./utils/ConfirmContext"
 import BookingContext from "./utils/BookingContext";
 import ServiceCreatedContext from "./utils/ServiceCreatedContext";
-import Home from "./pages/home";
+import Home from "./pages/services";
 import About from "./pages/about";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";

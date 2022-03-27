@@ -2,15 +2,20 @@ import { Service, ServiceTitle, ServiceDescription, ServicePrice } from "./Style
 
 const ServiceItem = ({ service_type, description, price }) => {
   return (
-    <Service>
-      <ServiceTitle>
-        <u>{service_type}</u>
-      </ServiceTitle>
-      <ServiceDescription>{description}</ServiceDescription>
-      <ServicePrice>
-        Price: $<i>{price}</i>
-      </ServicePrice>
-    </Service>
+    <>
+    <h3>{service_type}</h3>
+    <p>{description}</p>
+    <p>${price}</p>
+    </>
+    // <Service>
+    //   <ServiceTitle>
+    //     <u>{service_type}</u>
+    //   </ServiceTitle>
+    //   <ServiceDescription>{description}</ServiceDescription>
+    //   <ServicePrice>
+    //     Price: $<i>{price}</i>
+    //   </ServicePrice>
+    // </Service>
   );
 };
 
