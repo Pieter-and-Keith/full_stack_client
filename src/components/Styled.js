@@ -147,8 +147,6 @@ export const ServiceTitle = styled.h2`
     margin-top: 10px;
     margin-bottom: 10px;
     text-align:center;
-    text-transform: capitalize;
-    font-size: bold;
 `
 export const ServiceDescription =styled.p`
     text-align:center;
@@ -157,7 +155,7 @@ export const ServiceDescription =styled.p`
 
 export const ServicePrice = styled.h4`
     text-align: center;
-    margin: 2px;
+    margin: 5px;
     font-size: 14px;
 `
 
@@ -178,29 +176,31 @@ export const NavLinkWords = styled(Link)`
         font-size: 0.9rem;
     }
 `
+// margin: 30px auto 20px;
 
 export const AboutBox = styled.main`
-    margin: 50px 300px 0px;
+    margin: 10px auto;
+    width: 580px;
     padding: 20px;
     background-color: #2e3335;
     color:white;
     border: 1px solid black;
     border-radius: 5px;
-    opacity: 0.90;
+    opacity: 0.93;
+    @media (max-width: 700px) {
+        width: 480px;
+    }
+    @media (max-width: 600px) {
+        width: 400px;
+    }
+    @media (max-width: 480px) {
+        width:280px;
+    }
 
-    @media (max-width: 1200px) {
-        margin: 60px 200px;
-    }
-    @media (max-width: 800px) {
-        margin: 50px 100px;
-    }
-    @media (max-width: 500px) {
-        margin: 5px 20px;
-    }
-    @media (max-width: 350px) {
-        margin: 2px 5px;
-    }
-`
+    `
+    // @media (max-width: 1200px) {
+    //     margin: 60px 200px;
+    // }
 
 export const SignTitle = styled.h1`
     margin-top: 0px;
@@ -312,6 +312,11 @@ export const ButtonPlus = styled.button`
     color: white;
     opcity: 1;
     margin: 20px;
+    :hover{
+        color:blue;
+        background-color: white;
+        border-color:blue;
+    }
 `
 
 export const ButtonDiv = styled.div`
