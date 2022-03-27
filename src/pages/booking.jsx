@@ -9,6 +9,7 @@ import {
   SignTitle,
   BackgroundImage,
   Text,
+  Button,
 } from "../components/Styled";
 
 const Booking = () => {
@@ -74,7 +75,7 @@ const Booking = () => {
     <BackgroundImage>
       <JobDetails>
         <SignTitle>
-          <u>Details</u>
+          <u>Job Card</u>
         </SignTitle>
         <h2>Job: {bookingContext.service_type}</h2>
         <Text>Date: {bookingContext.date}</Text>
@@ -91,25 +92,27 @@ const Booking = () => {
         ) : (
           <></>
         )}
-        <button onClick={handleFinishedButton}>Update job status</button>
+        <Text>Job Status:</Text>
         {bookingContext.finished ? (
-          <h3 style={{ color: "green" }}>Job is finished</h3>
+          <Text style={{ color: "green" }}>Finished</Text>
         ) : (
-          <h3 style={{ color: "red" }}>Job is NOT finished</h3>
+          <Text style={{ color: "red" }}>Unfinished</Text>
         )}
-        <button onClick={handlePaidButton}>Update payment status</button>
+        <Button onClick={handleFinishedButton}>Update</Button>
+        <Text>Payment Status:</Text>
         {bookingContext.paid ? (
-          <h3 style={{ color: "green" }}> Invoice is Paid</h3>
+          <Text style={{ color: "green" }}>Paid</Text>
         ) : (
-          <h3 style={{ color: "red" }}>Invoice NOT paid</h3>
+          <Text style={{ color: "red" }}>Unpaid</Text>
         )}
+        <Button onClick={handlePaidButton}>Update</Button>
         <SignButton>
-          <button onClick={handleBackButton} style={{ margin: "10px" }}>
+          <Button onClick={handleBackButton} style={{ margin: "10px" }}>
             Back
-          </button>
-          <button onClick={handleDeleteButton} style={{ margin: "10px" }}>
+          </Button>
+          <Button onClick={handleDeleteButton} style={{ margin: "10px" }}>
             Delete
-          </button>
+          </Button>
         </SignButton>
       </JobDetails>
     </BackgroundImage>

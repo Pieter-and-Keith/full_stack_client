@@ -23,6 +23,7 @@ export const JobsDiv = styled.div`
     align-items: flex-start;
 `
 export const Text = styled.p`
+margin: 2px;
 `
 export const HomeBox1 = styled.main`
     display: flex;
