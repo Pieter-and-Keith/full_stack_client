@@ -176,12 +176,12 @@ export const NavLinkWords = styled(Link)`
 `
 
 export const AboutBox = styled.main`
-    margin: 60px 300px;
+    margin: 50px 300px;
     padding: 0 20px;
     background-color: #f4f4f4;
-    box-shadow: 2px 3px black;
-    border: 1px ridge #2D2424;
-    opacity: 0.9;
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 0.90;
 
     @media (max-width: 1200px) {
         margin: 60px 200px;
@@ -297,6 +297,19 @@ export const Button = styled.button`
         color:white;
         background-color: blue;
     }
+`
+export const ButtonPlus = styled.button`
+    border: 2px solid white;
+    padding: 20px;
+    background-color: blue;
+    border-radius: 2px;
+    color: white;
+    opcity: 1;
+    margin: 20px;
+`
+
+export const ButtonDiv = styled.div`
+    text-align: center;
 `
 
 export const BookingContainer = styled.div`

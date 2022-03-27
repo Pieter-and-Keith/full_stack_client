@@ -9,9 +9,8 @@ import {
   PageTitle2,
   AboutBox,
   BackgroundImage4,
-  HomeNav2,
-  HomeLinkWords2,
-  HomeLink2,
+  ButtonPlus,
+  ButtonDiv,
 } from "../components/Styled";
 
 const About = () => {
@@ -21,6 +20,9 @@ const About = () => {
 
   const handleBooking = () => {
     navigate("/make_booking")
+  }
+  const handleServices = () => {
+    navigate("/services")
   }
 
   return (
@@ -33,25 +35,29 @@ const About = () => {
         </BusinessTitle>
 
         <HomeNav>
-          <HomeLink>
+          {/* <HomeLink>
             <HomeLinkWords to="/services">Car Services</HomeLinkWords>
-          </HomeLink>
+          </HomeLink> */}
           {/* <HomeLink>
             <HomeLinkWords to="/about">About Us</HomeLinkWords>
           </HomeLink> */}
         </HomeNav>
-        <HomeNav>
+        {/* <HomeNav>
           {userSignedIn !== "admin" && (
             <HomeLink>
               <HomeLinkWords to="/make_booking">Make Booking</HomeLinkWords>
             </HomeLink>
           )}
-        </HomeNav>
+        </HomeNav> */}
       </HomeBox1>
+        <ButtonDiv>
+          <ButtonPlus onClick={handleServices}>Car Services</ButtonPlus>
+          <ButtonPlus onClick={handleBooking}>Make booking</ButtonPlus>
+        </ButtonDiv>
       <AboutBox>
-        <PageTitle2>
-          <u>About us</u>
-        </PageTitle2>
+        {/* <PageTitle2>
+          <u>SMSC</u>
+        </PageTitle2> */}
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
           sapien quis nibh cursus blandit. Etiam ullamcorper lacus sed lacus
@@ -75,7 +81,6 @@ const About = () => {
             <strong>Email: SMSC@gmail.com</strong>
           </p>
         </section>
-        <button onClick={handleBooking}>Make booking</button>
       </AboutBox>
     </BackgroundImage4>
   );
