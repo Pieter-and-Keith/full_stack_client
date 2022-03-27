@@ -12,5 +12,3 @@ const FooterElement = () => {
     )
 }
 export default FooterElement
-
-{/* <h5 class="copyright">&#169; - Pieter-Jan Delbecke - 2022</h5> */}

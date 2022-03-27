@@ -287,6 +287,15 @@ export const SignButton = styled.div`
     justify-content: center;
 `
 
+export const ButtonSignOut = styled.button`
+    background-color: #2e3335;
+    border: 0px;
+    color: white;
+    font-size: 16px;
+    :hover{
+        color:red
+    }
+`
 export const BookingForm = styled.form`
 display: flex;
 width: 360px;

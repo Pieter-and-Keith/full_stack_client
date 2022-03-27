@@ -1,6 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-import { NavBox, NavLinkWords } from "./Styled";
+import { 
+  NavBox, 
+  NavLinkWords,
+  ButtonSignOut
+ } from "./Styled";
 import { useGlobalState } from "../utils/StateContext";
 
 const Nav = () => {
@@ -21,7 +25,7 @@ const Nav = () => {
     <NavBox>
       {userSignedIn != "" && (
         <h4 style={{ margin: "5px" }}>
-          <u>User: {userSignedIn}</u>
+          <u>Welcome: {userSignedIn}</u>
         </h4>
       )}
       {userSignedIn === "admin" && (
@@ -33,9 +37,9 @@ const Nav = () => {
       <NavLinkWords to="/">Home</NavLinkWords>
       {userSignedIn ? (
         <>
-          <button onClick={handleSignOut} style={{ margin: "5px" }}>
+          <ButtonSignOut onClick={handleSignOut} style={{ margin: "5px" }}>
             Sign Out
-          </button>
+          </ButtonSignOut>
         </>
       ) : (
         <>
