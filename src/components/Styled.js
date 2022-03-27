@@ -300,6 +300,7 @@ export const Button = styled.button`
     }
 `
 export const ButtonPlus = styled.button`
+    width: 150px;
     border: 2px solid white;
     padding: 20px;
     background-color: blue;

@@ -33,8 +33,8 @@ const About = () => {
         </HomeNav>
       </HomeBox1>
         <ButtonDiv>
-          <ButtonPlus onClick={handleServices}>Car Services</ButtonPlus>
-          <ButtonPlus onClick={handleBooking}>Make booking</ButtonPlus>
+          <ButtonPlus onClick={handleServices}>Our Services</ButtonPlus>
+          <ButtonPlus onClick={handleBooking}>Make a Booking</ButtonPlus>
         </ButtonDiv>
       <AboutBox>
         <p>

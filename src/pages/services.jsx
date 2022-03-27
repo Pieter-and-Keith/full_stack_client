@@ -1,5 +1,5 @@
 import { useGlobalState } from "../utils/StateContext";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 import {
   AboutBox,
@@ -18,49 +18,55 @@ import {
 } from "../components/Styled";
 import ServiceItem from "../components/service-item";
 
-const Home = (props) => {
+const Services = (props) => {
   const { store } = useGlobalState();
   const { userSignedIn } = store;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const serviceTypes = props.services.map((service) => {
-    return (
-      <ServiceItem
-        key={service.id}
-        service_type={service.service_type}
-        description={service.description}
-        price={service.price}
-      />
-    );
-  });
+  // const serviceTypes = props.services.map((service) => {
+  //   return (
+  //     <ServiceItem
+  //       key={service.id}
+  //       service_type={service.service_type}
+  //       description={service.description}
+  //       price={service.price}
+  //     />
+  //   );
+  // });
   const handleBooking = () => {
-    navigate("/make_booking")
-  }
-  const handleServices = () => {
-    navigate("/services")
-  }
+    navigate("/make_booking");
+  };
+  const handleAboutUs = () => {
+    navigate("/");
+  };
 
   return (
     <BackgroundImage5>
-    <HomeBox1>
-      <BusinessTitle>
-        Sydney Motor Service Center
-      </BusinessTitle>
+      <HomeBox1>
+        <BusinessTitle>Sydney Motor Service Center</BusinessTitle>
 
-      <HomeNav>
-      </HomeNav>
-    </HomeBox1>
+        <HomeNav></HomeNav>
+      </HomeBox1>
       <ButtonDiv>
-        <ButtonPlus onClick={handleServices}>Car Services</ButtonPlus>
-        <ButtonPlus onClick={handleBooking}>Make booking</ButtonPlus>
+        <ButtonPlus onClick={handleAboutUs}>About Us</ButtonPlus>
+        <ButtonPlus onClick={handleBooking}>Make a Booking</ButtonPlus>
       </ButtonDiv>
-    <AboutBox>
-    {serviceTypes}
-    </AboutBox>
-  </BackgroundImage5>
-
- 
+      <AboutBox>
+        {props.services.map((service) => {
+          return (
+            <>
+              <ServiceItem
+                key={service.id}
+                service_type={service.service_type}
+                description={service.description}
+                price={service.price}
+              />
+            </>
+          );
+        })}
+      </AboutBox>
+    </BackgroundImage5>
   );
 };
 
-export default Home;
+export default Services;

@@ -5,7 +5,7 @@ import Global from "./styles/global";
 import ConfirmContext from "./utils/ConfirmContext"
 import BookingContext from "./utils/BookingContext";
 import ServiceCreatedContext from "./utils/ServiceCreatedContext";
-import Home from "./pages/services";
+import Services from "./pages/services";
 import About from "./pages/about";
 import SignIn from "./pages/sign-in";
 import SignUp from "./pages/sign-up";
@@ -55,7 +55,7 @@ function App() {
                 <Nav />
                 <Routes>
                   <Route path="/" element={<About />} />
-                  <Route path="/services" element={<Home services={services} />} />
+                  <Route path="/services" element={<Services services={services} />} />
                   <Route path="/sign_in" element={<SignIn />} />
                   <Route path="/sign_up" element={<SignUp />} />
                   <Route path="/user_details" element={<UserDetails />} />
