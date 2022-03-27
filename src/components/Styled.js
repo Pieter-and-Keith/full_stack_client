@@ -128,6 +128,9 @@ export const BusinessTitle = styled.header`
     }
 
 `
+export const BusinessHeader = styled.h1`
+    color: #332fd0;
+`
 
 export const Service = styled.div`
     width: 70%;

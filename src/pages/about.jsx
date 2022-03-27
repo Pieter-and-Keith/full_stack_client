@@ -34,13 +34,13 @@ const About = () => {
             <HomeLinkWords to="/about">About Us</HomeLinkWords>
           </HomeLink>
         </HomeNav>
-        <HomeNav2>
+        <HomeNav>
           {userSignedIn !== "admin" && (
-            <HomeLink2>
-              <HomeLinkWords2 to="/make_booking">Make Booking</HomeLinkWords2>
-            </HomeLink2>
+            <HomeLink>
+              <HomeLinkWords to="/make_booking">Make Booking</HomeLinkWords>
+            </HomeLink>
           )}
-        </HomeNav2>
+        </HomeNav>
       </HomeBox1>
       <AboutBox>
         <PageTitle2>

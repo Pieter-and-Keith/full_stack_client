@@ -9,6 +9,7 @@ import {
   HomeLinkWords,
   PageTitle,
   BackgroundImage5,
+  BusinessHeader,
   HomeNav2,
   HomeLink2,
   HomeLinkWords2,
@@ -34,9 +35,9 @@ const Home = (props) => {
     <BackgroundImage5>
       <HomeBox1>
         <BusinessTitle>
-          <h1 style={{ margin: "0px" }}>
+          <BusinessHeader style={{ margin: "0px" }}>
             Sydney Motor Service Centre
-          </h1>
+          </BusinessHeader>
         </BusinessTitle>
 
         <HomeNav>
