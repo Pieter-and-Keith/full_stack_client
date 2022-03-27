@@ -28,11 +28,11 @@ const About = () => {
 
         <HomeNav>
           <HomeLink>
-            <HomeLinkWords to="/">Car Services</HomeLinkWords>
+            <HomeLinkWords to="/services">Car Services</HomeLinkWords>
           </HomeLink>
-          <HomeLink>
+          {/* <HomeLink>
             <HomeLinkWords to="/about">About Us</HomeLinkWords>
-          </HomeLink>
+          </HomeLink> */}
         </HomeNav>
         <HomeNav>
           {userSignedIn !== "admin" && (

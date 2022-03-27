@@ -54,8 +54,8 @@ function App() {
               <BrowserRouter>
                 <Nav />
                 <Routes>
-                  <Route path="/" element={<Home services={services} />} />
-                  <Route path="/about" element={<About />} />
+                  <Route path="/" element={<About />} />
+                  <Route path="/services" element={<Home services={services} />} />
                   <Route path="/sign_in" element={<SignIn />} />
                   <Route path="/sign_up" element={<SignUp />} />
                   <Route path="/user_details" element={<UserDetails />} />
