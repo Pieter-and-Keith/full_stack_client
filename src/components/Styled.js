@@ -357,7 +357,7 @@ export const ButtonPlus = styled.button`
     background-color: blue;
     border-radius: 5px;
     color: white;
-    opcity: 1;
+    opacity: 1;
     margin: 20px;
     :hover{
         color:blue;

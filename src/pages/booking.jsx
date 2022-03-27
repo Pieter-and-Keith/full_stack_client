@@ -76,7 +76,7 @@ const Booking = () => {
   return (
     <BackgroundImage>
         <SignTitle>
-          <u>Job Card</u>
+          Job Card
         </SignTitle>
       <JobDetails>
         <JobDiv>
