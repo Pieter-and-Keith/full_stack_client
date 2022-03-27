@@ -56,10 +56,10 @@ const ConfirmBooking = () => {
           <Text>Suburb: {confirmBooking.suburb}</Text>
           <Text>Postcode: {confirmBooking.postcode}</Text>
           <hr></hr>
+        </JobDiv>
           <SignButton>
             <Button3 onClick={handleHome}>Home</Button3>
           </SignButton>
-        </JobDiv>
       </JobDetails>
     </BackgroundImage>
   );
