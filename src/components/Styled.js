@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 export const AdminDiv = styled.div`
  background-color: #c0c0c0;
  width: 100%;
- height: 100vh;
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
-`
+ min-height: 100vh;
+ background-image: url(/img1.jpg);
+ background-size: cover;
+ `
 export const AdminTitle = styled.h1`
     margin-top: 0px;
     padding-top: 15px;
@@ -23,7 +22,7 @@ export const JobsDiv = styled.div`
     align-items: flex-start;
 `
 export const Text = styled.p`
-margin: 2px;
+    margin: 2px;
 `
 export const HomeBox1 = styled.main`
     display: flex;
@@ -414,17 +413,16 @@ export const AdminInnerBox = styled.section`
     width: 250px;
     height: 220px;
     margin: 5px;
-
-    @media (max-width: 1250px) {
-        width: 28%;
-    }
-    @media (max-width: 700px) {
-        width: 40%;
-    }
-    @media (max-width: 500px) {
-        width: 85%;
-    }
-`
+    `
+    // @media (max-width: 1250px) {
+    //     width: 28%;
+    // }
+    // @media (max-width: 700px) {
+    //     width: 40%;
+    // }
+    // @media (max-width: 500px) {
+    //     width: 85%;
+    // }
 
 export const AdminOuterBox = styled.div`
     display: flex;

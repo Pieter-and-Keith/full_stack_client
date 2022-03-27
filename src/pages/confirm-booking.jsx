@@ -6,6 +6,12 @@ import {
   ConfirmBookingForm,
   ConfirmBookingTitle,
   BackgroundImage,
+  SignButton,
+  JobDetails,
+  Text,
+  Button,
+  Button2,
+  JobDiv,
 } from "../components/Styled";
 
 const ConfirmBooking = () => {
@@ -14,51 +20,25 @@ const ConfirmBooking = () => {
 
   return (
     <BackgroundImage>
-      <ConfirmBookingTitle>
-        <i>Sydney Motor Service Centre</i>
-      </ConfirmBookingTitle>
-      <ConfirmBookingForm>
-        <SignTitle>
-          <u>Confirm Details</u>
-        </SignTitle>
-        <h3>Name: </h3>
-        <span>
-          {confirmBooking.first_name} {confirmBooking.last_name}
-        </span>
-        <h3>Email: </h3>
-        <span>{confirmBooking.email}</span>
-        <h3>Phone Number: </h3>
-        <span>{confirmBooking.phone_number}</span>
-        <h3>Address: </h3>
-        <span>
-          {confirmBooking.street_number} {confirmBooking.street_name},{" "}
-          {confirmBooking.suburb}, {confirmBooking.state},{" "}
-          {confirmBooking.postcode}
-        </span>
-        <h3>Selected Service: </h3>
-        <span>{confirmBooking.service_type}</span>
-        <h3>Selected Date: </h3>
-        <span>{confirmBooking.date}</span>
-        <h3>Car Rego: </h3>
-        <span>{confirmBooking.rego}</span>
-        <h3>Car Make: </h3>
-        <span>{confirmBooking.make}</span>
-        <h3>Car Model: </h3>
-        <span>{confirmBooking.model}</span>
-        {confirmBooking.comment ? (
+      <SignTitle>Confirmation Page</SignTitle>
+      <JobDetails>
+        <JobDiv>
+        {/* <h2>Job: {confirmBooking.service_type}</h2> */}
+        {/* <Text><b>Date:</b> {confirmBooking.date}</Text> */}
+        {/* <Text>
+          <b>Client:</b> {confirmBooking.first_name} {confirmBooking.last_name}
+        </Text> */}
+        {/* <Text>Rego: {confirmBooking.rego}</Text> */}
+        {/* {confirmBooking.comment ? (
           <>
-            <h3>Additional Comment:</h3>
-            <span>{confirmBooking.comment}</span>
+            <Text><b>Comment:</b> {confirmBooking.comment}</Text>
           </>
         ) : (
           <></>
-        )}
-        <div style={{ marginTop: "15px" }}>
-          <Link to="/">
-            <button style={{ margin: "10px" }}>Home</button>
-          </Link>
-        </div>
-      </ConfirmBookingForm>
+        )} */}
+        {/* <hr></hr> */}
+        </JobDiv>
+      </JobDetails>
     </BackgroundImage>
   );
 };

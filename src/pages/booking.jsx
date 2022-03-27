@@ -83,10 +83,11 @@ const Booking = () => {
         <h2>Job: {bookingContext.service_type}</h2>
         <Text><b>Date:</b> {bookingContext.date}</Text>
         <Text>
-          <b>Car: </b>{bookingContext.make} {bookingContext.model}
-        </Text>
-        <Text>
           <b>Client:</b> {bookingContext.first_name} {bookingContext.last_name}
+        </Text>
+        <Text>Rego: {bookingContext.rego}</Text>
+        <Text>
+          <b>Car: </b>{bookingContext.make} {bookingContext.model}
         </Text>
         {bookingContext.comment ? (
           <>
