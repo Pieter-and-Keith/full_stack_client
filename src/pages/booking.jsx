@@ -10,6 +10,7 @@ import {
   BackgroundImage,
   Text,
   Button,
+  Button2,
   JobDiv
 } from "../components/Styled";
 
@@ -94,6 +95,7 @@ const Booking = () => {
         ) : (
           <></>
         )}
+        <hr></hr>
         <Text><b>Job Status:</b> 
                 {bookingContext.finished? (
                   " Finished"
@@ -108,7 +110,8 @@ const Booking = () => {
           <Text style={{ color: "red" }}>Unfinished</Text>
         )} */}
        
-        <Button onClick={handleFinishedButton}>Update</Button>
+        <Button2 onClick={handleFinishedButton}>Update</Button2>
+        <hr></hr>
         <Text><b>Payment Status:</b>
                 {bookingContext.paid? (
                   " Paid"
@@ -117,14 +120,14 @@ const Booking = () => {
                     )}
         </Text>
 
-
         {/* {bookingContext.paid ? (
           <Text style={{ color: "green" }}>Paid</Text>
-        ) : (
-          <Text style={{ color: "red" }}>Unpaid</Text>
-        )} */}
+          ) : (
+            <Text style={{ color: "red" }}>Unpaid</Text>
+          )} */}
 
-        <Button onClick={handlePaidButton}>Update</Button>
+        <Button2 onClick={handlePaidButton}>Update</Button2>
+          <hr></hr>
         <SignButton>
           <Button onClick={handleBackButton} style={{ margin: "10px" }}>
             Back

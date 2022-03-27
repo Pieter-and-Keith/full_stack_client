@@ -326,6 +326,17 @@ export const Button = styled.button`
         background-color: blue;
     }
 `
+export const Button2 = styled.button`
+    margin: 5px 0px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 2px;
+    :hover{
+        color:white;
+        background-color: blue;
+    }
+`
+
 export const ButtonPlus = styled.button`
     width: 150px;
     border: 2px solid white;
@@ -427,7 +438,7 @@ export const JobDetails = styled.div`
     }
 `
 export const JobDiv = styled.div`
-    margin-left: 40px;
+    margin: 20px 40px;
 `
 
 export const BackgroundImage = styled.div`
