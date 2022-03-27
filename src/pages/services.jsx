@@ -57,7 +57,7 @@ const Services = (props) => {
             <>
               <ServiceItem
                 key={service.id}
-                service_type={service.service_type}
+                service_type={(service.service_type).toUpperCase()}
                 description={service.description}
                 price={service.price}
               />

@@ -144,18 +144,21 @@ export const Service = styled.div`
 `
 
 export const ServiceTitle = styled.h2`
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align:center;
-    margin: 0;
     text-transform: capitalize;
+    font-size: bold;
 `
 export const ServiceDescription =styled.p`
     text-align:center;
-    margin: 5px;
+    margin: 0px;
 `
 
 export const ServicePrice = styled.h4`
     text-align: center;
-    margin: 0;
+    margin: 2px;
+    font-size: 14px;
 `
 
 export const NavBox = styled.nav`
@@ -179,7 +182,8 @@ export const NavLinkWords = styled(Link)`
 export const AboutBox = styled.main`
     margin: 50px 300px 0px;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #2e3335;
+    color:white;
     border: 1px solid black;
     border-radius: 5px;
     opacity: 0.90;
