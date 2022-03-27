@@ -8,6 +8,7 @@ import {
   JobDetails,
   SignTitle,
   BackgroundImage,
+  Text,
 } from "../components/Styled";
 
 const Booking = () => {
@@ -73,18 +74,19 @@ const Booking = () => {
     <BackgroundImage>
       <JobDetails>
         <SignTitle>
-          <u>Job Details</u>
+          <u>Details</u>
         </SignTitle>
         <h2>Job: {bookingContext.service_type}</h2>
-        <h2>Date: {bookingContext.date}</h2>
-        <h3>
+        <Text>Date: {bookingContext.date}</Text>
+        <Text>
           Car: {bookingContext.make} {bookingContext.model}
-        </h3>
-        <h3>First name: {bookingContext.first_name}</h3>
-        <h3>Last name: {bookingContext.last_name}</h3>
+        </Text>
+        <Text>
+          Client: {bookingContext.first_name} {bookingContext.last_name}
+        </Text>
         {bookingContext.comment ? (
           <>
-            <p>Comment: {bookingContext.comment}</p>
+            <Text>Comment: {bookingContext.comment}</Text>
           </>
         ) : (
           <></>

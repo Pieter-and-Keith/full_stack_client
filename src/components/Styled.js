@@ -22,6 +22,8 @@ export const JobsDiv = styled.div`
     justify-content: center;
     align-items: flex-start;
 `
+export const Text = styled.p`
+`
 export const HomeBox1 = styled.main`
     display: flex;
     flex-direction: row;
