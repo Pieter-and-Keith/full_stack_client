@@ -19,6 +19,7 @@ import {StateContext} from './utils/StateContext';
 import StateReducer from './utils/StateReducer'
 import Nav from './components/navbar'
 import Booking from "./pages/booking";
+import FooterElement from "./components/footer-element";
 
 function App() {
   const [services, setServices] = useState([])
@@ -65,6 +66,7 @@ function App() {
                   <Route path="/admin_option_create" element={<AdminOptionCreate />} />
                   <Route path="/booking" element={<Booking />} />
                 </Routes>
+                <FooterElement />
               </BrowserRouter>
             </ServiceCreatedContext.Provider>
           </BookingContext.Provider>
