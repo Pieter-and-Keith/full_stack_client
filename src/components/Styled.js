@@ -296,6 +296,10 @@ export const ButtonSignOut = styled.button`
         color:red
     }
 `
+export const UserText = styled.h4`
+    margin: 5px 30px;
+    color: white;
+`
 export const BookingForm = styled.form`
 display: flex;
 width: 360px;

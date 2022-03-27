@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { 
   NavBox, 
   NavLinkWords,
-  ButtonSignOut
+  ButtonSignOut,
+  UserText
  } from "./Styled";
 import { useGlobalState } from "../utils/StateContext";
 
@@ -24,9 +25,9 @@ const Nav = () => {
   return (
     <NavBox>
       {userSignedIn != "" && (
-        <h4 style={{ margin: "5px" }}>
-          <u>Welcome: {userSignedIn}</u>
-        </h4>
+        <UserText>
+          Welcome: {userSignedIn}
+        </UserText>
       )}
       {userSignedIn === "admin" && (
         <>
