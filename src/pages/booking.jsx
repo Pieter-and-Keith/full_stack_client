@@ -10,6 +10,7 @@ import {
   BackgroundImage,
   Text,
   Button,
+  JobDiv
 } from "../components/Styled";
 
 const Booking = () => {
@@ -73,38 +74,56 @@ const Booking = () => {
 
   return (
     <BackgroundImage>
-      <JobDetails>
         <SignTitle>
           <u>Job Card</u>
         </SignTitle>
+      <JobDetails>
+        <JobDiv>
         <h2>Job: {bookingContext.service_type}</h2>
-        <Text>Date: {bookingContext.date}</Text>
+        <Text><b>Date:</b> {bookingContext.date}</Text>
         <Text>
-          Car: {bookingContext.make} {bookingContext.model}
+          <b>Car: </b>{bookingContext.make} {bookingContext.model}
         </Text>
         <Text>
-          Client: {bookingContext.first_name} {bookingContext.last_name}
+          <b>Client:</b> {bookingContext.first_name} {bookingContext.last_name}
         </Text>
         {bookingContext.comment ? (
           <>
-            <Text>Comment: {bookingContext.comment}</Text>
+            <Text><b>Comment:</b> {bookingContext.comment}</Text>
           </>
         ) : (
           <></>
         )}
-        <Text>Job Status:</Text>
-        {bookingContext.finished ? (
+        <Text><b>Job Status:</b> 
+                {bookingContext.finished? (
+                  " Finished"
+                  ):(
+                    " Unfinished"
+                    )}
+        </Text>
+
+        {/* {bookingContext.finished ? (
           <Text style={{ color: "green" }}>Finished</Text>
         ) : (
           <Text style={{ color: "red" }}>Unfinished</Text>
-        )}
+        )} */}
+       
         <Button onClick={handleFinishedButton}>Update</Button>
-        <Text>Payment Status:</Text>
-        {bookingContext.paid ? (
+        <Text><b>Payment Status:</b>
+                {bookingContext.paid? (
+                  " Paid"
+                  ):(
+                    " Unpaid"
+                    )}
+        </Text>
+
+
+        {/* {bookingContext.paid ? (
           <Text style={{ color: "green" }}>Paid</Text>
         ) : (
           <Text style={{ color: "red" }}>Unpaid</Text>
-        )}
+        )} */}
+
         <Button onClick={handlePaidButton}>Update</Button>
         <SignButton>
           <Button onClick={handleBackButton} style={{ margin: "10px" }}>
@@ -114,6 +133,7 @@ const Booking = () => {
             Delete
           </Button>
         </SignButton>
+        </JobDiv>
       </JobDetails>
     </BackgroundImage>
   );
