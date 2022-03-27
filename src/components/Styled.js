@@ -1,6 +1,27 @@
 import styled from 'styled-components' 
 import { Link } from 'react-router-dom';
 
+export const AdminDiv = styled.div`
+ background-color: #c0c0c0;
+ width: 100%;
+ height: 100vh;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+`
+export const AdminTitle = styled.h1`
+    margin-top: 0px;
+    padding-top: 15px;
+    width: 100%;
+    text-align: center;
+`
+
+export const JobsDiv = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+`
 export const HomeBox1 = styled.main`
     display: flex;
     flex-direction: row;
@@ -155,7 +176,7 @@ export const ServiceDescription =styled.p`
 
 export const ServicePrice = styled.h4`
     text-align: center;
-    margin: 5px;
+    margin-top: 5px;
     font-size: 14px;
 `
 
@@ -168,15 +189,15 @@ export const NavBox = styled.nav`
 export const NavLinkWords = styled(Link)`
     text-decoration: none;
     margin: 5px;
-    color: blue;
-    :hover {
-        color: red;
+    color: white;
+    :hover{
+        color: blue;
     }
     @media (max-width: 500px) {
         font-size: 0.9rem;
     }
 `
-// margin: 30px auto 20px;
+
 
 export const AboutBox = styled.main`
     margin: 10px auto;
@@ -198,9 +219,6 @@ export const AboutBox = styled.main`
     }
 
     `
-    // @media (max-width: 1200px) {
-    //     margin: 60px 200px;
-    // }
 
 export const SignTitle = styled.h1`
     margin-top: 0px;
@@ -208,6 +226,8 @@ export const SignTitle = styled.h1`
     display: flex;
     justify-content: center;
 `
+
+
 
 export const SignForm = styled.form`
     display: flex;
@@ -308,7 +328,7 @@ export const ButtonPlus = styled.button`
     border: 2px solid white;
     padding: 20px;
     background-color: blue;
-    border-radius: 2px;
+    border-radius: 5px;
     color: white;
     opcity: 1;
     margin: 20px;
@@ -360,11 +380,12 @@ export const ConfirmBookingTitle = styled.h1`
 `
 
 export const AdminInnerBox = styled.section`
-    background-color: #F2EECB;
+    background-color: white;
     box-shadow: 2px 3px black;
     border: 1px ridge #2D2424;
     padding: 10px;
-    width: 22.4%;
+    width: 250px;
+    height: 220px;
     margin: 5px;
 
     @media (max-width: 1250px) {

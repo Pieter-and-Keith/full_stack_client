@@ -8,6 +8,7 @@ export default () => (
 			body {
 				font-family: 'Roboto', sans-serif;
                 margin: 0;
+				background-color:#2e3335;
 			}
 		`}
 	/>

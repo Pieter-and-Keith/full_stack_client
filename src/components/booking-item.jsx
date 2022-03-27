@@ -26,13 +26,13 @@ const BookingsItem = ({
 
   return (
     <AdminInnerBox>
-      <h3>Job: {serviceType}</h3>
-      <h4>Booking Date: {date}</h4>
+      <h3><u>Job:</u> {serviceType}</h3>
+      <h4><u>Date:</u> {date}</h4>
       <h5>
-        Car: {make} {model}
+        <u>Car:</u> {make} {model}
       </h5>
       <h5>
-        Client Name: {firstName} {lastName}
+        <u>Client:</u> {firstName} {lastName}
       </h5>
       <button onClick={handleOnClick}>SHOW</button>
     </AdminInnerBox>
