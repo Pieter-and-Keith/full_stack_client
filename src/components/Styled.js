@@ -107,12 +107,13 @@ export const HomeLinkWords2 = styled(Link)`
     }
 `
 
-export const BusinessTitle = styled.header`
+export const BusinessTitle = styled.h1`
     float: left;
     display: flex;
-    align-items: center;
-    width: 80%;
-    color: white;
+    margin: 10px auto 10px 40px;
+    align-item: center;
+    width: 100%;
+    color: blue;
 
     @media (max-width: 800px) {
         font-size: 0.8rem;

@@ -29,35 +29,17 @@ const About = () => {
     <BackgroundImage4>
       <HomeBox1>
         <BusinessTitle>
-          <h1 style={{ margin: "10px" }}>
-            Sydney Motor Service Center
-          </h1>
+          Sydney Motor Service Center
         </BusinessTitle>
 
         <HomeNav>
-          {/* <HomeLink>
-            <HomeLinkWords to="/services">Car Services</HomeLinkWords>
-          </HomeLink> */}
-          {/* <HomeLink>
-            <HomeLinkWords to="/about">About Us</HomeLinkWords>
-          </HomeLink> */}
         </HomeNav>
-        {/* <HomeNav>
-          {userSignedIn !== "admin" && (
-            <HomeLink>
-              <HomeLinkWords to="/make_booking">Make Booking</HomeLinkWords>
-            </HomeLink>
-          )}
-        </HomeNav> */}
       </HomeBox1>
         <ButtonDiv>
           <ButtonPlus onClick={handleServices}>Car Services</ButtonPlus>
           <ButtonPlus onClick={handleBooking}>Make booking</ButtonPlus>
         </ButtonDiv>
       <AboutBox>
-        {/* <PageTitle2>
-          <u>SMSC</u>
-        </PageTitle2> */}
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
           sapien quis nibh cursus blandit. Etiam ullamcorper lacus sed lacus
