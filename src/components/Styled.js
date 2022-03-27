@@ -410,7 +410,7 @@ export const BackgroundImage3 = styled.div`
 
 
 export const BackgroundImage4 = styled.div`
-    background-image: url(/img4.jpg);
+    background-image: url(/img3.jpg);
     background-size: cover;
     width: 100%;
     height: 100vh;

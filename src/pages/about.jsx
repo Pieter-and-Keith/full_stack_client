@@ -1,3 +1,5 @@
+import {useNavigate} from "react-router-dom"
+import { useGlobalState } from "../utils/StateContext";
 import {
   BusinessTitle,
   HomeBox1,
@@ -11,18 +13,22 @@ import {
   HomeLinkWords2,
   HomeLink2,
 } from "../components/Styled";
-import { useGlobalState } from "../utils/StateContext";
 
 const About = () => {
   const { store } = useGlobalState();
   const { userSignedIn } = store;
+  const navigate = useNavigate()
+
+  const handleBooking = () => {
+    navigate("/make_booking")
+  }
 
   return (
     <BackgroundImage4>
       <HomeBox1>
         <BusinessTitle>
           <h1 style={{ margin: "10px" }}>
-            Sydney Motor Service Centre
+            Sydney Motor Service Center
           </h1>
         </BusinessTitle>
 
@@ -69,6 +75,7 @@ const About = () => {
             <strong>Email: SMSC@gmail.com</strong>
           </p>
         </section>
+        <button onClick={handleBooking}>Make booking</button>
       </AboutBox>
     </BackgroundImage4>
   );
