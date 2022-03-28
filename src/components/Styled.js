@@ -18,6 +18,7 @@ export const AdminTitle = styled.h1`
 export const JobsDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
   justify-content: center;
   align-items: flex-start;
   width: 75%;
@@ -34,8 +35,7 @@ export const HomeBox1 = styled.main`
   justify-content: center;
   padding: 10px;
 `;
-// background-image: url(/navbar3.jpg);
-// background-size: contain;
+
 
 export const HomeMargin = styled.div`
   padding: 25px 200px;
@@ -47,8 +47,6 @@ export const HomeMargin = styled.div`
     padding: 0px 10px;
   }
 `;
-// background-image: url(/img3.jpg);
-// background-size: 100%;
 
 export const PageTitle = styled.h1`
   display: flex;

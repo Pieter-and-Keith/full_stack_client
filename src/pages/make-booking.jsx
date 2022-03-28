@@ -9,7 +9,7 @@ import {
   BackgroundImage,
   ErrorMessage,
   BookingContainer,
-  Button
+  Button,
 } from "../components/Styled";
 import ConfirmContext from "../utils/ConfirmContext";
 import { useGlobalState } from "../utils/StateContext";
@@ -90,22 +90,6 @@ const MakeBooking = (props) => {
   return (
     <BackgroundImage>
       <SignTitle>Booking Page</SignTitle>
-      {dateError ? (
-        <>
-          {" "}
-          <ErrorMessage>Error: Date {dateError}</ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
-      {optionIdError ? (
-        <>
-          {" "}
-          <ErrorMessage>Error: Service {optionIdError}</ErrorMessage>{" "}
-        </>
-      ) : (
-        <> </>
-      )}
       <BookingForm>
         <BookingContainer>
           <div style={{ margin: "5px" }}>
@@ -151,13 +135,27 @@ const MakeBooking = (props) => {
 
         <SignButton>
           <Link to="/">
-            <Button >Cancel</Button>
+            <Button>Cancel</Button>
           </Link>
-          <Button onClick={handleSubmit}>
-            Confirm
-          </Button>
+          <Button onClick={handleSubmit}>Confirm</Button>
         </SignButton>
       </BookingForm>
+      {dateError ? (
+        <>
+          {" "}
+          <ErrorMessage>Error: Date {dateError}</ErrorMessage>{" "}
+        </>
+      ) : (
+        <> </>
+      )}
+      {optionIdError ? (
+        <>
+          {" "}
+          <ErrorMessage>Error: Service {optionIdError}</ErrorMessage>{" "}
+        </>
+      ) : (
+        <> </>
+      )}
     </BackgroundImage>
   );
 };

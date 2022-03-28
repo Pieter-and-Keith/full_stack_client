@@ -1,16 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import ConfirmContext from "../utils/ConfirmContext";
 import { useNavigate } from "react-router-dom";
 import {
   SignTitle,
-  ConfirmBookingForm,
-  ConfirmBookingTitle,
   BackgroundImage,
   SignButton,
   JobDetails,
   Text,
-  Button,
   Button2,
   JobDiv,
 } from "../components/Styled";
