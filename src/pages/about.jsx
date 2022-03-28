@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../utils/StateContext";
 import {
   BusinessTitle,
@@ -13,40 +13,40 @@ import {
 const About = () => {
   const { store } = useGlobalState();
   const { userSignedIn } = store;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleBooking = () => {
-    navigate("/make_booking")
-  }
+    navigate("/make_booking");
+  };
   const handleServices = () => {
-    navigate("/services")
-  }
+    navigate("/services");
+  };
 
   return (
     <BackgroundImage4>
       <HomeBox1>
-        <BusinessTitle>
-          Sydney Motor Service Center
-        </BusinessTitle>
+        <BusinessTitle>Sydney Motor Service Center</BusinessTitle>
 
-        <HomeNav>
-        </HomeNav>
+        <HomeNav></HomeNav>
       </HomeBox1>
-        <ButtonDiv>
-          <ButtonPlus onClick={handleServices}>Our Services</ButtonPlus>
-          <ButtonPlus onClick={handleBooking}>Make a Booking</ButtonPlus>
-        </ButtonDiv>
+      <ButtonDiv>
+        <ButtonPlus onClick={handleServices}>Our Services</ButtonPlus>
+        <ButtonPlus onClick={handleBooking}>Make a Booking</ButtonPlus>
+      </ButtonDiv>
       <AboutBox>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis
-          sapien quis nibh cursus blandit. Etiam ullamcorper lacus sed lacus
-          condimentum rhoncus. Donec quis eros nec eros tristique sagittis.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia curae; Mauris malesuada urna quis vulputate tempor.
-          Nulla hendrerit egestas scelerisque. Pellentesque ac odio sit amet
-          eros aliquet lacinia. Curabitur euismod justo et dui egestas, in
-          vulputate sapien tincidunt. Nulla eleifend felis a augue egestas
-          gravida. 
+          Located in the CBD of Australia's biggest city, Sydney Motor Service
+          Center was founded by George Smith in 1975. <br></br>
+          Aussie owned and operated, SMSC has been for over 3 generations a
+          benchmark for high quality repairs and services on a wide range of
+          vehicles. From small hatchbacks to massive vans, no task is too big
+          or too small for us.<br></br>
+          We currenlty employ over 20 highly skilled technicians, each an expert
+          in their field.<br></br>
+          We keep the finger on the pulse and move along with all the latest
+          developments in the industry. Therefore we have technicians inhouse
+          that can deal with your electric car too.<br></br>
+          Call, email or book via this site your next appointment with us.
         </p>
 
         <section>
