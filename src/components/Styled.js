@@ -237,13 +237,19 @@ export const SignForm = styled.form`
   border-radius: 10px;
   border: 1px ridge #2d2424;
   opacity: 0.96;
+`;
 
-  @media (max-width: 800px) {
-    width: 50%;
-  }
-  @media (max-width: 450px) {
-    width: 75%;
-  }
+export const SignForm1 = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  padding: 20px;
+  margin: 5px auto;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  border: 1px ridge #2d2424;
+  opacity: 0.96;
 `;
 
 export const ErrorMessage = styled.h3`
@@ -309,24 +315,14 @@ export const BookingForm = styled.form`
     width: 90%;
   }
 `;
-// @media (max-width: 1400px) {
-//     width: 30%
-// }
-// @media (max-width: 1100px) {
-//     width: 35%
-// }
-// @media (max-width: 880px) {
-//     width: 50%
-// }
-// @media (max-width: 625px) {
-//     width: 70%
-// }
 
 export const Button = styled.button`
   margin: 10px 20px;
-  padding: 5px;
+  padding: 7px;
+  width: 70px;
   border: 1px solid black;
   border-radius: 2px;
+  transition: 0.25s;
   :hover {
     color: white;
     background-color: blue;
@@ -337,17 +333,7 @@ export const Button2 = styled.button`
   padding: 5px;
   border: 1px solid black;
   border-radius: 2px;
-  :hover {
-    color: white;
-    background-color: blue;
-  }
-`;
-
-export const Button3 = styled.button`
-  margin: 5px 0px;
-  padding: 5px;
-  border: 1px solid black;
-  border-radius: 2px;
+  transition: 0.25s;
   :hover {
     color: white;
     background-color: blue;
@@ -411,23 +397,17 @@ export const ConfirmBookingTitle = styled.h1`
 `;
 
 export const AdminInnerBox = styled.section`
-  background-color: white;
-  box-shadow: 2px 3px black;
-  border: 1px ridge #2d2424;
+  background-color: #f4f4f4;
+  border: 1px solid #2d2424;
+  border-radius: 5px;
   padding: 10px;
   width: 250px;
   height: 220px;
-  margin: 5px;
+  margin: 15px;
 `;
-// @media (max-width: 1250px) {
-//     width: 28%;
-// }
-// @media (max-width: 700px) {
-//     width: 40%;
-// }
-// @media (max-width: 500px) {
-//     width: 85%;
-// }
+ export const AdminInnerDiv = styled.div`
+  margin-left: 20px;
+ `
 
 export const AdminOuterBox = styled.div`
   display: flex;

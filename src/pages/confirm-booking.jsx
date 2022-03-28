@@ -12,7 +12,6 @@ import {
   Text,
   Button,
   Button2,
-  Button3,
   JobDiv,
 } from "../components/Styled";
 
@@ -58,7 +57,7 @@ const ConfirmBooking = () => {
           <hr></hr>
         </JobDiv>
           <SignButton>
-            <Button3 onClick={handleHome}>Home</Button3>
+            <Button2 onClick={handleHome}>Home</Button2>
           </SignButton>
       </JobDetails>
     </BackgroundImage>

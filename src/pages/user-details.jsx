@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import api from "../config/api"
-import { SignTitle, ErrorMessage2, SignForm, BackgroundImage } from '../components/Styled'
+import { SignTitle, ErrorMessage2, SignForm1, BackgroundImage, Button } from '../components/Styled'
 
 const UserDetails = () => {
     const navigate = useNavigate()
@@ -76,19 +76,8 @@ const UserDetails = () => {
 
     return(
         <BackgroundImage>
-          <SignTitle>User detail Page</SignTitle>
-          { firstNameError ? <> <ErrorMessage2>Error: First Name {firstNameError}</ErrorMessage2> </> : <> </> } 
-          { lastNameError ? <> <ErrorMessage2>Error: Last Name {lastNameError}</ErrorMessage2> </> : <> </> }
-          { phoneNumberError ? <> <ErrorMessage2>Error: Phone Number {phoneNumberError}</ErrorMessage2> </> : <> </> }
-          { streetNumberError ? <> <ErrorMessage2>Error: Street Number {streetNumberError[0]} or {streetNumberError[1]}</ErrorMessage2> </> : <> </> }
-          { streetNameError ? <> <ErrorMessage2>Error: Street Name {streetNameError}</ErrorMessage2> </> : <> </> }
-          { suburbError ? <> <ErrorMessage2>Error: Suburb {suburbError}</ErrorMessage2> </> : <> </> }
-          { postcodeError ? <> <ErrorMessage2>Error: Postcode {postcodeError[0]} or {postcodeError[1]}</ErrorMessage2> </> : <> </> }
-          { stateError ? <> <ErrorMessage2>Error: State {stateError}</ErrorMessage2> </> : <> </> }
-          { regoError ? <> <ErrorMessage2>Error: Rego {regoError}</ErrorMessage2> </> : <> </> }
-          { makeError ? <> <ErrorMessage2>Error: Make {makeError}</ErrorMessage2> </> : <> </> }
-          { modelError ? <> <ErrorMessage2>Error: Model {modelError}</ErrorMessage2> </> : <> </> }
-          <SignForm onSubmit={handleOnSubmit}>
+          <SignTitle>Personal Details</SignTitle>
+          <SignForm1 onSubmit={handleOnSubmit}>
             <div>
               <label htmlFor="firstName">First name:</label>
               <br></br>
@@ -145,9 +134,20 @@ const UserDetails = () => {
               <input type="text" name="model" id="model" value={data.model} onChange={handleChange}  />
             </div>
 
-            <button type="submit" style={{margin: "10px"}}>submit</button>
+            <Button type="submit" style={{margin: "10px"}}>submit</Button>
 
-          </SignForm>
+          </SignForm1>
+          { firstNameError ? <> <ErrorMessage2>Error: First Name {firstNameError}</ErrorMessage2> </> : <> </> } 
+          { lastNameError ? <> <ErrorMessage2>Error: Last Name {lastNameError}</ErrorMessage2> </> : <> </> }
+          { phoneNumberError ? <> <ErrorMessage2>Error: Phone Number {phoneNumberError}</ErrorMessage2> </> : <> </> }
+          { streetNumberError ? <> <ErrorMessage2>Error: Street Number {streetNumberError[0]} or {streetNumberError[1]}</ErrorMessage2> </> : <> </> }
+          { streetNameError ? <> <ErrorMessage2>Error: Street Name {streetNameError}</ErrorMessage2> </> : <> </> }
+          { suburbError ? <> <ErrorMessage2>Error: Suburb {suburbError}</ErrorMessage2> </> : <> </> }
+          { postcodeError ? <> <ErrorMessage2>Error: Postcode {postcodeError[0]} or {postcodeError[1]}</ErrorMessage2> </> : <> </> }
+          { stateError ? <> <ErrorMessage2>Error: State {stateError}</ErrorMessage2> </> : <> </> }
+          { regoError ? <> <ErrorMessage2>Error: Rego {regoError}</ErrorMessage2> </> : <> </> }
+          { makeError ? <> <ErrorMessage2>Error: Make {makeError}</ErrorMessage2> </> : <> </> }
+          { modelError ? <> <ErrorMessage2>Error: Model {modelError}</ErrorMessage2> </> : <> </> }
         </BackgroundImage>
     )
 }

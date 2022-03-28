@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 import api from "../config/api";
 import BookingContext from "../utils/BookingContext";
-import { AdminInnerBox } from "./Styled";
+import { AdminInnerBox, Button, SignButton, AdminInnerDiv } from "./Styled";
 
 const BookingsItem = ({
   id,
@@ -26,15 +26,23 @@ const BookingsItem = ({
 
   return (
     <AdminInnerBox>
-      <h3><u>Job:</u> {serviceType}</h3>
-      <h4><u>Date:</u> {date}</h4>
-      <h5>
-        <u>Car:</u> {make} {model}
-      </h5>
-      <h5>
-        <u>Client:</u> {firstName} {lastName}
-      </h5>
-      <button onClick={handleOnClick}>SHOW</button>
+      <AdminInnerDiv>
+        <h3>
+          <u>Job:</u> {serviceType}
+        </h3>
+        <h4>
+          <u>Date:</u> {date}
+        </h4>
+        <h5>
+          <u>Car:</u> {make} {model}
+        </h5>
+        <h5>
+          <u>Client:</u> {firstName} {lastName}
+        </h5>
+      </AdminInnerDiv>
+      <SignButton>
+        <Button onClick={handleOnClick}>SHOW</Button>
+      </SignButton>
     </AdminInnerBox>
   );
 };

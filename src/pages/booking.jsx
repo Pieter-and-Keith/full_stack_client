@@ -104,13 +104,6 @@ const Booking = () => {
                     " Unfinished"
                     )}
         </Text>
-
-        {/* {bookingContext.finished ? (
-          <Text style={{ color: "green" }}>Finished</Text>
-        ) : (
-          <Text style={{ color: "red" }}>Unfinished</Text>
-        )} */}
-       
         <Button2 onClick={handleFinishedButton}>Update</Button2>
         <hr></hr>
         <Text><b>Payment Status:</b>
@@ -120,13 +113,6 @@ const Booking = () => {
                     " Unpaid"
                     )}
         </Text>
-
-        {/* {bookingContext.paid ? (
-          <Text style={{ color: "green" }}>Paid</Text>
-          ) : (
-            <Text style={{ color: "red" }}>Unpaid</Text>
-          )} */}
-
         <Button2 onClick={handlePaidButton}>Update</Button2>
           <hr></hr>
         <SignButton>
