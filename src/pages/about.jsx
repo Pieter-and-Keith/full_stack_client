@@ -46,10 +46,7 @@ const About = () => {
           Nulla hendrerit egestas scelerisque. Pellentesque ac odio sit amet
           eros aliquet lacinia. Curabitur euismod justo et dui egestas, in
           vulputate sapien tincidunt. Nulla eleifend felis a augue egestas
-          gravida. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Vivamus non massa turpis. Curabitur in
-          bibendum ligula, at laoreet augue. Quisque lorem diam, iaculis sed
-          ultrices quis, venenatis at eros.
+          gravida. 
         </p>
 
         <section>

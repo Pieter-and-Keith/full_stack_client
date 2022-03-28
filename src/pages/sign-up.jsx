@@ -70,7 +70,7 @@ const SignUp = () => {
 
   return (
     <BackgroundImage>
-      <SignTitle>Sign-up page </SignTitle>
+      <SignTitle>Sign Up</SignTitle>
       <SignForm onSubmit={handleSubmit}>
         <div style={{ padding: "10px" }}>
           <label htmlFor="username">Username:</label>

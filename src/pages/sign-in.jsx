@@ -50,9 +50,13 @@ const SignIn = () => {
     }
   };
 
+  const handleSignUp = () => {
+    navigate("/sign_up")
+  }
+
   return (
     <BackgroundImage>
-      <SignTitle>Sign-in</SignTitle>
+      <SignTitle>Sign In</SignTitle>
       <SignForm onSubmit={handleSubmit}>
         <div style={{ margin: "5px" }}>
           <label htmlFor="email">Email:</label>
@@ -82,8 +86,8 @@ const SignIn = () => {
           <Button type="submit" >
             Sign In
           </Button>
-          <Button>
-            <LinkE to="/sign_up">Sign Up</LinkE>
+          <Button onClick={handleSignUp}>
+            Sign Up
           </Button>
         </SignButton>
       </SignForm>

@@ -44,7 +44,7 @@ const AdminOptionCreate = () => {
 
   return (
     <BackgroundImage>
-      <SignTitle>Create New Option</SignTitle>
+      <SignTitle>Create New Service</SignTitle>
       <BookingForm onSubmit={handleSubmit}>
         <div style={{ padding: "10px" }}>
           <label htmlFor="service_type">Service Name:</label>

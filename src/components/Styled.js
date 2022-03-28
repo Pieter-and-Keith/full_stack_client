@@ -130,27 +130,22 @@ export const HomeLinkWords2 = styled(Link)`
   }
 `;
 
+// float: left;
+// display: flex;
 export const BusinessTitle = styled.h1`
-  float: left;
-  display: flex;
-  margin: 10px auto 10px 40px;
-  align-item: center;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 40px;
   width: 100%;
   color: blue;
+    @media (max-width: 550px) {
+      font-size: 30px;
+    }
+    @media (max-width: 480px) {
+        font-size: 25px;
+      }
+  `;
 
-  @media (max-width: 800px) {
-    font-size: 0.8rem;
-  }
-  @media (max-width: 650px) {
-    font-size: 0.6rem;
-  }
-  @media (max-width: 500px) {
-    font-size: 0.5rem;
-  }
-  @media (max-width: 300px) {
-    font-size: 0.3rem;
-  }
-`;
 export const BusinessHeader = styled.h1`
   color: #332fd0;
 `;
@@ -165,7 +160,7 @@ export const Service = styled.div`
   opacity: 0.8;
 `;
 
-export const ServiceTitle = styled.h2`
+export const ServiceTitle = styled.h3`
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
@@ -195,17 +190,19 @@ export const NavLinkWords = styled(Link)`
     color: blue;
   }
   @media (max-width: 500px) {
-    font-size: 0.9rem;
+    font-size: 12px
+    margin: 0 auto;
+    border:
   }
 `;
 
 export const AboutBox = styled.main`
-  margin: 10px auto;
+  margin: 40px auto 0;
   width: 580px;
   padding: 20px;
   background-color: #2e3335;
   color: white;
-  border: 1px solid black;
+  border: 2px solid white;
   border-radius: 5px;
   opacity: 0.93;
   @media (max-width: 700px) {
@@ -213,6 +210,7 @@ export const AboutBox = styled.main`
   }
   @media (max-width: 600px) {
     width: 400px;
+    margin: 20px auto 0;
   }
   @media (max-width: 480px) {
     width: 280px;
@@ -325,18 +323,18 @@ export const Button = styled.button`
   transition: 0.25s;
   :hover {
     color: white;
-    background-color: blue;
+    background-color: #2e3335;
   }
 `;
 export const Button2 = styled.button`
-  margin: 5px 0px;
+  margin: 5px 10px;
   padding: 5px;
   border: 1px solid black;
   border-radius: 2px;
   transition: 0.25s;
   :hover {
     color: white;
-    background-color: blue;
+    background-color: #2e3335;
   }
 `;
 
@@ -353,6 +351,9 @@ export const ButtonPlus = styled.button`
     color: blue;
     background-color: white;
     border-color: blue;
+  }
+  @media(max-width: 400px){
+      margin: 5px
   }
 `;
 
