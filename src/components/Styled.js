@@ -20,6 +20,10 @@ export const JobsDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  width: 75%;
+  @media( max-width: 500px){
+      width:100%;
+  }
 `;
 export const Text = styled.p`
   margin: 2px;
